@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <h1 align="center">Change Password </h1>
 
@@ -60,7 +61,7 @@ $check_old_pass = mysqli_num_rows($run_old_pass);
 
 if($check_old_pass==0){
 
-echo "<script>alert('Your Current Password is not valid try again')</script>";
+echo "<script>swal('Current Password', 'Not Valid', 'error')</script>";
 
 exit();
 
@@ -68,7 +69,7 @@ exit();
 
 if($new_pass!=$new_pass_again){
 
-echo "<script>alert('Your New Password dose not match')</script>";
+echo "<script>swal('Password', 'Do Not Match', 'error')</script>";
 
 exit();
 
@@ -80,7 +81,8 @@ $run_pass = mysqli_query($con,$update_pass);
 
 if($run_pass){
 
-echo "<script>alert('your Password Has been Changed Successfully')</script>";
+echo "<script>swal('Password', 'Changed Successfully', 'success')
+</script>";
 
 echo "<script>window.open('my_account.php?my_orders','_self')</script>";
 

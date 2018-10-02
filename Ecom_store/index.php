@@ -1,12 +1,9 @@
 <?php
-
 session_start();
-
 include("includes/db.php");
-
 include("functions/functions.php");
-
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -21,16 +18,17 @@ include("functions/functions.php");
 <link href="styles/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/animate.css">
 
 </head>
 
 <body>
 
-<div id="top"><!-- top Starts -->
+<div id="top">
 
-<div class="container"><!-- container Starts -->
+<div class="container">
 
-<div class="col-md-6 offer"><!-- col-md-6 offer Starts -->
+<div class="col-md-6 offer">
 
 <a href="#" class="btn btn-success btn-sm" >
 <?php
@@ -105,15 +103,15 @@ echo "<a href='logout.php'> Logout </a>";
 ?>
 </li>
 
-</ul><!-- menu Ends -->
+</ul>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- top Ends -->
+</div>
+</div>
 
 <div class="navbar navbar-default" id="navbar"><!-- navbar navbar-default Starts -->
-<div class="container" ><!-- container Starts -->
+<div class="container" >
 
 <div class="navbar-header"><!-- navbar-header Starts -->
 
@@ -252,7 +250,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Starts --->
 
-<ol class="carousel-indicators"><!-- carousel-indicators Starts -->
+<ol class="carousel-indicators">
 
 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 
@@ -263,9 +261,9 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <li data-target="#myCarousel" data-slide-to="3"></li>
 
 
-</ol><!-- carousel-indicators Ends -->
+</ol>
 
-<div class="carousel-inner"><!-- carousel-inner Starts -->
+<div class="carousel-inner">
 
 <?php
 
@@ -274,10 +272,8 @@ $get_slides = "select * from slider LIMIT 0,1";
 $run_slides = mysqli_query($con,$get_slides);
 
 while($row_slides=mysqli_fetch_array($run_slides)){
-
 $slide_name = $row_slides['slide_name'];
 $slide_image = $row_slides['slide_image'];
-
 $slide_url = $row_slides['slide_url'];
 
 echo "
@@ -352,7 +348,7 @@ echo "
 <div id="advantages"><!-- advantages Starts -->
 <div class="container"><!-- container Starts -->
 
-<div class="same-height-row"><!-- same-height-row Starts -->
+<div class="same-height-row" ><!-- same-height-row Starts -->
 
 <?php
 

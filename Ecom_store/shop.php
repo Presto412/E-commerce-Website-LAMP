@@ -20,6 +20,7 @@ include("functions/functions.php");
 <link href="styles/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 </head>
 
@@ -118,8 +119,8 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
-<img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
+<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce">
+<img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
 
@@ -275,7 +276,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <div class='box'>
 
-<h1>Shop</h1>
+<h1 class='animated bounce'>Shop</h1>
 
 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using '</p>
 
@@ -283,7 +284,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 
 
-<div class="row" id="Products" ><!-- row Starts -->
+<div class="row animated zoomIn" id="Products" ><!-- row Starts -->
 
 <?php getProducts(); ?>
 
@@ -295,7 +296,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <?php getPaginator(); ?>
 
-</ul><!-- pagination Ends -->
+</ul>
 
 </center><!-- center Ends -->
 
@@ -399,7 +400,7 @@ $('[data-action="filter"][id="dev-table-filter"]').filterTable();
 
 });
 
-/// Search Filters code Ends /// 
+
 
 });
 

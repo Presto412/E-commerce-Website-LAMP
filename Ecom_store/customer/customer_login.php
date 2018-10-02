@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div class="box" ><!-- box Starts -->
 
 <div class="box-header" ><!-- box-header Starts -->
@@ -12,7 +13,7 @@
 </center>
 
 <p class="text-muted" >
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+Lorem Ipsum
 
 </p>
 
@@ -97,7 +98,7 @@ $check_cart = mysqli_num_rows($run_cart);
 
 if($check_customer==0){
 
-echo "<script>alert('password or email is wrong')</script>";
+echo "<script>swal('Wrong','password or email','error')</script>";
 
 exit();
 
@@ -107,7 +108,7 @@ if($check_customer==1 AND $check_cart==0){
 
 $_SESSION['customer_email']=$customer_email;
 
-echo "<script>alert('You are Logged In')</script>";
+echo "<script>swal('You are Logged In')</script>";
 
 echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
 
@@ -116,7 +117,7 @@ else {
 
 $_SESSION['customer_email']=$customer_email;
 
-echo "<script>alert('You are Logged In')</script>";
+echo "<script>swal('You are Logged In')</script>";
 
 echo "<script>window.open('checkout.php','_self')</script>";
 

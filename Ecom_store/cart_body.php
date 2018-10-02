@@ -7,10 +7,13 @@ include("includes/db.php");
 include("functions/functions.php");
 
 ?>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
 
 <body>
 
-<div id="top"><!-- top Starts -->
+<div id="top">
 
 <div class="container"><!-- container Starts -->
 
@@ -104,8 +107,8 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
-<img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
+<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
 

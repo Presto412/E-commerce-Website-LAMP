@@ -1,4 +1,5 @@
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php
 
 if(isset($_GET['delete_wishlist'])){
@@ -11,7 +12,7 @@ $run_delete = mysqli_query($con,$delete_wishlist);
 
 if($run_delete){
 
-echo "<script>alert('One Wishlist Product/Bundle Has Been Deleted')</script>";
+echo "<script>swal('One Wishlist Product/Bundle Has Been Deleted')</script>";
 
 echo "<script>window.open('my_account.php?my_wishlist','_self')</script>";
 

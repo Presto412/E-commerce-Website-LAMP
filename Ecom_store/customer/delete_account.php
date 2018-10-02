@@ -1,4 +1,4 @@
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <center>
 
 <h1>Do You Reaaly Want To Delete Your Account!</h1>
@@ -27,7 +27,7 @@ if($run_delete){
 
 session_destroy();
 
-echo "<script>alert('Your Account Has Been Deleted! Good By')</script>";
+echo "<script>swal('Your Account Has Been Deleted! Good By')</script>";
 
 echo "<script>window.open('../index.php','_self')</script>";
 

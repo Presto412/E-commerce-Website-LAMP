@@ -6,7 +6,7 @@ include("includes/db.php");
 include("functions/functions.php");
 
 ?>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php
 
 if(isset($_GET['c_id'])){
@@ -49,7 +49,7 @@ $delete_cart = "delete from cart where ip_add='$ip_add'";
 
 $run_delete = mysqli_query($con,$delete_cart);
 
-echo "<script>alert('Your order has been submitted,Thanks ')</script>";
+echo "<script>swal('Your order has been submitted,Thanks ')</script>";
 
 echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
 

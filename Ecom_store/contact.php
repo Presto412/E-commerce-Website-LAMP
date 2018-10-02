@@ -22,6 +22,7 @@ include("functions/functions.php");
 <link href="styles/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
 
 </head>
 
@@ -120,8 +121,8 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
-<img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
+<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
 
@@ -273,7 +274,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <div class="col-md-12" ><!-- col-md-12 Starts -->
 
-<div class="box" ><!-- box Starts -->
+<div class="box animated zoomIn" ><!-- box Starts -->
 
 <div class="box-header" ><!-- box-header Starts -->
 
@@ -426,7 +427,7 @@ $subject = "Welcome to my website";
 
 $msg = "I shall get you soon, thanks for sending us email";
 
-$from = "sad.ahmed22224@gmail.com";
+$from = "dasqueenie@gmail.com";
 
 mail($email,$subject,$msg,$from);
 

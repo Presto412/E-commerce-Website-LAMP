@@ -1,4 +1,4 @@
-
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></head>
 <center><!-- center Starts -->
 
 <h1>My Orders</h1>
@@ -17,7 +17,7 @@ If you have any questions, please feel free to <a href="../contact.php" > contac
 
 <hr>
 
-<div class="table-responsive" ><!-- table-responsive Starts -->
+<div class="table-responsive animated zoomIn" ><!-- table-responsive Starts -->
 
 <table class="table table-bordered table-hover" ><!-- table table-bordered table-hover Starts -->
 

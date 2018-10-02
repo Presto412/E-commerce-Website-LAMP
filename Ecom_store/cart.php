@@ -22,16 +22,18 @@ include("functions/functions.php");
 <link href="styles/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
 
-<div id="top"><!-- top Starts -->
+<div id="top">
 
-<div class="container"><!-- container Starts -->
+<div class="container">
 
-<div class="col-md-6 offer"><!-- col-md-6 offer Starts -->
+<div class="col-md-6 offer">
 
 <a href="#" class="btn btn-success btn-sm" >
 
@@ -56,10 +58,9 @@ echo "Welcome : " . $_SESSION['customer_email'] . "";
 Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
 </a>
 
-</div><!-- col-md-6 offer Ends -->
-
-<div class="col-md-6"><!-- col-md-6 Starts -->
-<ul class="menu"><!-- menu Starts -->
+</div>
+<div class="col-md-6">
+<ul class="menu">
 
 <li>
 <a href="customer_register.php">
@@ -107,24 +108,23 @@ echo "<a href='logout.php'> Logout </a>";
 ?>
 </li>
 
-</ul><!-- menu Ends -->
+</ul>
 
-</div><!-- col-md-6 Ends -->
+</div>
+</div>
+</div>
 
-</div><!-- container Ends -->
-</div><!-- top Ends -->
+<div class="navbar navbar-default" id="navbar">
+<div class="container" >
 
-<div class="navbar navbar-default" id="navbar"><!-- navbar navbar-default Starts -->
-<div class="container" ><!-- container Starts -->
+<div class="navbar-header">
 
-<div class="navbar-header"><!-- navbar-header Starts -->
+<a class="navbar-brand home" href="index.php" >
 
-<a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
+<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
-<img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
-
-</a><!--- navbar navbar-brand home Ends -->
+</a>
 
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
 
@@ -143,13 +143,13 @@ echo "<a href='logout.php'> Logout </a>";
 </button>
 
 
-</div><!-- navbar-header Ends -->
+</div>
 
-<div class="navbar-collapse collapse" id="navigation" ><!-- navbar-collapse collapse Starts -->
+<div class="navbar-collapse collapse" id="navigation" >
 
-<div class="padding-nav" ><!-- padding-nav Starts -->
+<div class="padding-nav" >
 
-<ul class="nav navbar-nav navbar-left"><!-- nav navbar-nav navbar-left Starts -->
+<ul class="nav navbar-nav navbar-left">
 
 <li>
 <a href="index.php"> Home </a>
@@ -195,7 +195,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="contact.php"> Contact Us </a>
 </li>
 
-</ul><!-- nav navbar-nav navbar-left Ends -->
+</ul>
 
 </div><!-- padding-nav Ends -->
 
@@ -271,7 +271,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <div class="col-md-9" id="cart" ><!-- col-md-9 Starts -->
 
-<div class="box" ><!-- box Starts -->
+<div class="box animated zoomIn" ><!-- box Starts -->
 
 <form action="cart.php" method="post" enctype="multipart-form-data" ><!-- form Starts -->
 
@@ -495,7 +495,7 @@ $coupon_used = $row_coupons['coupon_used'];
 
 if($coupon_limit == $coupon_used){
 
-echo "<script>alert('Your Coupon Code Has Been Expired')</script>";
+echo "<script>swal('Your Coupon Code Has Been Expired')</script>";
 
 }
 else{
@@ -517,14 +517,14 @@ $update_cart = "update cart set p_price='$coupon_price' where p_id='$coupon_pro'
 
 $run_update = mysqli_query($con,$update_cart);
 
-echo "<script>alert('Your Coupon Code Has Been Applied')</script>";
+echo "<script>swal('Coupon Code','Applied','error')</script>";
 
 echo "<script>window.open('cart.php','_self')</script>";
 
 }
 else{
 
-echo "<script>alert('Product Does Not Exist In Cart')</script>";
+echo "<script>swal('Product Does Not Exist In Cart')</script>";
 
 }
 
@@ -533,7 +533,7 @@ echo "<script>alert('Product Does Not Exist In Cart')</script>";
 }
 else{
 
-echo "<script> alert('Your Coupon Code Is Not Valid') </script>";
+echo "<script> swal('Coupon Code','Invalid','error') </script>";
 
 }
 
@@ -585,17 +585,17 @@ echo @$up_cart = update_cart();
 
 
 
-<div id="row same-height-row"><!-- row same-height-row Starts -->
+<div id="row same-height-row">
 
-<div class="col-md-3 col-sm-6"><!-- col-md-3 col-sm-6 Starts -->
+<div class="col-md-3 col-sm-6">
 
-<div class="box same-height headline"><!-- box same-height headline Starts -->
+<div class="box same-height headline animated zoomIn">
 
-<h3 class="text-center"> You also like these Products </h3>
+<h3 class="text-center"> You may like </h3>
 
-</div><!-- box same-height headline Ends -->
+</div>
 
-</div><!-- col-md-3 col-sm-6 Ends -->
+</div>
 
 <?php
 

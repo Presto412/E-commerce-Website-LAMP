@@ -1,14 +1,3 @@
-/*
-
-Template : E commerce Store in php and mysqli with bootstrap 3
-Author Name : Mohammed Tahir Ahmed
-Author Email: sad.ahmed22224@gmail.com
-Theme URl : http://www.computerfever.com
-Version: 1.0
-
-*/
-
-/* General Styles */
 
 body {
 font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -20,7 +9,7 @@ overflow-x: hidden;
 
 }
 
-/* Top Navbar Styles  */
+
 
 #top {
 

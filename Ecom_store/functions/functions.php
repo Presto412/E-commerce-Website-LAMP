@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost","root","","ecom_store");
+$db = mysqli_connect("localhost","root","Queenie@11","Ecom_Store");
 
 /// IP address code starts /////
 function getRealUserIp(){
@@ -11,6 +11,8 @@ function getRealUserIp(){
       default : return $_SERVER['REMOTE_ADDR'];
     }
  }
+
+
 /// IP address code Ends /////
 
 
@@ -526,6 +528,6 @@ echo "' >".'Last Page'."</a></li>";
 
 /// getPaginator Function Ends ///
 
-
  
 ?>
+

@@ -10,8 +10,6 @@ echo "<script>window.open('../checkout.php','_self')</script>";
 }else {
 
 
-
-
 include("includes/db.php");
 
 include("functions/functions.php");
@@ -30,16 +28,17 @@ include("functions/functions.php");
 <link href="styles/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 </head>
 
 <body>
 
-<div id="top"><!-- top Starts -->
+<div id="top">
 
-<div class="container"><!-- container Starts -->
+<div class="container">
 
-<div class="col-md-6 offer"><!-- col-md-6 offer Starts -->
+<div class="col-md-6 offer">
 
 <a href="#" class="btn btn-success btn-sm" >
 <?php
@@ -128,8 +127,8 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="../index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
-<img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
+<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
 
@@ -319,7 +318,7 @@ Send Email Again
 
 <div class="col-md-9" ><!--- col-md-9 Starts -->
 
-<div class="box" ><!-- box Starts -->
+<div class="box animated zoomIn" ><!-- box Starts -->
 
 <?php
 
