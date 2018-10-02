@@ -1,3 +1,9 @@
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formjs/1.1.1/formjs.min.js"></script>
+
 
 <div id="footer">
 	<div class="container">
@@ -40,21 +46,7 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 <hr class="hidden-md hidden-lg hidden-sm" >
 </div>
-<div class="col-md-3 col-sm-6">
-<h4> Top Products Categories </h4>
-<ul>
-<?php
-$get_p_cats = "select * from product_categories";
-$run_p_cats = mysqli_query($con,$get_p_cats);
-while($row_p_cats = mysqli_fetch_array($run_p_cats)){
-$p_cat_id = $row_p_cats['p_cat_id'];
-$p_cat_title = $row_p_cats['p_cat_title'];
-echo "<li> <a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a> </li>";
-}
-?>
-</ul>
-<hr class="hidden-md hidden-lg">
-</div>
+
 <div class="col-md-3 col-sm-6">
 
 <h4>Contact Us at</h4>
@@ -66,23 +58,11 @@ echo "<li> <a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a> </li>";
 <br>priyansh.jain0246@gmail.com
 <br>
 </p>
-<a href="../contact.php">Go to Contact us page</a>
+<a href="contact.php">Go to Contact us page</a>
 <hr class="hidden-md hidden-lg">
 </div>
-<div class="col-md-3 col-sm-6">
-<h4>Subscribe with us</h4>
-<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="#">
-<div class="input-group">
-<input type="text" class="form-control" name="email">
-<input type="hidden" value="computerfever" name="uri"/>
-<input type="hidden" name="loc" value="en_US"/>
-<span class="input-group-btn">
-<input type="submit" value="subscribe" class="btn btn-default">
-</span>
-</div>
-</form>
+<div class="col-md-6 col-sm-6">
 
-<hr>
 
 <h4> Social Media </h4>
 
