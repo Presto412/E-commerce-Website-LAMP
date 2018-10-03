@@ -73,6 +73,11 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 <a href="#"><i class="fa fa-google-plus"></i></a>
 <a href="#"><i class="fa fa-envelope"></i></a>
 </p>
+
+<br>
+<h4> Leave Feedback</h4>
+<a href="../angular-contact-form/index.html" target="_blank">
+<button>Submit Feedback</button></a>
 </div>
 
 </div>
@@ -86,7 +91,7 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 <div class="col-md-6" >
 
-<p class="pull-left"> &copy; 2016 IWP Project </p>
+<p class="pull-left"> &copy; 2018 IWP Project </p>
 
 </div>
 

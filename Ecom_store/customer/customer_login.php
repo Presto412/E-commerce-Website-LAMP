@@ -1,5 +1,6 @@
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></head>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<div class="box" ><!-- box Starts -->
+<div class="box animated zoomIn" ><!-- box Starts -->
 
 <div class="box-header" ><!-- box-header Starts -->
 

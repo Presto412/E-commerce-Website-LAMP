@@ -54,9 +54,9 @@ else {
 
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-<div class="huge"> <?php echo $count_products; ?> </div>
+<div class="huge"> Users </div>
 
-<div>Products</div>
+
 
 </div><!-- col-xs-9 text-right Ends -->
 
@@ -64,7 +64,7 @@ else {
 
 </div><!-- panel-heading Ends -->
 
-<a href="index.php?view_products">
+<a href="index.php?view_users">
 
 <div class="panel-footer"><!-- panel-footer Starts -->
 
@@ -144,9 +144,9 @@ else {
 
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-<div class="huge"> <?php echo $count_p_categories; ?> </div>
+<div class="huge"> <?php echo $count_products; ?> </div>
 
-<div>Products Categories</div>
+<div>Products</div>
 
 </div><!-- col-xs-9 text-right Ends -->
 
@@ -154,7 +154,7 @@ else {
 
 </div><!-- panel-heading Ends -->
 
-<a href="index.php?view_p_cats">
+<a href="index.php?view_products">
 
 <div class="panel-footer"><!-- panel-footer Starts -->
 

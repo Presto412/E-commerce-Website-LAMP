@@ -164,84 +164,7 @@ else {
 
 </li><!-- Products li Ends -->
 
-<li><!-- Bundles Li Starts --->
 
-<a href="#" data-toggle="collapse" data-target="#bundles">
-
-<i class="fa fa-fw fa-edit"></i> Bundles
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a>
-
-<ul id="bundles" class="collapse">
-
-<li>
-<a href="index.php?insert_bundle"> Insert Bundle </a>
-</li>
-
-<li>
-<a href="index.php?view_bundles"> View Bundles </a>
-</li>
-
-</ul>
-
-</li><!-- Bundles Li Ends --->
-
-<li><!-- relations li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#relations"><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-retweet"></i> Assign Products To Bundles Relations
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a><!-- anchor Ends -->
-
-<ul id="relations" class="collapse"><!-- collapse Starts -->
-
-<li>
-
-<a href="index.php?insert_rel"> Insert Relation </a>
-
-</li>
-
-
-<li>
-
-<a href="index.php?view_rel"> View Relations </a>
-
-</li>
-
-</ul><!-- collapse Ends -->
-
-
-</li><!-- relations li Ends -->
-
-<li><!-- Icons Li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#icons">
-
-<i class="fa fa-fw fa-retweet"> </i> Icons
-
-<i class="fa fa-fw fa-caret-down" ></i>
-
-</a>
-
-<ul id="icons" class="collapse"><!-- Icons Ul Starts -->
-
-<li>
-<a href="index.php?insert_icon"> Insert Icon </a>
-</li>
-
-
-<li>
-<a href="index.php?view_icons"> View Icons </a>
-</li>
-
-</ul><!-- Icons Ul Ends -->
-
-</li><!-- Icons Li Ends -->
 
 
 <li><!-- manufacturer li Starts -->
@@ -271,32 +194,6 @@ else {
 </li><!-- manufacturer li Ends -->
 
 
-<li><!-- li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#p_cat">
-
-<i class="fa fa-fw fa-pencil"></i> Products Categories
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-
-</a>
-
-<ul id="p_cat" class="collapse">
-
-<li>
-<a href="index.php?insert_p_cat"> Insert Product Category </a>
-</li>
-
-<li>
-<a href="index.php?view_p_cats"> View Products Categories </a>
-</li>
-
-
-</ul>
-
-</li><!-- li Ends -->
-
 
 <li><!-- li Starts -->
 
@@ -324,103 +221,8 @@ else {
 </li><!-- li Ends -->
 
 
-<li><!-- boxes section li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#boxes"><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-arrows"></i> Boxes Section
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a><!-- anchor Ends -->
-
-<ul id="boxes" class="collapse">
-
-<li>
-
-<a href="index.php?insert_box"> Insert Box </a>
-
-</li>
 
 
-<li>
-
-<a href="index.php?view_boxes"> View Boxes </a>
-
-</li>
-
-</ul>
-
-</li><!--boxes section li Ends -->
-
-<li><!-- services section li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#services">
-
-<i class="fa fa-fw fa-briefcase"></i> Services
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a>
-
-<ul id="services" class="collapse">
-
-<li>
-<a href="index.php?insert_service"> Insert Service </a>
-</li>
-
-<li>
-<a href="index.php?view_services"> View Services </a>
-</li>
-
-</ul>
-
-</li><!-- services section li Ends -->
-
-
-<li><!-- contact us li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#contact_us"><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-pencil"> </i> Contact Us Section
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a><!-- anchor Ends -->
-
-<ul id="contact_us" class="collapse">
-
-<li>
-
-<a href="index.php?edit_contact_us"> Edit Contact Us </a>
-
-</li>
-
-<li>
-
-<a href="index.php?insert_enquiry"> Insert Enquiry Type </a>
-
-</li>
-
-<li>
-
-<a href="index.php?view_enquiry"> View Enquiry Types </a>
-
-</li>
-
-</ul>
-
-</li><!-- contact us li Ends -->
-
-<li><!-- about us li Starts -->
-
-<a href="index.php?edit_about_us">
-
-<i class="fa fa-fw fa-edit"></i> Edit About Us Page
-
-</a>
-
-</li><!-- about us li Ends -->
 
 
 <li><!-- Coupons Section li Starts -->
@@ -447,66 +249,7 @@ else {
 
 </li><!-- Coupons Section li Ends -->
 
-<li><!-- slide li Starts -->
 
-<a href="#" data-toggle="collapse" data-target="#slides">
-
-<i class="fa fa-fw fa-gear"></i> Slides
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-
-</a>
-
-<ul id="slides" class="collapse">
-
-<li>
-<a href="index.php?insert_slide"> Insert Slide </a>
-</li>
-
-<li>
-<a href="index.php?view_slides"> View Slides </a>
-</li>
-
-
-</ul>
-
-</li><!-- slide li Ends -->
-
-<li><!-- terms li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#terms" ><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-table"></i> Terms
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a><!-- anchor Ends -->
-
-<ul id="terms" class="collapse"><!-- ul collapse Starts -->
-
-<li>
-<a href="index.php?insert_term"> Insert Terms </a> 
-</li>
-
-<li>
-<a href="index.php?view_terms"> View Terms </a> 
-</li>
-
-</ul><!-- ul collapse Ends -->
-
-
-</li><!-- terms li Ends -->
-
-<li><!-- Edit Css li Starts -->
-
-<a href="index.php?edit_css">
-
-<i class="fa fa-fw fa-list"></i> Edit Css File
-
-</a>
-
-</li><!-- Edit Css li Ends -->
 
 <li>
 
@@ -528,21 +271,13 @@ else {
 
 </li>
 
-<li>
 
-<a href="index.php?view_payments">
-
-<i class="fa fa-fw fa-pencil"></i> View Payments
-
-</a>
-
-</li>
 
 <li><!-- li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#users">
 
-<i class="fa fa-fw fa-gear"></i> Users
+<i class="fa fa-fw fa-gear"></i> Admins
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -552,7 +287,7 @@ else {
 <ul id="users" class="collapse">
 
 <li>
-<a href="index.php?insert_user"> Insert User </a>
+<a href="index.php?insert_user"> Insert Users </a>
 </li>
 
 <li>
