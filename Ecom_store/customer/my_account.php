@@ -2,19 +2,19 @@
 
 session_start();
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<script>window.open('../checkout.php','_self')</script>";
-
-
-}else {
+    echo "<script>window.open('../checkout.php','_self')</script>";
 
 
-include("includes/db.php");
+} else {
 
-include("functions/functions.php");
 
-?>
+    include("includes/db.php");
+
+    include("functions/functions.php");
+
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -43,14 +43,14 @@ include("functions/functions.php");
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -76,14 +76,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='../checkout.php' >My Account</a>";
+    echo "<a href='../checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='my_account.php?my_orders'>My Account</a>";
+    echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -100,13 +99,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='../checkout.php'> Login </a>";
+    echo "<a href='../checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -127,7 +126,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="../index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo.png" width="80px" height="40px" alt="logo" class="hidden-xs animated bounce" >
 <img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -168,14 +167,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li class="active">
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='../checkout.php' >My Account</a>";
+    echo "<a href='../checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='my_account.php?my_orders'>My Account</a>";
+    echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -191,11 +189,6 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 <a href="../about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="../services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="../contact.php"> Contact Us </a>
@@ -282,7 +275,7 @@ $c_email = $_SESSION['customer_email'];
 
 $get_customer = "select * from customers where customer_email='$c_email'";
 
-$run_customer = mysqli_query($con,$get_customer);
+$run_customer = mysqli_query($con, $get_customer);
 
 $row_customer = mysqli_fetch_array($run_customer);
 
@@ -290,9 +283,9 @@ $customer_confirm_code = $row_customer['customer_confirm_code'];
 
 $c_name = $row_customer['customer_name'];
 
-if(!empty($customer_confirm_code)){
+if (!empty($customer_confirm_code)) {
 
-?>
+    ?>
 
 <div class="alert alert-danger"><!-- alert alert-danger Starts -->
 
@@ -306,7 +299,8 @@ Send Email Again
 
 </div><!-- alert alert-danger Ends -->
 
-<?php } ?>
+<?php 
+} ?>
 
 </div><!-- col-md-12 Ends -->
 
@@ -322,25 +316,25 @@ Send Email Again
 
 <?php
 
-if(isset($_GET[$customer_confirm_code])){
+if (isset($_GET[$customer_confirm_code])) {
 
-$update_customer = "update customers set customer_confirm_code='' where customer_confirm_code='$customer_confirm_code'";
+    $update_customer = "update customers set customer_confirm_code='' where customer_confirm_code='$customer_confirm_code'";
 
-$run_confirm = mysqli_query($con,$update_customer);
+    $run_confirm = mysqli_query($con, $update_customer);
 
-echo "<script>alert('Your Email Has Been Confirmed')</script>";
+    echo "<script>alert('Your Email Has Been Confirmed')</script>";
 
-echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+    echo "<script>window.open('my_account.php?my_orders','_self')</script>";
 
 }
 
-if(isset($_GET['send_email'])){
+if (isset($_GET['send_email'])) {
 
-$subject = "Email Confirmation Message";
+    $subject = "Email Confirmation Message";
 
-$from = "sad.ahmed22224@gmail.com";
+    $from = "sad.ahmed22224@gmail.com";
 
-$message = "
+    $message = "
 
 <h2>
 Email Confirmation By Computerfever.com $c_name
@@ -354,59 +348,59 @@ Click Here To Confirm Email
 
 ";
 
-$headers = "From: $from \r\n";
+    $headers = "From: $from \r\n";
 
-$headers .= "Content-type: text/html\r\n";
+    $headers .= "Content-type: text/html\r\n";
 
-mail($c_email,$subject,$message,$headers);
+    mail($c_email, $subject, $message, $headers);
 
-echo "<script>alert('Your Confirmation Email Has Been sent to you, check your inbox')</script>";
+    echo "<script>alert('Your Confirmation Email Has Been sent to you, check your inbox')</script>";
 
-echo "<script>window.open('my_account.php?my_orders','_self')</script>";
-
-}
-
-
-
-if(isset($_GET['my_orders'])){
-
-include("my_orders.php");
+    echo "<script>window.open('my_account.php?my_orders','_self')</script>";
 
 }
 
-if(isset($_GET['pay_offline'])) {
 
-include("pay_offline.php");
 
-}
+if (isset($_GET['my_orders'])) {
 
-if(isset($_GET['edit_account'])) {
-
-include("edit_account.php");
+    include("my_orders.php");
 
 }
 
-if(isset($_GET['change_pass'])){
+if (isset($_GET['pay_offline'])) {
 
-include("change_pass.php");
-
-}
-
-if(isset($_GET['delete_account'])){
-
-include("delete_account.php");
+    include("pay_offline.php");
 
 }
 
-if(isset($_GET['my_wishlist'])){
+if (isset($_GET['edit_account'])) {
 
-include("my_wishlist.php");
+    include("edit_account.php");
 
 }
 
-if(isset($_GET['delete_wishlist'])){
+if (isset($_GET['change_pass'])) {
 
-include("delete_wishlist.php");
+    include("change_pass.php");
+
+}
+
+if (isset($_GET['delete_account'])) {
+
+    include("delete_account.php");
+
+}
+
+if (isset($_GET['my_wishlist'])) {
+
+    include("my_wishlist.php");
+
+}
+
+if (isset($_GET['delete_wishlist'])) {
+
+    include("delete_wishlist.php");
 
 }
 
@@ -434,4 +428,5 @@ include("includes/footer.php");
 
 </body>
 </html>
-<?php } ?>
+<?php 
+} ?>

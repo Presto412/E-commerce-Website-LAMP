@@ -37,14 +37,14 @@ include("functions/functions.php");
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -70,14 +70,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -94,13 +93,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -121,7 +120,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo.png" width="80px" height="40px" alt="logo" class="hidden-xs animated bounce" >
 <img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -162,14 +161,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -185,11 +183,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li class="active" >
 <a href="contact.php"> Contact Us </a>
@@ -284,7 +277,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 $get_contact_us = "select * from contact_us";
 
-$run_conatct_us = mysqli_query($con,$get_contact_us);
+$run_conatct_us = mysqli_query($con, $get_contact_us);
 
 $row_conatct_us = mysqli_fetch_array($run_conatct_us);
 
@@ -354,13 +347,13 @@ $contact_email = $row_conatct_us['contact_email'];
 
 $get_enquiry_types = "select * from enquiry_types";
 
-$run_enquiry_types = mysqli_query($con,$get_enquiry_types);
+$run_enquiry_types = mysqli_query($con, $get_enquiry_types);
 
-while($row_enquiry_types = mysqli_fetch_array($run_enquiry_types)){
+while ($row_enquiry_types = mysqli_fetch_array($run_enquiry_types)) {
 
-$enquiry_title = $row_enquiry_types['enquiry_title'];
+    $enquiry_title = $row_enquiry_types['enquiry_title'];
 
-echo "<option> $enquiry_title </option>";
+    echo "<option> $enquiry_title </option>";
 
 }
 
@@ -385,21 +378,21 @@ echo "<option> $enquiry_title </option>";
 
 <?php
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
 // Admin receives email through this code
 
-$sender_name = $_POST['name'];
+    $sender_name = $_POST['name'];
 
-$sender_email = $_POST['email'];
+    $sender_email = $_POST['email'];
 
-$sender_subject = $_POST['subject'];
+    $sender_subject = $_POST['subject'];
 
-$sender_message = $_POST['message'];
+    $sender_message = $_POST['message'];
 
-$enquiry_type = $_POST['enquiry_type'];
+    $enquiry_type = $_POST['enquiry_type'];
 
-$new_message = "
+    $new_message = "
 
 <h1> This Message Has Been Sent By $sender_name </h1>
 
@@ -413,25 +406,25 @@ $new_message = "
 
 ";
 
-$headers = "From: $sender_email \r\n";
+    $headers = "From: $sender_email \r\n";
 
-$headers .= "Content-type: text/html\r\n";
+    $headers .= "Content-type: text/html\r\n";
 
-mail($contact_email,$sender_subject,$new_message,$headers);
+    mail($contact_email, $sender_subject, $new_message, $headers);
 
 // Send email to sender through this code
 
-$email = $_POST['email'];
+    $email = $_POST['email'];
 
-$subject = "Welcome to my website";
+    $subject = "Welcome to my website";
 
-$msg = "I shall get you soon, thanks for sending us email";
+    $msg = "I shall get you soon, thanks for sending us email";
 
-$from = "dasqueenie@gmail.com";
+    $from = "dasqueenie@gmail.com";
 
-mail($email,$subject,$msg,$from);
+    mail($email, $subject, $msg, $from);
 
-echo "<h2 align='center'>Your message has been sent successfully</h2>";
+    echo "<h2 align='center'>Your message has been sent successfully</h2>";
 
 }
 

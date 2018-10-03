@@ -2,24 +2,24 @@
 
 session_start();
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<script>window.open('../checkout.php','_self')</script>";
+    echo "<script>window.open('../checkout.php','_self')</script>";
 
 
-}else {
+} else {
 
-include("includes/db.php");
+    include("includes/db.php");
 
-include("functions/functions.php");
+    include("functions/functions.php");
 
-if(isset($_GET['order_id'])){
+    if (isset($_GET['order_id'])) {
 
-$order_id = $_GET['order_id'];
+        $order_id = $_GET['order_id'];
 
-}
+    }
 
-?>
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -47,14 +47,14 @@ $order_id = $_GET['order_id'];
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -80,14 +80,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='../checkout.php' >My Account</a>";
+    echo "<a href='../checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='my_account.php?my_orders'>My Account</a>";
+    echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -104,13 +103,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='../checkout.php'> Login </a>";
+    echo "<a href='../checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -131,7 +130,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -172,14 +171,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li class="active">
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='../checkout.php' >My Account</a>";
+    echo "<a href='../checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='my_account.php?my_orders'>My Account</a>";
+    echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -195,11 +193,6 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 <a href="../about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="../services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="../contact.php"> Contact Us </a>
@@ -366,43 +359,43 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 
 <?php
 
-if(isset($_POST['confirm_payment'])){
+if (isset($_POST['confirm_payment'])) {
 
-$update_id = $_GET['update_id'];
+    $update_id = $_GET['update_id'];
 
-$invoice_no = $_POST['invoice_no'];
+    $invoice_no = $_POST['invoice_no'];
 
-$amount = $_POST['amount_sent'];
+    $amount = $_POST['amount_sent'];
 
-$payment_mode = $_POST['payment_mode'];
+    $payment_mode = $_POST['payment_mode'];
 
-$ref_no = $_POST['ref_no'];
+    $ref_no = $_POST['ref_no'];
 
-$code = $_POST['code'];
+    $code = $_POST['code'];
 
-$payment_date = $_POST['date'];
+    $payment_date = $_POST['date'];
 
-$complete = "Complete";
+    $complete = "Complete";
 
-$insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,code,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date')";
+    $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,code,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date')";
 
-$run_payment = mysqli_query($con,$insert_payment);
+    $run_payment = mysqli_query($con, $insert_payment);
 
-$update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+    $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
 
-$run_customer_order = mysqli_query($con,$update_customer_order);
+    $run_customer_order = mysqli_query($con, $update_customer_order);
 
-$update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+    $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
 
-$run_pending_order = mysqli_query($con,$update_pending_order);
+    $run_pending_order = mysqli_query($con, $update_pending_order);
 
-if($run_pending_order){
+    if ($run_pending_order) {
 
-echo "<script>alert('your Payment has been received,order will be completed within 24 hours')</script>";
+        echo "<script>alert('your Payment has been received,order will be completed within 24 hours')</script>";
 
-echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+        echo "<script>window.open('my_account.php?my_orders','_self')</script>";
 
-}
+    }
 
 
 
@@ -435,4 +428,5 @@ include("includes/footer.php");
 </body>
 </html>
 
-<?php } ?>
+<?php 
+} ?>

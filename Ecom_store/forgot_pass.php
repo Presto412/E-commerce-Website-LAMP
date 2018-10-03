@@ -35,14 +35,14 @@ include("functions/functions.php");
 
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -69,14 +69,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -93,13 +92,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -120,7 +119,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -161,14 +160,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -184,11 +182,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -321,32 +314,31 @@ include("includes/footer.php");
 
 <?php
 
-if(isset($_POST['forgot_pass'])){
+if (isset($_POST['forgot_pass'])) {
 
-$c_email = $_POST['c_email'];
+    $c_email = $_POST['c_email'];
 
-$sel_c = "select * from customers where customer_email='$c_email'";
+    $sel_c = "select * from customers where customer_email='$c_email'";
 
-$run_c = mysqli_query($con,$sel_c);
+    $run_c = mysqli_query($con, $sel_c);
 
-$count_c = mysqli_num_rows($run_c);
+    $count_c = mysqli_num_rows($run_c);
 
-$row_c = mysqli_fetch_array($run_c);
+    $row_c = mysqli_fetch_array($run_c);
 
-$c_name = $row_c['customer_name'];
+    $c_name = $row_c['customer_name'];
 
-$c_pass = $row_c['customer_pass'];
+    $c_pass = $row_c['customer_pass'];
 
-if($count_c == 0){
+    if ($count_c == 0) {
 
-echo "<script> alert('Sorry, We do not have your email') </script>";
+        echo "<script> alert('Sorry, We do not have your email') </script>";
 
-exit();
+        exit();
 
-}
-else{
+    } else {
 
-$message = "
+        $message = "
 
 <h1 align='center'> Your Password Has Been Sent To You </h1>
 
@@ -370,21 +362,21 @@ Click Here To Login Your Account
 
 ";
 
-$from = "sad.ahmed22224@gmail.com"; 
+        $from = "sad.ahmed22224@gmail.com";
 
-$subject = "Your Password";
+        $subject = "Your Password";
 
-$headers = "From: $from\r\n";
+        $headers = "From: $from\r\n";
 
-$headers .= "Content-type: text/html\r\n";
+        $headers .= "Content-type: text/html\r\n";
 
-mail($c_email,$subject,$message,$headers);
+        mail($c_email, $subject, $message, $headers);
 
-echo "<script> alert('Your Password has been sent to you, check your inbox ') </script>";
+        echo "<script> alert('Your Password has been sent to you, check your inbox ') </script>";
 
-echo "<script>window.open('checkout.php','_self')</script>";
+        echo "<script>window.open('checkout.php','_self')</script>";
 
-}
+    }
 
 }
 

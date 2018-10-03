@@ -35,14 +35,14 @@ include("functions/functions.php");
 
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -69,14 +69,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -93,13 +92,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -120,7 +119,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -161,14 +160,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -184,11 +182,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -272,14 +265,14 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-include("customer/customer_login.php");
+    include("customer/customer_login.php");
 
 
-}else{
+} else {
 
-include("payment_options.php");
+    include("payment_options.php");
 
 }
 

@@ -35,14 +35,14 @@ include("functions/functions.php");
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -68,14 +68,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -92,13 +91,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -119,7 +118,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -160,14 +159,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -183,11 +181,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -272,15 +265,15 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 $get_terms = "select * from terms LIMIT 0,1";
 
-$run_terms = mysqli_query($con,$get_terms);
+$run_terms = mysqli_query($con, $get_terms);
 
-while($row_terms = mysqli_fetch_array($run_terms)){ 
+while ($row_terms = mysqli_fetch_array($run_terms)) {
 
-$term_title = $row_terms['term_title'];
+    $term_title = $row_terms['term_title'];
 
-$term_link = $row_terms['term_link'];
+    $term_link = $row_terms['term_link'];
 
-?>
+    ?>
 
 <li class="active">
 
@@ -292,27 +285,28 @@ $term_link = $row_terms['term_link'];
 
 </li>
 
-<?php } ?>
+<?php 
+} ?>
 
 <?php
 
 $count_terms = "select * from terms";
 
-$run_count = mysqli_query($con,$count_terms);
+$run_count = mysqli_query($con, $count_terms);
 
 $count = mysqli_num_rows($run_count);
 
 $get_terms = "select * from terms LIMIT 1,$count";
 
-$run_terms = mysqli_query($con,$get_terms);
+$run_terms = mysqli_query($con, $get_terms);
 
-while($row_terms = mysqli_fetch_array($run_terms)){
+while ($row_terms = mysqli_fetch_array($run_terms)) {
 
-$term_title = $row_terms['term_title'];
+    $term_title = $row_terms['term_title'];
 
-$term_link = $row_terms['term_link'];
+    $term_link = $row_terms['term_link'];
 
-?>
+    ?>
 
 <li>
 
@@ -324,7 +318,8 @@ $term_link = $row_terms['term_link'];
 
 </li>
 
-<?php } ?>
+<?php 
+} ?>
 
 </ul><!-- nav nav-pills nav-stacked Ends -->
 
@@ -342,17 +337,17 @@ $term_link = $row_terms['term_link'];
 
 $get_terms = "select * from terms LIMIT 0,1";
 
-$run_terms = mysqli_query($con,$get_terms);
+$run_terms = mysqli_query($con, $get_terms);
 
-while($row_terms = mysqli_fetch_array($run_terms)){
+while ($row_terms = mysqli_fetch_array($run_terms)) {
 
-$term_title = $row_terms['term_title'];
+    $term_title = $row_terms['term_title'];
 
-$term_desc = $row_terms['term_desc'];
+    $term_desc = $row_terms['term_desc'];
 
-$term_link = $row_terms['term_link'];
+    $term_link = $row_terms['term_link'];
 
-?>
+    ?>
 
 <div id="<?php echo $term_link; ?>" class="tab-pane fade in active" ><!-- tab-pane fade in active Starts -->
 
@@ -362,30 +357,31 @@ $term_link = $row_terms['term_link'];
 
 </div><!-- tab-pane fade in active Ends -->
 
-<?php } ?>
+<?php 
+} ?>
 
 
 <?php
 
 $count_terms = "select * from terms";
 
-$run_count = mysqli_query($con,$count_terms);
+$run_count = mysqli_query($con, $count_terms);
 
 $count = mysqli_num_rows($run_count);
 
 $get_terms = "select * from terms LIMIT 1,$count";
 
-$run_terms = mysqli_query($con,$get_terms);
+$run_terms = mysqli_query($con, $get_terms);
 
-while($row_terms = mysqli_fetch_array($run_terms)){
+while ($row_terms = mysqli_fetch_array($run_terms)) {
 
-$term_title = $row_terms['term_title'];
+    $term_title = $row_terms['term_title'];
 
-$term_desc = $row_terms['term_desc'];
+    $term_desc = $row_terms['term_desc'];
 
-$term_link = $row_terms['term_link'];
+    $term_link = $row_terms['term_link'];
 
-?>
+    ?>
 
 <div id="<?php echo $term_link; ?>" class="tab-pane fade in"><!-- tab-pane fade in Starts -->
 
@@ -397,7 +393,8 @@ $term_link = $row_terms['term_link'];
 
 </div><!-- tab-pane fade in Ends -->
 
-<?php } ?>
+<?php 
+} ?>
 
 </div><!-- tab-content Ends -->
 

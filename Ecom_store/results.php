@@ -34,14 +34,14 @@ include("functions/functions.php");
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -67,14 +67,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -91,13 +90,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -118,7 +117,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -159,14 +158,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -182,11 +180,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -271,19 +264,19 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <?php
 
-if(isset($_GET['search'])){
+if (isset($_GET['search'])) {
 
-$user_keyword = $_GET['user_query'];
+    $user_keyword = $_GET['user_query'];
 
-$get_products = "select * from products where product_keywords like '%$user_keyword%'";
+    $get_products = "select * from products where product_keywords like '%$user_keyword%'";
 
-$run_products = mysqli_query($con,$get_products);
+    $run_products = mysqli_query($con, $get_products);
 
-$count = mysqli_num_rows($run_products);
+    $count = mysqli_num_rows($run_products);
 
-if($count==0){
+    if ($count == 0) {
 
-echo "
+        echo "
 
 <div class='box'>
 
@@ -293,58 +286,56 @@ echo "
 
 ";
 
-}else{
+    } else {
 
-while($row_products=mysqli_fetch_array($run_products)){
+        while ($row_products = mysqli_fetch_array($run_products)) {
 
-$pro_id = $row_products['product_id'];
+            $pro_id = $row_products['product_id'];
 
-$pro_title = $row_products['product_title'];
+            $pro_title = $row_products['product_title'];
 
-$pro_price = $row_products['product_price'];
+            $pro_price = $row_products['product_price'];
 
-$pro_img1 = $row_products['product_img1'];
+            $pro_img1 = $row_products['product_img1'];
 
-$pro_label = $row_products['product_label'];
+            $pro_label = $row_products['product_label'];
 
-$manufacturer_id = $row_products['manufacturer_id'];
+            $manufacturer_id = $row_products['manufacturer_id'];
 
-$get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+            $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
 
-$run_manufacturer = mysqli_query($db,$get_manufacturer);
+            $run_manufacturer = mysqli_query($db, $get_manufacturer);
 
-$row_manufacturer = mysqli_fetch_array($run_manufacturer);
+            $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
-$manufacturer_name = $row_manufacturer['manufacturer_title'];
+            $manufacturer_name = $row_manufacturer['manufacturer_title'];
 
-$pro_psp_price = $row_products['product_psp_price'];
+            $pro_psp_price = $row_products['product_psp_price'];
 
-$pro_url = $row_products['product_url'];
-
-
-if($pro_label == "Sale" or $pro_label == "Gift"){
-
-$product_price = "<del> $$pro_price </del>";
-
-$product_psp_price = "| $$pro_psp_price";
-
-}
-else{
-
-$product_psp_price = "";
-
-$product_price = "$$pro_price";
-
-}
+            $pro_url = $row_products['product_url'];
 
 
-if($pro_label == ""){
+            if ($pro_label == "Sale" or $pro_label == "Gift") {
+
+                $product_price = "<del> $$pro_price </del>";
+
+                $product_psp_price = "| $$pro_psp_price";
+
+            } else {
+
+                $product_psp_price = "";
+
+                $product_price = "$$pro_price";
+
+            }
 
 
-}
-else{
+            if ($pro_label == "") {
 
-$product_label = "
+
+            } else {
+
+                $product_label = "
 
 <a class='label sale' href='#' style='color:black;'>
 
@@ -356,10 +347,10 @@ $product_label = "
 
 ";
 
-}
+            }
 
 
-echo "
+            echo "
 
 <div class='col-md-3 col-sm-6 center-responsive' >
 
@@ -409,12 +400,12 @@ $product_label
 
 ";
 
-}
+        }
+
+    }
 
 }
-
-}
- ?>
+?>
 
 </div><!-- row Ends -->
 

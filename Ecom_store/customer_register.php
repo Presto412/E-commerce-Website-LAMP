@@ -37,14 +37,14 @@ include("functions/functions.php");
 
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -71,14 +71,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -95,13 +94,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -122,7 +121,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -163,14 +162,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -186,11 +184,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -567,63 +560,63 @@ if(val.length<=6)no=1;
 
 <?php
 
-if(isset($_POST['register'])){
+if (isset($_POST['register'])) {
 
-$secret = "6Lc-WxYUAAAAAN5j2OdDsryWwGfREg5eeuZFpKMv";
+    $secret = "6Lc-WxYUAAAAAN5j2OdDsryWwGfREg5eeuZFpKMv";
 
-$response = $_POST['g-recaptcha-response'];
+    $response = $_POST['g-recaptcha-response'];
 
-$remoteip = $_SERVER['REMOTE_ADDR'];
+    $remoteip = $_SERVER['REMOTE_ADDR'];
 
-$url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
+    $url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
 
-$result = json_decode($url, TRUE);
+    $result = json_decode($url, true);
 
-if($result['success'] == 1){
+    if ($result['success'] == 1) {
 
-$c_name = $_POST['c_name'];
+        $c_name = $_POST['c_name'];
 
-$c_email = $_POST['c_email'];
+        $c_email = $_POST['c_email'];
 
-$c_pass = $_POST['c_pass'];
+        $c_pass = $_POST['c_pass'];
 
-$c_country = $_POST['c_country'];
+        $c_country = $_POST['c_country'];
 
-$c_city = $_POST['c_city'];
+        $c_city = $_POST['c_city'];
 
-$c_contact = $_POST['c_contact'];
+        $c_contact = $_POST['c_contact'];
 
-$c_address = $_POST['c_address'];
+        $c_address = $_POST['c_address'];
 
-$c_image = $_FILES['c_image']['name'];
+        $c_image = $_FILES['c_image']['name'];
 
-$c_image_tmp = $_FILES['c_image']['tmp_name'];
+        $c_image_tmp = $_FILES['c_image']['tmp_name'];
 
-$c_ip = getRealUserIp(); 
+        $c_ip = getRealUserIp();
 
-move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
+        move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
 
-$get_email = "select * from customers where customer_email='$c_email'";
+        $get_email = "select * from customers where customer_email='$c_email'";
 
-$run_email = mysqli_query($con,$get_email);
+        $run_email = mysqli_query($con, $get_email);
 
-$check_email = mysqli_num_rows($run_email);
+        $check_email = mysqli_num_rows($run_email);
 
-if($check_email == 1){
+        if ($check_email == 1) {
 
-echo "<script>alert('This email is already registered, try another one')</script>";
+            echo "<script>alert('This email is already registered, try another one')</script>";
 
-exit();
+            exit();
 
-}
+        }
 
-$customer_confirm_code = mt_rand();
+        $customer_confirm_code = mt_rand();
 
-$subject = "Email Confirmation Message";
+        $subject = "Email Confirmation Message";
 
-$from = "sad.ahmed22224@gmail.com";
+        $from = "sad.ahmed22224@gmail.com";
 
-$message = "
+        $message = "
 
 <h2>
 Email Confirmation By Computerfever.com $c_name
@@ -637,49 +630,48 @@ Click Here To Confirm Email
 
 ";
 
-$headers = "From: $from \r\n";
+        $headers = "From: $from \r\n";
 
-$headers .= "Content-type: text/html\r\n";
+        $headers .= "Content-type: text/html\r\n";
 
-mail($c_email,$subject,$message,$headers);
+        mail($c_email, $subject, $message, $headers);
 
-$insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
-
-
-$run_customer = mysqli_query($con,$insert_customer);
-
-$sel_cart = "select * from cart where ip_add='$c_ip'";
-
-$run_cart = mysqli_query($con,$sel_cart);
-
-$check_cart = mysqli_num_rows($run_cart);
-
-if($check_cart>0){
-
-$_SESSION['customer_email']=$c_email;
-
-echo "<script>alert('You have been Registered Successfully')</script>";
-
-echo "<script>window.open('checkout.php','_self')</script>";
-
-}else{
-
-$_SESSION['customer_email']=$c_email;
-
-echo "<script>alert('You have been Registered Successfully')</script>";
-
-echo "<script>window.open('index.php','_self')</script>";
+        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
 
 
-}
+        $run_customer = mysqli_query($con, $insert_customer);
+
+        $sel_cart = "select * from cart where ip_add='$c_ip'";
+
+        $run_cart = mysqli_query($con, $sel_cart);
+
+        $check_cart = mysqli_num_rows($run_cart);
+
+        if ($check_cart > 0) {
+
+            $_SESSION['customer_email'] = $c_email;
+
+            echo "<script>alert('You have been Registered Successfully')</script>";
+
+            echo "<script>window.open('checkout.php','_self')</script>";
+
+        } else {
+
+            $_SESSION['customer_email'] = $c_email;
+
+            echo "<script>alert('You have been Registered Successfully')</script>";
+
+            echo "<script>window.open('index.php','_self')</script>";
 
 
-}
-else{
+        }
 
-echo "<script>alert('Please Select Captcha, Try Again')</script>";
 
-}
+    } else {
+
+        echo "<script>alert('Please Select Captcha, Try Again')</script>";
+
+    }
 
 
 }

@@ -22,10 +22,10 @@ include("functions/functions.php");
 
 <a href="#" class="btn btn-success btn-sm" >
 <?php
-if(!isset($_SESSION['customer_email'])){
-echo "Welcome :Guest";
-}else{
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+if (!isset($_SESSION['customer_email'])) {
+    echo "Welcome :Guest";
+} else {
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 }
 ?>
 </a>
@@ -48,14 +48,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -72,13 +71,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -99,7 +98,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" >
 
-<img src="images/logo.png" alt="logo" class="hidden-xs animated bounce" >
+<img src="images/logo.png" width="80px" height="40px" alt="logo" class="hidden-xs animated bounce" >
 <img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a>
@@ -140,14 +139,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -161,12 +159,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 <li class="active">
 <a href="about.php"> About Us </a>
-</li>
-
-<li>
-
-<a href="services.php"> Services </a>
-
 </li>
 
 <li>
@@ -252,7 +244,7 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 $get_about_us = "select * from about_us";
 
-$run_about_us = mysqli_query($con,$get_about_us);
+$run_about_us = mysqli_query($con, $get_about_us);
 
 $row_about_us = mysqli_fetch_array($run_about_us);
 

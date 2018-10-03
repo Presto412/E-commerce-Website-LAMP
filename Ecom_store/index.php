@@ -33,14 +33,14 @@ include("functions/functions.php");
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -66,14 +66,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -90,13 +89,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -117,7 +116,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -158,14 +157,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -181,11 +179,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -269,14 +262,14 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 $get_slides = "select * from slider LIMIT 0,1";
 
-$run_slides = mysqli_query($con,$get_slides);
+$run_slides = mysqli_query($con, $get_slides);
 
-while($row_slides=mysqli_fetch_array($run_slides)){
-$slide_name = $row_slides['slide_name'];
-$slide_image = $row_slides['slide_image'];
-$slide_url = $row_slides['slide_url'];
+while ($row_slides = mysqli_fetch_array($run_slides)) {
+    $slide_name = $row_slides['slide_name'];
+    $slide_image = $row_slides['slide_image'];
+    $slide_url = $row_slides['slide_url'];
 
-echo "
+    echo "
 
 <div class='item active'>
 
@@ -293,18 +286,18 @@ echo "
 
 $get_slides = "select * from slider LIMIT 1,3 ";
 
-$run_slides = mysqli_query($con,$get_slides);
+$run_slides = mysqli_query($con, $get_slides);
 
-while($row_slides = mysqli_fetch_array($run_slides)) {
+while ($row_slides = mysqli_fetch_array($run_slides)) {
 
 
-$slide_name = $row_slides['slide_name'];
+    $slide_name = $row_slides['slide_name'];
 
-$slide_image = $row_slides['slide_image'];
+    $slide_image = $row_slides['slide_image'];
 
-$slide_url = $row_slides['slide_url'];
+    $slide_url = $row_slides['slide_url'];
 
-echo "
+    echo "
 
 <div class='item'>
 
@@ -354,18 +347,18 @@ echo "
 
 $get_boxes = "select * from boxes_section";
 
-$run_boxes = mysqli_query($con,$get_boxes);
+$run_boxes = mysqli_query($con, $get_boxes);
 
-while($run_boxes_section=mysqli_fetch_array($run_boxes)){
+while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
-$box_id = $run_boxes_section['box_id'];
+    $box_id = $run_boxes_section['box_id'];
 
-$box_title = $run_boxes_section['box_title'];
+    $box_title = $run_boxes_section['box_title'];
 
-$box_desc = $run_boxes_section['box_desc'];
+    $box_desc = $run_boxes_section['box_desc'];
 
 
-?>
+    ?>
 
 <div class="col-sm-4"><!-- col-sm-4 Starts -->
 
@@ -388,7 +381,8 @@ $box_desc = $run_boxes_section['box_desc'];
 
 </div><!-- col-sm-4 Ends -->
 
-<?php } ?>
+<?php 
+} ?>
 
 </div><!-- same-height-row Ends -->
 

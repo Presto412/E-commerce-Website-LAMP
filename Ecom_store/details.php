@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");                       
+include("includes/db.php");
 
-include("functions/functions.php");                
+include("functions/functions.php");
 
 ?>
 
@@ -15,56 +15,54 @@ $product_id = @$_GET['pro_id'];
 
 $get_product = "select * from products where product_url='$product_id'";
 
-$run_product = mysqli_query($con,$get_product);
+$run_product = mysqli_query($con, $get_product);
 
 $check_product = mysqli_num_rows($run_product);
 
-if($check_product == 0){
+if ($check_product == 0) {
 
-echo "<script> window.open('index.php','_self') </script>";
+    echo "<script> window.open('index.php','_self') </script>";
 
-}
-else{
-
+} else {
 
 
-$row_product = mysqli_fetch_array($run_product);
 
-$p_cat_id = $row_product['p_cat_id'];
+    $row_product = mysqli_fetch_array($run_product);
 
-$pro_id = $row_product['product_id'];
+    $p_cat_id = $row_product['p_cat_id'];
 
-$pro_title = $row_product['product_title'];
+    $pro_id = $row_product['product_id'];
 
-$pro_price = $row_product['product_price'];
+    $pro_title = $row_product['product_title'];
 
-$pro_desc = $row_product['product_desc'];
+    $pro_price = $row_product['product_price'];
 
-$pro_img1 = $row_product['product_img1'];
+    $pro_desc = $row_product['product_desc'];
 
-$pro_img2 = $row_product['product_img2'];
+    $pro_img1 = $row_product['product_img1'];
 
-$pro_img3 = $row_product['product_img3']; 
+    $pro_img2 = $row_product['product_img2'];
 
-$pro_label = $row_product['product_label'];
+    $pro_img3 = $row_product['product_img3'];
 
-$pro_psp_price = $row_product['product_psp_price'];
+    $pro_label = $row_product['product_label'];
 
-$pro_features = $row_product['product_features'];
+    $pro_psp_price = $row_product['product_psp_price'];
 
-$pro_video = $row_product['product_video'];
+    $pro_features = $row_product['product_features'];
 
-$status = $row_product['status'];
+    $pro_video = $row_product['product_video'];
 
-$pro_url = $row_product['product_url'];
+    $status = $row_product['status'];
 
-if($pro_label == ""){
+    $pro_url = $row_product['product_url'];
+
+    if ($pro_label == "") {
 
 
-}
-else{
+    } else {
 
-$product_label = "
+        $product_label = "
 
 <a class='label sale' href='#' style='color:black;'>
 
@@ -76,20 +74,20 @@ $product_label = "
 
 ";
 
-}
+    }
 
-$get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+    $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
 
-$run_p_cat = mysqli_query($con,$get_p_cat);
+    $run_p_cat = mysqli_query($con, $get_p_cat);
 
-$row_p_cat = mysqli_fetch_array($run_p_cat);
+    $row_p_cat = mysqli_fetch_array($run_p_cat);
 
-$p_cat_title = $row_p_cat['p_cat_title'];
-
-
+    $p_cat_title = $row_p_cat['p_cat_title'];
 
 
-?>
+
+
+    ?>
 
 <!DOCTYPE html>
 <html>
@@ -118,14 +116,14 @@ $p_cat_title = $row_p_cat['p_cat_title'];
 <a href="#" class="btn btn-success btn-sm" >
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "Welcome :Guest";
+    echo "Welcome :Guest";
 
 
-}else{
+} else {
 
-echo "Welcome : " . $_SESSION['customer_email'] . "";
+    echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
@@ -151,14 +149,13 @@ Register
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -175,13 +172,13 @@ Go to Cart
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php'> Login </a>";
+    echo "<a href='checkout.php'> Login </a>";
 
-}else {
+} else {
 
-echo "<a href='logout.php'> Logout </a>";
+    echo "<a href='logout.php'> Logout </a>";
 
 }
 
@@ -202,7 +199,7 @@ echo "<a href='logout.php'> Logout </a>";
 
 <a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
 
-<img src="images/logo.png" alt="computerfever logo" class="hidden-xs" >
+<img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
@@ -243,14 +240,13 @@ echo "<a href='logout.php'> Logout </a>";
 <li>
 <?php
 
-if(!isset($_SESSION['customer_email'])){
+if (!isset($_SESSION['customer_email'])) {
 
-echo "<a href='checkout.php' >My Account</a>";
+    echo "<a href='checkout.php' >My Account</a>";
 
-}
-else{
+} else {
 
-echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+    echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
 
@@ -266,11 +262,6 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <a href="about.php"> About Us </a>
 </li>
 
-<li>
-
-<a href="services.php"> Services </a>
-
-</li>
 
 <li>
 <a href="contact.php"> Contact Us </a>
@@ -432,60 +423,58 @@ echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 <?php 
 
 
-if(isset($_POST['add_cart'])){
+if (isset($_POST['add_cart'])) {
 
-$ip_add = getRealUserIp();
+    $ip_add = getRealUserIp();
 
-$p_id = $pro_id;
+    $p_id = $pro_id;
 
-$product_qty = $_POST['product_qty'];
+    $product_qty = $_POST['product_qty'];
 
-$product_size = $_POST['product_size'];
+    $product_size = $_POST['product_size'];
 
 
-$check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
+    $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
 
-$run_check = mysqli_query($con,$check_product);
+    $run_check = mysqli_query($con, $check_product);
 
-if(mysqli_num_rows($run_check)>0){
+    if (mysqli_num_rows($run_check) > 0) {
 
-echo "<script>alert('This Product is already added in cart')</script>";
+        echo "<script>alert('This Product is already added in cart')</script>";
 
-echo "<script>window.open('$pro_url','_self')</script>";
+        echo "<script>window.open('$pro_url','_self')</script>";
 
-}
-else {
+    } else {
 
-$get_price = "select * from products where product_id='$p_id'";
+        $get_price = "select * from products where product_id='$p_id'";
 
-$run_price = mysqli_query($con,$get_price);
+        $run_price = mysqli_query($con, $get_price);
 
-$row_price = mysqli_fetch_array($run_price);
+        $row_price = mysqli_fetch_array($run_price);
 
-$pro_price = $row_price['product_price'];
+        $pro_price = $row_price['product_price'];
 
-$pro_psp_price = $row_price['product_psp_price'];
+        $pro_psp_price = $row_price['product_psp_price'];
 
-$pro_label = $row_price['product_label'];
+        $pro_label = $row_price['product_label'];
 
-if($pro_label == "Sale" or $pro_label == "Gift"){
+        if ($pro_label == "Sale" or $pro_label == "Gift") {
 
-$product_price = $pro_psp_price;
+            $product_price = $pro_psp_price;
 
-}
-else{
+        } else {
 
-$product_price = $pro_price;
+            $product_price = $pro_price;
 
-}
+        }
 
-$query = "insert into cart (p_id,ip_add,qty,p_price,size) values ('$p_id','$ip_add','$product_qty','$product_price','$product_size')";
+        $query = "insert into cart (p_id,ip_add,qty,p_price,size) values ('$p_id','$ip_add','$product_qty','$product_price','$product_size')";
 
-$run_query = mysqli_query($db,$query);
+        $run_query = mysqli_query($db, $query);
 
-echo "<script>window.open('$pro_url','_self')</script>";
+        echo "<script>window.open('$pro_url','_self')</script>";
 
-}
+    }
 
 }
 
@@ -496,9 +485,9 @@ echo "<script>window.open('$pro_url','_self')</script>";
 
 <?php
 
-if($status == "product"){
+if ($status == "product") {
 
-?>
+    ?>
 
 <div class="form-group"><!-- form-group Starts -->
 
@@ -543,7 +532,8 @@ if($status == "product"){
 
 </div><!-- form-group Ends -->
 
-<?php }else { ?>
+<?php 
+} else { ?>
 
 
 <div class="form-group"><!-- form-group Starts -->
@@ -590,7 +580,8 @@ if($status == "product"){
 </div><!-- form-group Ends -->
 
 
-<?php } ?>
+<?php 
+} ?>
 
 <center><!-- center Starts -->
 
@@ -598,13 +589,13 @@ if($status == "product"){
 
 $get_icons = "select * from icons where icon_product='$pro_id'";
 
-$run_icons = mysqli_query($con,$get_icons);
+$run_icons = mysqli_query($con, $get_icons);
 
-while($row_icons = mysqli_fetch_array($run_icons)){
+while ($row_icons = mysqli_fetch_array($run_icons)) {
 
-$icon_image = $row_icons['icon_image'];
+    $icon_image = $row_icons['icon_image'];
 
-echo "<img src='admin_area/icon_images/$icon_image' width='45' height='45' > &nbsp;&nbsp;&nbsp; ";
+    echo "<img src='admin_area/icon_images/$icon_image' width='45' height='45' > &nbsp;&nbsp;&nbsp; ";
 
 
 }
@@ -615,14 +606,14 @@ echo "<img src='admin_area/icon_images/$icon_image' width='45' height='45' > &nb
 
 <?php
 
-if($status == "product"){
+if ($status == "product") {
 
 
 
 
-if($pro_label == "Sale" or $pro_label == "Gift"){
+    if ($pro_label == "Sale" or $pro_label == "Gift") {
 
-echo "
+        echo "
 
 <p class='price'>
 
@@ -634,10 +625,9 @@ Product sale Price : $$pro_psp_price
 
 ";
 
-}
-else{
+    } else {
 
-echo "
+        echo "
 
 <p class='price'>
 
@@ -647,15 +637,14 @@ Product Price : $$pro_price
 
 ";
 
-}
+    }
 
-}
-else{
+} else {
 
 
-if($pro_label == "Sale" or $pro_label == "Gift"){
+    if ($pro_label == "Sale" or $pro_label == "Gift") {
 
-echo "
+        echo "
 
 <p class='price'>
 
@@ -667,10 +656,9 @@ Bundle sale Price : $$pro_psp_price
 
 ";
 
-}
-else{
+    } else {
 
-echo "
+        echo "
 
 <p class='price'>
 
@@ -680,7 +668,7 @@ Bundle Price : $$pro_price
 
 ";
 
-}
+    }
 
 
 }
@@ -704,57 +692,55 @@ Bundle Price : $$pro_price
 
 <?php
 
-if(isset($_POST['add_wishlist'])){
+if (isset($_POST['add_wishlist'])) {
 
-if(!isset($_SESSION['customer_email'])){
+    if (!isset($_SESSION['customer_email'])) {
 
-echo "<script>alert('You Must Login To Add Product In Wishlist')</script>";
+        echo "<script>alert('You Must Login To Add Product In Wishlist')</script>";
 
-echo "<script>window.open('checkout.php','_self')</script>";
+        echo "<script>window.open('checkout.php','_self')</script>";
 
-}
-else{
+    } else {
 
-$customer_session = $_SESSION['customer_email'];
+        $customer_session = $_SESSION['customer_email'];
 
-$get_customer = "select * from customers where customer_email='$customer_session'";
+        $get_customer = "select * from customers where customer_email='$customer_session'";
 
-$run_customer = mysqli_query($con,$get_customer);
+        $run_customer = mysqli_query($con, $get_customer);
 
-$row_customer = mysqli_fetch_array($run_customer);
+        $row_customer = mysqli_fetch_array($run_customer);
 
-$customer_id = $row_customer['customer_id']; 
+        $customer_id = $row_customer['customer_id'];
 
-$select_wishlist = "select * from wishlist where customer_id='$customer_id' AND product_id='$pro_id'";
+        $select_wishlist = "select * from wishlist where customer_id='$customer_id' AND product_id='$pro_id'";
 
-$run_wishlist = mysqli_query($con,$select_wishlist);
+        $run_wishlist = mysqli_query($con, $select_wishlist);
 
-$check_wishlist = mysqli_num_rows($run_wishlist);
+        $check_wishlist = mysqli_num_rows($run_wishlist);
 
-if($check_wishlist == 1){
+        if ($check_wishlist == 1) {
 
-echo "<script>alert('This Product Has Been already Added In Wishlist')</script>";
+            echo "<script>alert('This Product Has Been already Added In Wishlist')</script>";
 
-echo "<script>window.open('$pro_url','_self')</script>";
+            echo "<script>window.open('$pro_url','_self')</script>";
 
-}
-else{
+        } else {
 
-$insert_wishlist = "insert into wishlist (customer_id,product_id) values ('$customer_id','$pro_id')";
+            $insert_wishlist = "insert into wishlist (customer_id,product_id) values ('$customer_id','$pro_id')";
 
-$run_wishlist = mysqli_query($con,$insert_wishlist);
+            $run_wishlist = mysqli_query($con, $insert_wishlist);
 
-if($run_wishlist){
+            if ($run_wishlist) {
 
-echo "<script> alert('Product Has Inserted Into Wishlist') </script>";
+                echo "<script> alert('Product Has Inserted Into Wishlist') </script>";
 
-echo "<script>window.open('$pro_url','_self')</script>";
+                echo "<script>window.open('$pro_url','_self')</script>";
 
-}
+            }
 
-}
+        }
 
-}
+    }
 
 }
 
@@ -814,14 +800,13 @@ echo "<script>window.open('$pro_url','_self')</script>";
 
 <?php
 
-if($status == "product"){
+if ($status == "product") {
 
-echo "Product Description";
+    echo "Product Description";
 
-}
-else{
+} else {
 
-echo "Bundle Description";
+    echo "Bundle Description";
 
 }
 
@@ -872,11 +857,11 @@ Sounds and Videos
 
 <?php
 
-if($status == "product"){
+if ($status == "product") {
 
 
 
-?>
+    ?>
 
 <div class="col-md-3 col-sm-6"><!-- col-md-3 col-sm-6 Starts -->
 
@@ -892,58 +877,56 @@ if($status == "product"){
 
 $get_products = "select * from products order by rand() LIMIT 0,3";
 
-$run_products = mysqli_query($con,$get_products); 
+$run_products = mysqli_query($con, $get_products);
 
-while($row_products = mysqli_fetch_array($run_products)) {
+while ($row_products = mysqli_fetch_array($run_products)) {
 
-$pro_id = $row_products['product_id'];
+    $pro_id = $row_products['product_id'];
 
-$pro_title = $row_products['product_title'];
+    $pro_title = $row_products['product_title'];
 
-$pro_price = $row_products['product_price'];
+    $pro_price = $row_products['product_price'];
 
-$pro_img1 = $row_products['product_img1'];
+    $pro_img1 = $row_products['product_img1'];
 
-$pro_label = $row_products['product_label'];
+    $pro_label = $row_products['product_label'];
 
-$manufacturer_id = $row_products['manufacturer_id'];
+    $manufacturer_id = $row_products['manufacturer_id'];
 
-$get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+    $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
 
-$run_manufacturer = mysqli_query($db,$get_manufacturer);
+    $run_manufacturer = mysqli_query($db, $get_manufacturer);
 
-$row_manufacturer = mysqli_fetch_array($run_manufacturer);
+    $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
-$manufacturer_name = $row_manufacturer['manufacturer_title'];
+    $manufacturer_name = $row_manufacturer['manufacturer_title'];
 
-$pro_psp_price = $row_products['product_psp_price'];
+    $pro_psp_price = $row_products['product_psp_price'];
 
-$pro_url = $row_products['product_url'];
-
-
-if($pro_label == "Sale" or $pro_label == "Gift"){
-
-$product_price = "<del> $$pro_price </del>";
-
-$product_psp_price = "| $$pro_psp_price";
-
-}
-else{
-
-$product_psp_price = "";
-
-$product_price = "$$pro_price";
-
-}
+    $pro_url = $row_products['product_url'];
 
 
-if($pro_label == ""){
+    if ($pro_label == "Sale" or $pro_label == "Gift") {
+
+        $product_price = "<del> $$pro_price </del>";
+
+        $product_psp_price = "| $$pro_psp_price";
+
+    } else {
+
+        $product_psp_price = "";
+
+        $product_price = "$$pro_price";
+
+    }
 
 
-}
-else{
+    if ($pro_label == "") {
 
-$product_label = "
+
+    } else {
+
+        $product_label = "
 
 <a class='label sale' href='#' style='color:black;'>
 
@@ -955,10 +938,10 @@ $product_label = "
 
 ";
 
-}
+    }
 
 
-echo "
+    echo "
 
 <div class='col-md-3 col-sm-6 center-responsive' >
 
@@ -1014,7 +997,8 @@ $product_label
 
 ?>
 
-<?php }else{ ?>
+<?php 
+} else { ?>
 
 <div class="box same-height"><!-- box same-height Starts -->
 
@@ -1026,66 +1010,64 @@ $product_label
 
 $get_bundle_product_relation = "select * from bundle_product_relation where bundle_id='$pro_id'";
 
-$run_bundle_product_relation = mysqli_query($con,$get_bundle_product_relation);
+$run_bundle_product_relation = mysqli_query($con, $get_bundle_product_relation);
 
-while($row_bundle_product_relation = mysqli_fetch_array($run_bundle_product_relation)){
+while ($row_bundle_product_relation = mysqli_fetch_array($run_bundle_product_relation)) {
 
-$bundle_product_relation_product_id = $row_bundle_product_relation['product_id'];
+    $bundle_product_relation_product_id = $row_bundle_product_relation['product_id'];
 
-$get_products = "select * from products where product_id='$bundle_product_relation_product_id'";
-
-
-$run_products = mysqli_query($con,$get_products);
-
-while($row_products = mysqli_fetch_array($run_products)){
-$pro_id = $row_products['product_id'];
-
-$pro_title = $row_products['product_title'];
-
-$pro_price = $row_products['product_price'];
-
-$pro_img1 = $row_products['product_img1'];
-
-$pro_label = $row_products['product_label'];
-
-$manufacturer_id = $row_products['manufacturer_id'];
-
-$get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
-
-$run_manufacturer = mysqli_query($db,$get_manufacturer);
-
-$row_manufacturer = mysqli_fetch_array($run_manufacturer);
-
-$manufacturer_name = $row_manufacturer['manufacturer_title'];
-
-$pro_psp_price = $row_products['product_psp_price'];
-
-$pro_url = $row_products['product_url'];
+    $get_products = "select * from products where product_id='$bundle_product_relation_product_id'";
 
 
-if($pro_label == "Sale" or $pro_label == "Gift"){
+    $run_products = mysqli_query($con, $get_products);
 
-$product_price = "<del> $$pro_price </del>";
+    while ($row_products = mysqli_fetch_array($run_products)) {
+        $pro_id = $row_products['product_id'];
 
-$product_psp_price = "| $$pro_psp_price";
+        $pro_title = $row_products['product_title'];
 
-}
-else{
+        $pro_price = $row_products['product_price'];
 
-$product_psp_price = "";
+        $pro_img1 = $row_products['product_img1'];
 
-$product_price = "$$pro_price";
+        $pro_label = $row_products['product_label'];
 
-}
+        $manufacturer_id = $row_products['manufacturer_id'];
+
+        $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+
+        $run_manufacturer = mysqli_query($db, $get_manufacturer);
+
+        $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+
+        $manufacturer_name = $row_manufacturer['manufacturer_title'];
+
+        $pro_psp_price = $row_products['product_psp_price'];
+
+        $pro_url = $row_products['product_url'];
 
 
-if($pro_label == ""){
+        if ($pro_label == "Sale" or $pro_label == "Gift") {
+
+            $product_price = "<del> $$pro_price </del>";
+
+            $product_psp_price = "| $$pro_psp_price";
+
+        } else {
+
+            $product_psp_price = "";
+
+            $product_price = "$$pro_price";
+
+        }
 
 
-}
-else{
+        if ($pro_label == "") {
 
-$product_label = "
+
+        } else {
+
+            $product_label = "
 
 <a class='label sale' href='#' style='color:black;'>
 
@@ -1097,10 +1079,10 @@ $product_label = "
 
 ";
 
-}
+        }
 
 
-echo "
+        echo "
 
 <div class='col-md-3 col-sm-6 center-responsive' >
 
@@ -1151,7 +1133,7 @@ $product_label
 ";
 
 
-}
+    }
 
 
 }
@@ -1161,7 +1143,8 @@ $product_label
 ?>
 
 
-<?php } ?>
+<?php 
+} ?>
 
 </div><!-- row same-height-row Ends -->
 
@@ -1186,4 +1169,5 @@ include("includes/footer.php");
 </body>
 </html>
 
-<?php } ?>
+<?php 
+} ?>
