@@ -63,8 +63,8 @@ CREATE TABLE IF NOT EXISTS `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`, `admin_about`) VALUES
-(2, 'Karena Kapoor', 'karena@gmail.com', 'khan123', 'Kareena.jpg', '077885221', 'India', 'Fashion Designer', ' Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical '),
-(5, 'Salman', 'salman@gmail.com', 'salman', 'Salman-2.jpg', '33456693', 'India', 'Actor', '  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical  ');
+(2, 'Priyansh Jain', 'priyansh.jain0246@gmail.com', 'priyansh123', 'priyansh.jpg', '077885221', 'India', 'Fashion Designer', ' Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical '),
+(5, 'Queenie Das', 'queeniedas@gmail.com', 'qweeny', 'queenie.jpg', '33456693', 'India', 'Actor', '  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical  ');
 
 -- --------------------------------------------------------
 
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `contact_us` (
 --
 
 INSERT INTO `contact_us` (`contact_id`, `contact_email`, `contact_heading`, `contact_desc`) VALUES
-(1, 'sad.ahmed22224@gmail.com', 'Contact  To Us', 'If you have any questions, please feel free to contact us, our customer service center is working for you 24/7.');
+(1, 'priyasnh.jain0246@gmail.com', 'Contact  To Us', 'If you have any questions, please feel free to contact us, our customer service center is working for you 24/7.');
 
 -- --------------------------------------------------------
 
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`, `customer_confirm_code`) VALUES
-(2, 'Brock Lesnar', 'brock@gmail.com', 'brock123', 'America', 'New York', '0092334566931', 'new york', 'Brock-Lesnar.jpg', '::1', '');
+(2, 'John Doe', 'john@gmail.com', 'brock123', 'America', 'New York', '0092334566931', 'new york', 'Brock-Lesnar.jpg', '::1', '');
 
 -- --------------------------------------------------------
 
@@ -314,11 +314,11 @@ CREATE TABLE IF NOT EXISTS `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
-(2, 'Amir Khan', 'no', 'image2.jpg'),
-(3, 'Omri Liba', 'no', 'image3.jpg'),
-(4, 'Joy Peng', 'no', 'manufacturer.jpg'),
-(5, 'Kane Bender', 'no', 'image6.jpg'),
-(6, 'Akshay Kumar', 'yes', 'akshay-kumar.jpg');
+(2, 'Adidas', 'no', 'adidas.jpg'),
+(3, 'Levis', 'no', 'levis.jpg'),
+(4, 'Prada', 'no', 'prada.jpeg'),
+(5, 'Nike', 'no', 'nike.png'),
+(6, 'UCB', 'yes', 'ucb.jpg');
 
 -- --------------------------------------------------------
 
@@ -480,10 +480,10 @@ CREATE TABLE IF NOT EXISTS `slider` (
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
-(1, 'Slide Number 1', '1.jpg', 'http://localhost/Ecom_store/shop.php'),
-(2, 'Slide Number 2', '2.jpg', 'htttp://www.computerfever.com/services'),
-(3, 'Slide Number 3', '3.jpg', 'http://urdustories.computerfever.com'),
-(7, 'Slide Number 4', 'slide-5.jpg', 'http://www.computerfever.com');
+(1, 'Slide Number 1', '1.jpg', 'http://localhost/index.php'),
+(2, 'Slide Number 2', '2.jpg', 'http://localhost/index.php'),
+(3, 'Slide Number 3', '3.jpg', 'http://localhost/index.php'),
+(7, 'Slide Number 4', 'slide-5.jpg', 'http://localhost/index.php');
 
 -- --------------------------------------------------------
 
