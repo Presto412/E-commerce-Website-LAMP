@@ -235,32 +235,6 @@ include("edit_manufacturer.php");
 }
 
 
-if(isset($_GET['insert_coupon'])){
-
-include("insert_coupon.php");
-
-}
-
-if(isset($_GET['view_coupons'])){
-
-include("view_coupons.php");
-
-}
-
-if(isset($_GET['delete_coupon'])){
-
-include("delete_coupon.php");
-
-}
-
-
-if(isset($_GET['edit_coupon'])){
-
-include("edit_coupon.php");
-
-}
-
-
 
 
 
