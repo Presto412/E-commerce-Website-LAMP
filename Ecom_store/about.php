@@ -165,14 +165,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </div>
 
-<a class="btn btn-primary navbar-btn right" href="cart.php">
-
-<i class="fa fa-shopping-cart"></i>
-
-<span> <?php items(); ?> items in cart </span>
-
-</a>
-
 <div class="navbar-collapse collapse right">
 
 <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">

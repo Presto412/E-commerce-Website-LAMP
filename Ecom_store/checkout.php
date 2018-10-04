@@ -187,13 +187,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </div><!-- padding-nav Ends -->
 
-<a class="btn btn-primary navbar-btn right" href="cart.php"><!-- btn btn-primary navbar-btn right Starts -->
-
-<i class="fa fa-shopping-cart"></i>
-
-<span> <?php items(); ?> items in cart </span>
-
-</a><!-- btn btn-primary navbar-btn right Ends -->
 
 <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
 
