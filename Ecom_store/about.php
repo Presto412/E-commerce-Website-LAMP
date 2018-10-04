@@ -8,11 +8,12 @@ include("functions/functions.php");
 <html>
 <head>
 <title>E commerce Store </title>
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet" >
+<link href="http://fonts.googleapis.com/css?family=Lato:400,500,700,300,100" rel="stylesheet" >
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 <link href="styles/style.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>

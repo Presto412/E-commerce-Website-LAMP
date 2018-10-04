@@ -2,6 +2,7 @@
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 <script src="js/angular.js" ></script>
 <script src="js/formjs.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <div id="footer">
 	<div class="container">

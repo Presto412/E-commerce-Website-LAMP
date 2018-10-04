@@ -1,5 +1,6 @@
 <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/formjs/1.1.1/formjs.min.js"></script>
