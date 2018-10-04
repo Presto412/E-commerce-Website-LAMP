@@ -49,10 +49,6 @@ if (!isset($_SESSION['customer_email'])) {
 ?>
 </a>
 
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
-</a>
-
 </div><!-- col-md-6 offer Ends -->
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -82,7 +78,7 @@ if (!isset($_SESSION['customer_email'])) {
 </li>
 
 <li>
-<a href="cart.php">
+<a href="#">
 Go to Cart
 </a>
 </li>
@@ -173,7 +169,7 @@ if (!isset($_SESSION['customer_email'])) {
 </li>
 
 <li>
-<a href="cart.php"> Shopping Cart </a>
+<a href="#"> Shopping Cart </a>
 </li>
 
 <li>
@@ -377,15 +373,6 @@ if (isset($_GET['search'])) {
 <p class='price' > $product_price $product_psp_price </p>
 
 <p class='buttons' >
-
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='$pro_url' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
-
 
 </p>
 

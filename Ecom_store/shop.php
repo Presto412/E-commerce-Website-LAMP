@@ -50,10 +50,6 @@ if (!isset($_SESSION['customer_email'])) {
 ?>
 </a>
 
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
-</a>
-
 </div><!-- col-md-6 offer Ends -->
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -83,7 +79,7 @@ if (!isset($_SESSION['customer_email'])) {
 </li>
 
 <li>
-<a href="cart.php">
+<a href="#">
 Go to Cart
 </a>
 </li>
@@ -174,7 +170,7 @@ if (!isset($_SESSION['customer_email'])) {
 </li>
 
 <li>
-<a href="cart.php"> Shopping Cart </a>
+<a href="#"> Shopping Cart </a>
 </li>
 
 <li>

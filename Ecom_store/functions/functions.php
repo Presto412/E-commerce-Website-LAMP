@@ -186,15 +186,6 @@ function getPro()
 
 <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='$pro_url' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
-
-
 </p>
 
 </div>
@@ -391,15 +382,6 @@ function getProducts()
 <p class='price' > $product_price $product_psp_price </p>
 
 <p class='buttons' >
-
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='$pro_url' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
-
 
 </p>
 
