@@ -15,7 +15,9 @@ include("includes/db.php");
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 
 <link rel="stylesheet" href="css/login.css" >
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 </head>
 
 <body>
@@ -65,14 +67,14 @@ if($count==1){
 
 $_SESSION['admin_email']=$admin_email;
 
-echo "<script>alert('You are Logged in into admin panel')</script>";
+echo "<script>swal('Log in','Succesful','success')</script>";
 
 echo "<script>window.open('index.php?dashboard','_self')</script>";
 
 }
 else {
 
-echo "<script>alert('Email or Password is Wrong')</script>";
+echo "<script>swal('Login Error','Email or Password is Wrong','error')</script>";
 
 }
 

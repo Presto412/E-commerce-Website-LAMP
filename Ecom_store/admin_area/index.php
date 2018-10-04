@@ -77,7 +77,7 @@ $count_pending_orders = mysqli_num_rows($run_pending_orders);
 <link href="css/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" >
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -231,32 +231,6 @@ include("delete_manufacturer.php");
 if(isset($_GET['edit_manufacturer'])){
 
 include("edit_manufacturer.php");
-
-}
-
-
-if(isset($_GET['insert_coupon'])){
-
-include("insert_coupon.php");
-
-}
-
-if(isset($_GET['view_coupons'])){
-
-include("view_coupons.php");
-
-}
-
-if(isset($_GET['delete_coupon'])){
-
-include("delete_coupon.php");
-
-}
-
-
-if(isset($_GET['edit_coupon'])){
-
-include("edit_coupon.php");
 
 }
 
