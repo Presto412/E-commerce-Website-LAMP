@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "my_password", "ecom_store");
+$db = mysqli_connect("localhost", "root", "Queenie@11", "Ecom_Store");
 
 /// IP address code starts /////
 function getRealUserIp()
@@ -121,7 +121,7 @@ function getPro()
 
     $pro_psp_price = $row_products['product_psp_price'];
 
-    $pro_url = $row_products['product_url'];
+    $pro_url = 'images/'.$row_products['product_url'].'.php';
 
     if ($pro_label == "Sale" or $pro_label == "Gift") {
 
@@ -176,6 +176,7 @@ function getPro()
 
 <p class='btn btn-primary'> $manufacturer_name </p>
 
+
 </center>
 
 <hr>
@@ -206,6 +207,7 @@ $product_label
 // getPro function Ends //
 
 
+		
 /// getProducts Function Starts ///
 
 function getProducts()
@@ -317,7 +319,7 @@ function getProducts()
 
     $pro_psp_price = $row_products['product_psp_price'];
 
-    $pro_url = $row_products['product_url'];
+    $pro_url = 'images/'.$row_products['product_url'].'.php';
 
 
     if ($pro_label == "Sale" or $pro_label == "Gift") {
@@ -370,7 +372,6 @@ function getProducts()
 <div class='text' >
 
 <center>
-
 <p class='btn btn-primary'> $manufacturer_name </p>
 
 </center>

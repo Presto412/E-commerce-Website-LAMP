@@ -1,0 +1,42 @@
+table{
+margin-left:70px;margin-top:20px;}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+
+.container {
+  position: relative;
+  width: 10%;
+}
+
+.image {
+  display: inline;
+  width: 25%;
+  height: auto;
+}
+
+
+.night {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4%;
+  right: 0;
+  height: 100%;
+  width: 25%;
+    opacity: 0.6;
+  transition: .5s ease;
+  background-color: #004080;
+}
+
+.btn1{
+margin-left:100px;
+margin-top:20px;
+}
+.btn2{
+margin-left:200px;}
+

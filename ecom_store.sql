@@ -427,7 +427,37 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat
 
 -- --------------------------------------------------------
 
+--Table structure for table 'seller'
+
+CREATE TABLE IF NOT EXISTS `seller` (
+`seller_id` int(10) NOT NULL,
+  `seller_title` text NOT NULL,
+  `seller_price` int(10) NOT NULL,
+  `seller_time` text NOT NULL,
+  `seller_rating` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
 --
+--
+-- Dumping data for table `seller`
+--
+
+INSERT INTO `seller` (`seller_id`,`seller_title`,`seller_price`,`seller_time`,`seller_rating`) VALUES
+(4, 'Seller C',5, '1-2 weeks','4/5' ),
+(4, 'Seller B',0, '2-3 weeks','4.5/5' ),
+(4, 'Seller D',4, '1-2 weeks','3.5/5' ),
+(5, 'Seller C',5, '1-2 weeks','4/5' ),
+(5, 'Seller A',4, '5-6 days','4.5/5' ),
+(5, 'Seller B',0, '2-3 weeks','4.5/5' ),
+(5, 'Seller D',4, '1-2 weeks','3.5/5' ),
+(6, 'Seller C',5, '1-2 weeks','4/5' ),
+(6, 'Seller B',0, '2-3 weeks','4.5/5' ),
+(7, 'Seller A',4, '5-6 days','4.5/5' ),
+(7, 'Seller B',0, '2-3 weeks','4.5/5' ),
+(7, 'Seller D',4, '1-2 weeks','3.5/5' );
+-- --------------------------------------------------------
+
+
 -- Table structure for table `services`
 --
 
