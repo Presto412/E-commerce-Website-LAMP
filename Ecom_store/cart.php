@@ -49,6 +49,14 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
+if (
+    isset($_GET['itemId']) &&
+    isset($_GET['quantity']) &&
+    isset($_GET['price']) &&
+    isset($_GET['size'])) {
+    addToCart($_GET['itemId'], $_GET['quantity'], $_GET['price'], $_GET['size']);
+}
+
 ?>
 </a>
 
@@ -664,7 +672,7 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
 <a href='images/$pro_url.php' class='btn btn-default' >View details</a>
 
-<a href='images/$pro_url.php' class='btn btn-primary'>
+<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
 
 <i class='fa fa-shopping-cart'></i> Add to cart
 

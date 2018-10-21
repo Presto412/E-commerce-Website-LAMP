@@ -80,7 +80,7 @@ function addToCart($item_id, $qty, $price, $size)
     $ip_add = getRealUserIp();
 
     $insert_cart = "insert into cart (p_id, ip_add, qty, p_price, size) VALUES
-($item_id, $ip_add, $qty, $price, $size)";
+($item_id, '$ip_add', $qty, '$price', '$size')";
 
     $run_cart = mysqli_query($db, $insert_cart);
 

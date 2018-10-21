@@ -650,7 +650,7 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
 <a href='images/$pro_url.php' class='btn btn-default' >View details</a>
 
-<a href='images/$pro_url.php' class='btn btn-primary'>
+<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
 
 <i class='fa fa-shopping-cart'></i> Add to cart
 
@@ -782,8 +782,6 @@ success:function(data){
 $("body").load('cart_body.php');
 
 }
-
-
 
 
 });
