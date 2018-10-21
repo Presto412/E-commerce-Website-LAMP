@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("includes/db.php");
-include("functions/functions.php");
+include "includes/db.php";
+include "functions/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ include("functions/functions.php");
 
 <title>E commerce Store </title>
 
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet" >
+<link href="http://fonts.googleapis.com/css?family=Lato:400,500,700,300,100" rel="stylesheet" >
 
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@ include("functions/functions.php");
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/animate.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -37,20 +37,15 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
-
 ?>
 </a>
 
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
-</a>
 
 </div><!-- col-md-6 offer Ends -->
 
@@ -75,7 +70,6 @@ if (!isset($_SESSION['customer_email'])) {
     echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
-
 
 ?>
 </li>
@@ -167,7 +161,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
@@ -188,13 +181,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </div><!-- padding-nav Ends -->
 
-<a class="btn btn-primary navbar-btn right" href="cart.php"><!-- btn btn-primary navbar-btn right Starts -->
-
-<i class="fa fa-shopping-cart"></i>
-
-<span> <?php items(); ?> items in cart </span>
-
-</a><!-- btn btn-primary navbar-btn right Ends -->
 
 <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
 
@@ -290,7 +276,6 @@ $run_slides = mysqli_query($con, $get_slides);
 
 while ($row_slides = mysqli_fetch_array($run_slides)) {
 
-
     $slide_name = $row_slides['slide_name'];
 
     $slide_image = $row_slides['slide_image'];
@@ -307,10 +292,7 @@ while ($row_slides = mysqli_fetch_array($run_slides)) {
 
 ";
 
-
 }
-
-
 
 ?>
 
@@ -357,7 +339,6 @@ while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
     $box_desc = $run_boxes_section['box_desc'];
 
-
     ?>
 
 <div class="col-sm-4"><!-- col-sm-4 Starts -->
@@ -381,8 +362,8 @@ while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
 </div><!-- col-sm-4 Ends -->
 
-<?php 
-} ?>
+<?php
+}?>
 
 </div><!-- same-height-row Ends -->
 
@@ -424,7 +405,7 @@ getPro();
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

@@ -2,6 +2,7 @@
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 <script src="js/angular.js" ></script>
 <script src="js/formjs.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <div id="footer">
 	<div class="container">
@@ -9,7 +10,7 @@
 			<div class="col-md-3 col-sm-6" >
 				<h4>Pages</h4>
 					<ul>
-						<li><a href="cart.php">Shopping Cart</a></li>
+						<li><a href="#">Shopping Cart</a></li>
 						<li><a href="contact.php">Contact Us</a></li>
 						<li><a href="shop.php">Shop</a></li>
 						<li>

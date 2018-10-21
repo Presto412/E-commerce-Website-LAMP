@@ -21,7 +21,7 @@ if (!isset($_SESSION['customer_email'])) {
 <head>
 <title>E commerce Store </title>
 
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet" >
+<link href="http://fonts.googleapis.com/css?family=Lato:400,500,700,300,100" rel="stylesheet" >
 
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 
@@ -29,7 +29,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -57,11 +57,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 ?>
 </a>
-
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
-</a>
-
 </div><!-- col-md-6 offer Ends -->
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -197,14 +192,6 @@ if (!isset($_SESSION['customer_email'])) {
 </ul><!-- nav navbar-nav navbar-left Ends -->
 
 </div><!-- padding-nav Ends -->
-
-<a class="btn btn-primary navbar-btn right" href="../cart.php"><!-- btn btn-primary navbar-btn right Starts -->
-
-<i class="fa fa-shopping-cart"></i>
-
-<span> <?php items(); ?> items in cart </span>
-
-</a><!-- btn btn-primary navbar-btn right Ends -->
 
 <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
 

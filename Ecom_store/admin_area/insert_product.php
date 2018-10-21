@@ -20,7 +20,7 @@ else {
 
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'#product_desc,#product_features' });</script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>

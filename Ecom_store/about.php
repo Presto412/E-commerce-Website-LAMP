@@ -1,18 +1,19 @@
 <?php
 session_start();
-include("includes/db.php");
-include("functions/functions.php");
+include "includes/db.php";
+include "functions/functions.php";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <title>E commerce Store </title>
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet" >
+<link href="http://fonts.googleapis.com/css?family=Lato:400,500,700,300,100" rel="stylesheet" >
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 <link href="styles/style.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -29,11 +30,8 @@ if (!isset($_SESSION['customer_email'])) {
 }
 ?>
 </a>
-
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
-</a>
-
+<a href="cart.php">
+Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?>
 </div>
 
 <div class="col-md-6">
@@ -58,12 +56,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="cart.php">
+<a href="cart.php"></a>
 Go to Cart
 </a>
 </li>
@@ -149,7 +146,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
@@ -168,14 +164,6 @@ if (!isset($_SESSION['customer_email'])) {
 </ul>
 
 </div>
-
-<a class="btn btn-primary navbar-btn right" href="cart.php">
-
-<i class="fa fa-shopping-cart"></i>
-
-<span> <?php items(); ?> items in cart </span>
-
-</a>
 
 <div class="navbar-collapse collapse right">
 
@@ -275,7 +263,7 @@ $about_desc = $row_about_us['about_desc'];
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

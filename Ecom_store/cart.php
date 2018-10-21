@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -43,19 +43,25 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
+if (
+    isset($_GET['itemId']) &&
+    isset($_GET['quantity']) &&
+    isset($_GET['price']) &&
+    isset($_GET['size'])) {
+    addToCart($_GET['itemId'], $_GET['quantity'], $_GET['price'], $_GET['size']);
+}
 
 ?>
 </a>
 
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
+<a href="cart.php">
+Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?>
 </a>
 
 </div>
@@ -80,7 +86,6 @@ if (!isset($_SESSION['customer_email'])) {
     echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
-
 
 ?>
 </li>
@@ -171,7 +176,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
@@ -196,7 +200,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <i class="fa fa-shopping-cart"></i>
 
-<span> <?php items(); ?> items in cart </span>
+<span> <?php items();?> items in cart </span>
 
 </a><!-- btn btn-primary navbar-btn right Ends -->
 
@@ -385,9 +389,9 @@ $<?php echo $sub_total; ?>.00
 
 </tr><!-- tr Ends -->
 
-<?php 
+<?php
 }
-} ?>
+}?>
 
 </tbody><!-- tbody Ends -->
 
@@ -465,7 +469,6 @@ if (isset($_POST['apply_coupon'])) {
 
     if ($code == "") {
 
-
     } else {
 
         $get_coupons = "select * from coupons where coupon_code='$code'";
@@ -486,7 +489,6 @@ if (isset($_POST['apply_coupon'])) {
 
             $coupon_used = $row_coupons['coupon_used'];
 
-
             if ($coupon_limit == $coupon_used) {
 
                 echo "<script>swal('Your Coupon Code Has Been Expired')</script>";
@@ -498,7 +500,6 @@ if (isset($_POST['apply_coupon'])) {
                 $run_cart = mysqli_query($con, $get_cart);
 
                 $check_cart = mysqli_num_rows($run_cart);
-
 
                 if ($check_cart == 1) {
 
@@ -530,9 +531,7 @@ if (isset($_POST['apply_coupon'])) {
 
     }
 
-
 }
-
 
 ?>
 
@@ -547,7 +546,6 @@ function update_cart()
 
         foreach ($_POST['remove'] as $remove_id) {
 
-
             $delete_product = "delete from cart where p_id='$remove_id'";
 
             $run_delete = mysqli_query($con, $delete_product);
@@ -556,22 +554,13 @@ function update_cart()
                 echo "<script>window.open('cart.php','_self')</script>";
             }
 
-
-
         }
 
-
-
-
     }
-
-
 
 }
 
 echo @$up_cart = update_cart();
-
-
 
 ?>
 
@@ -621,7 +610,6 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
     $pro_url = $row_products['product_url'];
 
-
     if ($pro_label == "Sale" or $pro_label == "Gift") {
 
         $product_price = "<del> $$pro_price </del>";
@@ -636,9 +624,7 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
     }
 
-
     if ($pro_label == "") {
-
 
     } else {
 
@@ -656,14 +642,13 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
     }
 
-
     echo "
 
 <div class='col-md-3 col-sm-6 center-responsive' >
 
 <div class='product' >
 
-<a href='$pro_url' >
+<a href='images/$pro_url.php' >
 
 <img src='admin_area/product_images/$pro_img1' class='img-responsive' >
 
@@ -679,15 +664,15 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
 <hr>
 
-<h3><a href='$pro_url' >$pro_title</a></h3>
+<h3><a href='images/$pro_url.php' >$pro_title</a></h3>
 
 <p class='price' > $product_price $product_psp_price </p>
 
 <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View details</a>
+<a href='images/$pro_url.php' class='btn btn-default' >View details</a>
 
-<a href='$pro_url' class='btn btn-primary'>
+<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
 
 <i class='fa fa-shopping-cart'></i> Add to cart
 
@@ -707,11 +692,7 @@ $product_label
 
 ";
 
-
 }
-
-
-
 
 ?>
 
@@ -790,7 +771,7 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -13,14 +13,14 @@ include("functions/functions.php");
 <head>
 <title>E commerce Store </title>
 
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet" >
+<link href="http://fonts.googleapis.com/css?family=Lato:400,500,700,300,100" rel="stylesheet" >
 
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 
 <link href="styles/style.css" rel="stylesheet">
 
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -38,19 +38,13 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
 
-
 ?>
-</a>
-
-<a href="#">
-Shopping Cart Total Price: <?php total_price(); ?>, Total Items <?php items(); ?>
 </a>
 
 </div><!-- col-md-6 offer Ends -->
@@ -76,7 +70,6 @@ if (!isset($_SESSION['customer_email'])) {
     echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
-
 
 ?>
 </li>
@@ -168,7 +161,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
@@ -188,14 +180,6 @@ if (!isset($_SESSION['customer_email'])) {
 </ul><!-- nav navbar-nav navbar-left Ends -->
 
 </div><!-- padding-nav Ends -->
-
-<a class="btn btn-primary navbar-btn right" href="cart.php"><!-- btn btn-primary navbar-btn right Starts -->
-
-<i class="fa fa-shopping-cart"></i>
-
-<span> <?php items(); ?> items in cart </span>
-
-</a><!-- btn btn-primary navbar-btn right Ends -->
 
 <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
 
@@ -314,7 +298,6 @@ if (isset($_GET['search'])) {
 
             $pro_url = $row_products['product_url'];
 
-
             if ($pro_label == "Sale" or $pro_label == "Gift") {
 
                 $product_price = "<del> $$pro_price </del>";
@@ -329,9 +312,7 @@ if (isset($_GET['search'])) {
 
             }
 
-
             if ($pro_label == "") {
-
 
             } else {
 
@@ -349,14 +330,13 @@ if (isset($_GET['search'])) {
 
             }
 
-
             echo "
 
 <div class='col-md-3 col-sm-6 center-responsive' >
 
 <div class='product' >
 
-<a href='$pro_url' >
+<a href='images/$pro_url.php' >
 
 <img src='admin_area/product_images/$pro_img1' class='img-responsive' >
 
@@ -372,20 +352,11 @@ if (isset($_GET['search'])) {
 
 <hr>
 
-<h3><a href='$pro_url' >$pro_title</a></h3>
+<h3><a href='images/$pro_url.php' >$pro_title</a></h3>
 
 <p class='price' > $product_price $product_psp_price </p>
 
 <p class='buttons' >
-
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='$pro_url' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
-
 
 </p>
 
@@ -418,7 +389,7 @@ $product_label
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

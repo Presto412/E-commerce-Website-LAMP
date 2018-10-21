@@ -1,0 +1,6 @@
+{
+  "username": "root",
+  "password": "my_password",
+  "database": "ecom_store",
+  "url": "localhost"
+}
