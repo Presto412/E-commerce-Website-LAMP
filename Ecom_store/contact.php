@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -41,13 +41,11 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
-
 
 ?>
 </a>
@@ -76,12 +74,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#">
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -167,12 +164,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#"> Shopping Cart </a>
+<a href="cart.php"> Shopping Cart </a>
 </li>
 
 <li>
@@ -417,7 +413,6 @@ if (isset($_POST['submit'])) {
 
 }
 
-
 ?>
 
 </div><!-- box Ends -->
@@ -433,7 +428,7 @@ if (isset($_POST['submit'])) {
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

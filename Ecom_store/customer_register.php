@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -41,13 +41,11 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
-
 
 ?>
 
@@ -77,12 +75,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#">
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -168,12 +165,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#"> Shopping Cart </a>
+<a href="cart.php"> Shopping Cart </a>
 </li>
 
 <li>
@@ -420,7 +416,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 
@@ -627,7 +623,6 @@ Click Here To Confirm Email
 
         $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
 
-
         $run_customer = mysqli_query($con, $insert_customer);
 
         $sel_cart = "select * from cart where ip_add='$c_ip'";
@@ -652,16 +647,13 @@ Click Here To Confirm Email
 
             echo "<script>window.open('index.php','_self')</script>";
 
-
         }
-
 
     } else {
 
         echo "<script>alert('Please Select Captcha, Try Again')</script>";
 
     }
-
 
 }
 

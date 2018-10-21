@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -39,13 +39,11 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
-
 
 ?>
 </a>
@@ -74,12 +72,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#">
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -165,12 +162,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#"> Shopping Cart </a>
+<a href="cart.php"> Shopping Cart </a>
 </li>
 
 <li>
@@ -273,8 +269,8 @@ while ($row_terms = mysqli_fetch_array($run_terms)) {
 
 </li>
 
-<?php 
-} ?>
+<?php
+}?>
 
 <?php
 
@@ -306,8 +302,8 @@ while ($row_terms = mysqli_fetch_array($run_terms)) {
 
 </li>
 
-<?php 
-} ?>
+<?php
+}?>
 
 </ul><!-- nav nav-pills nav-stacked Ends -->
 
@@ -345,8 +341,8 @@ while ($row_terms = mysqli_fetch_array($run_terms)) {
 
 </div><!-- tab-pane fade in active Ends -->
 
-<?php 
-} ?>
+<?php
+}?>
 
 
 <?php
@@ -381,8 +377,8 @@ while ($row_terms = mysqli_fetch_array($run_terms)) {
 
 </div><!-- tab-pane fade in Ends -->
 
-<?php 
-} ?>
+<?php
+}?>
 
 </div><!-- tab-content Ends -->
 
@@ -397,7 +393,7 @@ while ($row_terms = mysqli_fetch_array($run_terms)) {
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

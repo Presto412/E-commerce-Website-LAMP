@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -38,13 +38,11 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
-
 
 ?>
 </a>
@@ -73,12 +71,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#">
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -164,12 +161,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#"> Shopping Cart </a>
+<a href="cart.php"> Shopping Cart </a>
 </li>
 
 <li>
@@ -302,7 +298,6 @@ if (isset($_GET['search'])) {
 
             $pro_url = $row_products['product_url'];
 
-
             if ($pro_label == "Sale" or $pro_label == "Gift") {
 
                 $product_price = "<del> $$pro_price </del>";
@@ -317,9 +312,7 @@ if (isset($_GET['search'])) {
 
             }
 
-
             if ($pro_label == "") {
-
 
             } else {
 
@@ -337,14 +330,13 @@ if (isset($_GET['search'])) {
 
             }
 
-
             echo "
 
 <div class='col-md-3 col-sm-6 center-responsive' >
 
 <div class='product' >
 
-<a href='$pro_url' >
+<a href='images/$pro_url.php' >
 
 <img src='admin_area/product_images/$pro_img1' class='img-responsive' >
 
@@ -360,7 +352,7 @@ if (isset($_GET['search'])) {
 
 <hr>
 
-<h3><a href='$pro_url' >$pro_title</a></h3>
+<h3><a href='images/$pro_url.php' >$pro_title</a></h3>
 
 <p class='price' > $product_price $product_psp_price </p>
 
@@ -397,7 +389,7 @@ $product_label
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

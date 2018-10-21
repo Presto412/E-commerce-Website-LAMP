@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("includes/db.php");
-include("functions/functions.php");
+include "includes/db.php";
+include "functions/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -37,13 +37,11 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
-
 
 ?>
 </a>
@@ -73,12 +71,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#">
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -164,12 +161,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#"> Shopping Cart </a>
+<a href="cart.php"> Shopping Cart </a>
 </li>
 
 <li>
@@ -280,7 +276,6 @@ $run_slides = mysqli_query($con, $get_slides);
 
 while ($row_slides = mysqli_fetch_array($run_slides)) {
 
-
     $slide_name = $row_slides['slide_name'];
 
     $slide_image = $row_slides['slide_image'];
@@ -297,10 +292,7 @@ while ($row_slides = mysqli_fetch_array($run_slides)) {
 
 ";
 
-
 }
-
-
 
 ?>
 
@@ -347,7 +339,6 @@ while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
     $box_desc = $run_boxes_section['box_desc'];
 
-
     ?>
 
 <div class="col-sm-4"><!-- col-sm-4 Starts -->
@@ -371,8 +362,8 @@ while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
 </div><!-- col-sm-4 Ends -->
 
-<?php 
-} ?>
+<?php
+}?>
 
 </div><!-- same-height-row Ends -->
 
@@ -414,7 +405,7 @@ getPro();
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 

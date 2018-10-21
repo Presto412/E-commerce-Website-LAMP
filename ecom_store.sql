@@ -425,9 +425,11 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat
 (6, 'Sweater', 'no', 'sweater.jpg'),
 (7, 'jackets', 'yes', 'jacket.jpg');
 
+
 -- --------------------------------------------------------
 
---Table structure for table 'seller'
+-- Table structure for table 'seller'
+-- 
 
 CREATE TABLE IF NOT EXISTS `seller` (
 `seller_id` int(10) NOT NULL,
@@ -777,6 +779,3 @@ MODIFY `term_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 ALTER TABLE `wishlist`
 MODIFY `wishlist_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

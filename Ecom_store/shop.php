@@ -2,9 +2,9 @@
 
 session_start();
 
-include("includes/db.php");
+include "includes/db.php";
 
-include("functions/functions.php");
+include "functions/functions.php";
 
 ?>
 <!DOCTYPE html>
@@ -39,13 +39,11 @@ if (!isset($_SESSION['customer_email'])) {
 
     echo "Welcome :Guest";
 
-
 } else {
 
     echo "Welcome : " . $_SESSION['customer_email'] . "";
 
 }
-
 
 ?>
 </a>
@@ -74,12 +72,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#">
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -165,12 +162,11 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
-
 ?>
 </li>
 
 <li>
-<a href="#"> Shopping Cart </a>
+<a href="cart.php"> Shopping Cart </a>
 </li>
 
 <li>
@@ -249,7 +245,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <div class="col-md-3"><!-- col-md-3 Starts -->
 
-<?php include("includes/sidebar.php"); ?>
+<?php include "includes/sidebar.php";?>
 
 </div><!-- col-md-3 Ends -->
 
@@ -267,7 +263,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <div class="row animated zoomIn" id="Products" ><!-- row Starts -->
 
-<?php getProducts(); ?>
+<?php getProducts();?>
 
 </div><!-- row Ends -->
 
@@ -275,7 +271,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <ul class="pagination" ><!-- pagination Starts -->
 
-<?php getPaginator(); ?>
+<?php getPaginator();?>
 
 </ul>
 
@@ -296,7 +292,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 <?php
 
-include("includes/footer.php");
+include "includes/footer.php";
 
 ?>
 
@@ -331,7 +327,7 @@ $(".hide-show").html('Hide');
 
 /// Hide And Show Code Ends ///
 
-/// Search Filters code Starts /// 
+/// Search Filters code Starts ///
 
 $(function(){
 
@@ -343,19 +339,19 @@ return this.each(function(){
 
 $(this).on('keyup', function(){
 
-var $this = $(this), 
+var $this = $(this),
 
-search = $this.val().toLowerCase(), 
+search = $this.val().toLowerCase(),
 
-target = $this.attr('data-filters'), 
+target = $this.attr('data-filters'),
 
-handle = $(target), 
+handle = $(target),
 
 rows = handle.find('li a');
 
 if(search == '') {
 
-rows.show(); 
+rows.show();
 
 } else {
 
@@ -385,7 +381,7 @@ $('[data-action="filter"][id="dev-table-filter"]').filterTable();
 
 });
 
- 
+
 
 </script>
 
@@ -394,14 +390,14 @@ $('[data-action="filter"][id="dev-table-filter"]').filterTable();
 
 
 $(document).ready(function(){
- 
-  // getProducts Function Code Starts 
+
+  // getProducts Function Code Starts
 
   function getProducts(){
-  
-  // Manufacturers Code Starts 
 
-    var sPath = ''; 
+  // Manufacturers Code Starts
+
+    var sPath = '';
 
 var aInputs = $('li').find('.get_manufacturer');
 
@@ -429,15 +425,15 @@ var sPath = '';
 
 for(var i = 0; i < aKeys.length; i++){
 
-sPath = sPath + 'man[]=' + aKeys[i]+'&'; 
+sPath = sPath + 'man[]=' + aKeys[i]+'&';
 
 }
 
 }
 
-// Manufacturers Code ENDS 
+// Manufacturers Code ENDS
 
-// Products Categories Code Starts 
+// Products Categories Code Starts
 
 var aInputs = Array();
 
@@ -471,9 +467,9 @@ sPath = sPath + 'p_cat[]=' + aKeys[i]+'&';
 
 }
 
-// Products Categories Code ENDS 
+// Products Categories Code ENDS
 
-   // Categories Code Starts 
+   // Categories Code Starts
 
 var aInputs = Array();
 
@@ -507,74 +503,74 @@ if(aKeys.length>0){
 
 }
 
-   // Categories Code ENDS 
-   
-   // Loader Code Starts 
+   // Categories Code ENDS
 
-$('#wait').html('<img src="images/load.gif">'); 
+   // Loader Code Starts
+
+$('#wait').html('<img src="images/load.gif">');
 
 // Loader Code ENDS
 
-// ajax Code Starts 
+// ajax Code Starts
 
 $.ajax({
 
-url:"load.php", 
- 
-method:"POST",
- 
-data: sPath+'sAction=getProducts', 
- 
-success:function(data){
- 
- $('#Products').html('');  
- 
- $('#Products').html(data);
- 
- $("#wait").empty(); 
- 
-}  
+url:"load.php",
 
-});  
+method:"POST",
+
+data: sPath+'sAction=getProducts',
+
+success:function(data){
+
+ $('#Products').html('');
+
+ $('#Products').html(data);
+
+ $("#wait").empty();
+
+}
+
+});
 
     $.ajax({
-url:"load.php",  
-method:"POST",  
-data: sPath+'sAction=getPaginator',  
+url:"load.php",
+method:"POST",
+data: sPath+'sAction=getPaginator',
 success:function(data){
-$('.pagination').html('');  
+$('.pagination').html('');
 $('.pagination').html(data);
-}  
+}
 
     });
 
-// ajax Code Ends 
-   
+// ajax Code Ends
+
    }
 
-   // getProducts Function Code Ends    
+   // getProducts Function Code Ends
 
-$('.get_manufacturer').click(function(){ 
-
-getProducts(); 
-
-});
-
-
-  $('.get_p_cat').click(function(){ 
+$('.get_manufacturer').click(function(){
 
 getProducts();
 
-}); 
+});
 
-$('.get_cat').click(function(){ 
 
-getProducts(); 
+  $('.get_p_cat').click(function(){
+
+getProducts();
 
 });
- 
- 
- }); 
+
+$('.get_cat').click(function(){
+
+getProducts();
+
+});
+
+
+ });
 
 </script>
 
