@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "my_password", "Ecom_Store");
+$db = mysqli_connect("localhost", "root", "Queenie@11", "Ecom_Store");
 
 /// IP address code starts /////
 function getRealUserIp()
@@ -191,6 +191,16 @@ function getPro()
 
 <p class='buttons' >
 
+<a href='$pro_url' class='btn btn-default' >View details</a>
+
+<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
+
+<i class='fa fa-shopping-cart'></i> Add to cart
+
+</a>
+
+
+
 </p>
 
 </div>
@@ -380,7 +390,19 @@ function getProducts()
 
 <p class='price' > $product_price $product_psp_price </p>
 
+
 <p class='buttons' >
+
+<a href='$pro_url' class='btn btn-default' >View details</a>
+
+<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
+
+<i class='fa fa-shopping-cart'></i> Add to cart
+
+</a>
+
+
+
 
 </p>
 
