@@ -10,7 +10,7 @@
 <?php
 
 
-$db = mysqli_connect("localhost", "root", "Queenie@11", "Ecom_Store");
+$db = mysqli_connect("localhost", "root", "my_password", "Ecom_Store");
 
 
     echo "
