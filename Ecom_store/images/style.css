@@ -34,7 +34,8 @@ td {
   width: 25%;
   opacity: 0.6;
   transition: 0.5s ease;
-  background-color: #011c37;
+
+ 
 }
 
 .btn1 {
@@ -44,3 +45,4 @@ td {
 .btn2 {
   margin-left: 200px;
 }
+

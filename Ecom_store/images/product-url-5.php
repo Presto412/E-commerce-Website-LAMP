@@ -21,16 +21,21 @@ $db = mysqli_connect("localhost", "root", "my_password", "Ecom_Store");
 <img src='Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-1-pdp_slider_l.jpg' style='float:left;height:400px;'>
 <div class='container'>
 <img src='Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-1-pdp_slider_l.jpg' class='image'>
-  <div class='night'>
+  <div class='night' id='night'>
   </div>
 
 </div>
 
 <p class='btn btn-primary btn1'>Day View</p>
-<p class='btn btn-primary btn1 btn2'>Night View</p>
+
+<p class='btn btn-primary btn1 btn2'>Night View
+<fieldset class='field' style='width: 150px; height: 150px;display:inline-block;margin-left:50px;font-size:20px;'>
+  <label for='b'></label>
+  Darker&ensp;Lighter<input type='range' min='0' max='255' id='b' step='1' value='0'>
+  <output for='b' style='font-size:20px;'></output>
+</fieldset>  </p>
 <br><br>
 </div>
-
 ";
 
 
@@ -63,6 +68,23 @@ echo "</table>";
 ?>
 
 <script>
+var slide = document.querySelector('#night'), 
+    b = document.querySelector('#b'),
+    b_out = document.querySelector('#b_out');
+
+function setColor(){
+  var b_hex = parseInt(b.value,10).toString(16);
+      if(b_hex.length<2)
+        {
+          b_hex="0"+n;
+        }
+     var hex = "#0000" + b_hex;
+  slide.style.backgroundColor = hex; 
+}
+
+b.addEventListener('input', function() {
+  setColor();
+});
 
 $(document).ready(function(){
     $(".sel").click(function(){
