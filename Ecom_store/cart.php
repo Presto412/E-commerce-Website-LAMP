@@ -130,23 +130,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </a>
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
-
-
 </div>
 
 <div class="navbar-collapse collapse" id="navigation" >
@@ -367,7 +350,7 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
 
 <td>
 
-$<?php echo $only_price; ?>.00
+Rs.<?php echo $only_price; ?>.00
 
 </td>
 
@@ -383,7 +366,7 @@ $<?php echo $only_price; ?>.00
 
 <td>
 
-$<?php echo $sub_total; ?>.00
+Rs.<?php echo $sub_total; ?>.00
 
 </td>
 
@@ -401,7 +384,7 @@ $<?php echo $sub_total; ?>.00
 
 <th colspan="5"> Total </th>
 
-<th colspan="2"> $<?php echo $total; ?>.00 </th>
+<th colspan="2"> Rs.<?php echo $total; ?>.00 </th>
 
 </tr>
 
@@ -564,142 +547,6 @@ echo @$up_cart = update_cart();
 
 ?>
 
-
-
-<div id="row same-height-row">
-
-<div class="col-md-3 col-sm-6">
-
-<div class="box same-height headline animated zoomIn">
-
-<h3 class="text-center"> You may like </h3>
-
-</div>
-
-</div>
-
-<?php
-
-$get_products = "select * from products order by rand() LIMIT 0,3";
-
-$run_products = mysqli_query($con, $get_products);
-
-while ($row_products = mysqli_fetch_array($run_products)) {
-
-    $pro_id = $row_products['product_id'];
-
-    $pro_title = $row_products['product_title'];
-
-    $pro_price = $row_products['product_price'];
-
-    $pro_img1 = $row_products['product_img1'];
-
-    $pro_label = $row_products['product_label'];
-
-    $manufacturer_id = $row_products['manufacturer_id'];
-
-    $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
-
-    $run_manufacturer = mysqli_query($db, $get_manufacturer);
-
-    $row_manufacturer = mysqli_fetch_array($run_manufacturer);
-
-    $manufacturer_name = $row_manufacturer['manufacturer_title'];
-
-    $pro_psp_price = $row_products['product_psp_price'];
-
-    $pro_url = $row_products['product_url'];
-
-    if ($pro_label == "Sale" or $pro_label == "Gift") {
-
-        $product_price = "<del> $$pro_price </del>";
-
-        $product_psp_price = "| $$pro_psp_price";
-
-    } else {
-
-        $product_psp_price = "";
-
-        $product_price = "$$pro_price";
-
-    }
-
-    if ($pro_label == "") {
-
-    } else {
-
-        $product_label = "
-
-<a class='label sale' href='#' style='color:black;'>
-
-<div class='thelabel'>$pro_label</div>
-
-<div class='label-background'> </div>
-
-</a>
-
-";
-
-    }
-
-    echo "
-
-<div class='col-md-3 col-sm-6 center-responsive' >
-
-<div class='product' >
-
-<a href='images/$pro_url.php' >
-
-<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
-
-</a>
-
-<div class='text' >
-
-<center>
-
-<p class='btn btn-primary'> $manufacturer_name </p>
-
-</center>
-
-<hr>
-
-<h3><a href='images/$pro_url.php' >$pro_title</a></h3>
-
-<p class='price' > $product_price $product_psp_price </p>
-
-<p class='buttons' >
-
-<a href='images/$pro_url.php' class='btn btn-default' >View details</a>
-
-<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
-
-
-</p>
-
-</div>
-
-$product_label
-
-
-</div>
-
-</div>
-
-";
-
-}
-
-?>
-
-
-</div><!-- row same-height-row Ends -->
-
-
 </div><!-- col-md-9 Ends -->
 
 <div class="col-md-3"><!-- col-md-3 Starts -->
@@ -712,10 +559,6 @@ $product_label
 
 </div><!-- box-header Ends -->
 
-<p class="text-muted">
-Shipping and additional costs are calculated based on the values you have entered.
-</p>
-
 <div class="table-responsive"><!-- table-responsive Starts -->
 
 <table class="table"><!-- table Starts -->
@@ -726,23 +569,17 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <td> Order Subtotal </td>
 
-<th> $<?php echo $total; ?>.00 </th>
+<th> Rs.<?php echo $total; ?>.00 </th>
 
 </tr>
 
-<tr>
 
-<td> Shipping and handling </td>
-
-<th>$0.00</th>
-
-</tr>
 
 <tr>
 
 <td>Tax</td>
 
-<th>$0.00</th>
+<th>Rs.0.00</th>
 
 </tr>
 
@@ -750,7 +587,7 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <td>Total</td>
 
-<th>$<?php echo $total; ?>.00</th>
+<th>Rs.<?php echo $total; ?>.00</th>
 
 </tr>
 

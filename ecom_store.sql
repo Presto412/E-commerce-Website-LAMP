@@ -135,10 +135,9 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
-(2, 'Feminine', 'no', 'zinta_preity.jpg'),
-(3, 'Kids', 'no', 'image10.jpg'),
-(4, 'Others', 'yes', 'cat_image.jpg'),
-(5, 'Men', 'yes', 'image11.jpg');
+(2, 'Feminine', 'no', 'image2.jpg'),
+(4, 'Others', 'yes', 'image6.jpg'),
+(5, 'Men', 'yes', 'image10.jpg');
 
 -- --------------------------------------------------------
 
@@ -199,16 +198,15 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `customer_contact` varchar(255) NOT NULL,
   `customer_address` text NOT NULL,
   `customer_image` text NOT NULL,
-  `customer_ip` varchar(255) NOT NULL,
-  `customer_confirm_code` text NOT NULL
+  `customer_ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`, `customer_confirm_code`) VALUES
-(2, 'John Doe', 'john@gmail.com', 'brock123', 'America', 'New York', '0092334566931', 'new york', 'profile.jpg', '::1', '');
+INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
+(2, 'test', 'test@gmail.com', 'test123', 'India', 'Vellore', '999999999', 'vit', 'profile.jpg', '::1');
 
 -- --------------------------------------------------------
 

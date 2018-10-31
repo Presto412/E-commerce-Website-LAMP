@@ -6,17 +6,11 @@ include "functions/functions.php";
 
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <title>E commerce Store </title>
-
 <link href="http://fonts.googleapis.com/css?family=Lato:400,500,700,300,100" rel="stylesheet" >
-
 <link href="styles/bootstrap.min.css" rel="stylesheet">
-
 <link href="styles/style.css" rel="stylesheet">
-
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/animate.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,7 +39,8 @@ if (!isset($_SESSION['customer_email'])) {
 
 ?>
 </a>
-
+<a href="cart.php">
+Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?></a>
 
 </div><!-- col-md-6 offer Ends -->
 
@@ -70,10 +65,8 @@ if (!isset($_SESSION['customer_email'])) {
     echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
 
 }
-
 ?>
 </li>
-
 <li>
 <a href="cart.php">
 Go to Cart
@@ -82,20 +75,14 @@ Go to Cart
 
 <li>
 <?php
-
 if (!isset($_SESSION['customer_email'])) {
-
     echo "<a href='checkout.php'> Login </a>";
 
 } else {
-
     echo "<a href='logout.php'> Logout </a>";
-
 }
-
 ?>
 </li>
-
 </ul>
 
 </div>
@@ -114,23 +101,6 @@ if (!isset($_SESSION['customer_email'])) {
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
 </a><!--- navbar navbar-brand home Ends -->
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
-
 
 </div><!-- navbar-header Ends -->
 

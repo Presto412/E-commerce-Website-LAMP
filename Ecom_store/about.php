@@ -31,7 +31,7 @@ if (!isset($_SESSION['customer_email'])) {
 ?>
 </a>
 <a href="cart.php">
-Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?>
+Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?></a>
 </div>
 
 <div class="col-md-6">
@@ -60,7 +60,7 @@ if (!isset($_SESSION['customer_email'])) {
 </li>
 
 <li>
-<a href="cart.php"></a>
+<a href="cart.php">
 Go to Cart
 </a>
 </li>
@@ -99,23 +99,6 @@ if (!isset($_SESSION['customer_email'])) {
 <img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
-
 
 </div>
 

@@ -10,8 +10,6 @@ echo "<script>window.open('login.php','_self')</script>";
 else {
 
 
-
-
 ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" ><!-- navbar navbar-inverse navbar-fixed-top Starts -->
@@ -21,7 +19,7 @@ else {
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" ><!-- navbar-ex1-collapse Starts -->
 
 
-<span class="sr-only" >Toggle Navigation</span>
+
 
 <span class="icon-bar" ></span>
 

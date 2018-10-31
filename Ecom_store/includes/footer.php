@@ -73,10 +73,7 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 <a href="#"><i class="fa fa-envelope"></i></a>
 </p>
 
-<br>
-<h4> Leave Feedback</h4>
-<a href="angular-contact-form/index.html" target="_blank">
-<button>Submit Feedback</button></a>
+
 </div>
 
 </div>
