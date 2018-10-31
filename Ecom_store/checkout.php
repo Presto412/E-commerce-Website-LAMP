@@ -118,23 +118,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </a><!--- navbar navbar-brand home Ends -->
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
-
-
 </div><!-- navbar-header Ends -->
 
 <div class="navbar-collapse collapse" id="navigation" ><!-- navbar-collapse collapse Starts -->

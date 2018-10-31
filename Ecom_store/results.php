@@ -282,8 +282,6 @@ if (isset($_GET['search'])) {
 
             $pro_img1 = $row_products['product_img1'];
 
-            $pro_label = $row_products['product_label'];
-
             $manufacturer_id = $row_products['manufacturer_id'];
 
             $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
@@ -294,41 +292,8 @@ if (isset($_GET['search'])) {
 
             $manufacturer_name = $row_manufacturer['manufacturer_title'];
 
-            $pro_psp_price = $row_products['product_psp_price'];
-
             $pro_url = $row_products['product_url'];
 
-            if ($pro_label == "Sale" or $pro_label == "Gift") {
-
-                $product_price = "<del> $$pro_price </del>";
-
-                $product_psp_price = "| $$pro_psp_price";
-
-            } else {
-
-                $product_psp_price = "";
-
-                $product_price = "$$pro_price";
-
-            }
-
-            if ($pro_label == "") {
-
-            } else {
-
-                $product_label = "
-
-<a class='label sale' href='#' style='color:black;'>
-
-<div class='thelabel'>$pro_label</div>
-
-<div class='label-background'> </div>
-
-</a>
-
-";
-
-            }
 
             echo "
 
@@ -354,7 +319,7 @@ if (isset($_GET['search'])) {
 
 <h3><a href='images/$pro_url.php' >$pro_title</a></h3>
 
-<p class='price' > $product_price $product_psp_price </p>
+<p class='price' > Rs. $pro_price </p>
 
 <p class='buttons' >
 
@@ -362,7 +327,7 @@ if (isset($_GET['search'])) {
 
 </div>
 
-$product_label
+
 
 
 </div>

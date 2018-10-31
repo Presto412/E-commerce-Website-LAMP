@@ -47,7 +47,8 @@ if (!isset($_SESSION['customer_email'])) {
 
 ?>
 </a>
-
+<a href="cart.php">
+Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?></a>
 </div><!-- col-md-6 offer Ends -->
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -116,21 +117,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </a><!--- navbar navbar-brand home Ends -->
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
 
 
 </div><!-- navbar-header Ends -->

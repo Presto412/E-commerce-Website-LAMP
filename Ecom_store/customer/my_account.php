@@ -56,7 +56,9 @@ if (!isset($_SESSION['customer_email'])) {
 
 
 ?>
+
 </a>
+
 </div><!-- col-md-6 offer Ends -->
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -126,21 +128,7 @@ if (!isset($_SESSION['customer_email'])) {
 
 </a><!--- navbar navbar-brand home Ends -->
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
 
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
 
 
 </div><!-- navbar-header Ends -->
@@ -270,24 +258,7 @@ $customer_confirm_code = $row_customer['customer_confirm_code'];
 
 $c_name = $row_customer['customer_name'];
 
-if (!empty($customer_confirm_code)) {
-
-    ?>
-
-<div class="alert alert-danger"><!-- alert alert-danger Starts -->
-
-<strong> Warning! </strong> Please Confirm Your Email and if you have not received your confirmation email
-
-<a href="my_account.php?send_email" class="alert-link"> 
-
-Send Email Again
-
-</a>
-
-</div><!-- alert alert-danger Ends -->
-
-<?php 
-} ?>
+ ?>
 
 </div><!-- col-md-12 Ends -->
 
@@ -303,49 +274,7 @@ Send Email Again
 
 <?php
 
-if (isset($_GET[$customer_confirm_code])) {
 
-    $update_customer = "update customers set customer_confirm_code='' where customer_confirm_code='$customer_confirm_code'";
-
-    $run_confirm = mysqli_query($con, $update_customer);
-
-    echo "<script>alert('Your Email Has Been Confirmed')</script>";
-
-    echo "<script>window.open('my_account.php?my_orders','_self')</script>";
-
-}
-
-if (isset($_GET['send_email'])) {
-
-    $subject = "Email Confirmation Message";
-
-    $from = "sad.ahmed22224@gmail.com";
-
-    $message = "
-
-<h2>
-Email Confirmation By Computerfever.com $c_name
-</h2>
-
-<a href='localhost/ecom_store/customer/my_account.php?$customer_confirm_code'>
-
-Click Here To Confirm Email
-
-</a>
-
-";
-
-    $headers = "From: $from \r\n";
-
-    $headers .= "Content-type: text/html\r\n";
-
-    mail($c_email, $subject, $message, $headers);
-
-    echo "<script>alert('Your Confirmation Email Has Been sent to you, check your inbox')</script>";
-
-    echo "<script>window.open('my_account.php?my_orders','_self')</script>";
-
-}
 
 
 
@@ -355,11 +284,6 @@ if (isset($_GET['my_orders'])) {
 
 }
 
-if (isset($_GET['pay_offline'])) {
-
-    include("pay_offline.php");
-
-}
 
 if (isset($_GET['edit_account'])) {
 

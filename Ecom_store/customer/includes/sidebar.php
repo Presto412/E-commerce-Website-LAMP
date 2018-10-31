@@ -12,8 +12,6 @@ $run_customer = mysqli_query($con,$get_customer);
 
 $row_customer = mysqli_fetch_array($run_customer);
 
-$customer_image = $row_customer['customer_image'];
-
 $customer_name = $row_customer['customer_name'];
 
 if(!isset($_SESSION['customer_email'])){
@@ -24,15 +22,12 @@ else {
 
 echo "
 
-<center>
 
-<img src='customer_images/$customer_image' class='img-responsive'>
-
-</center>
 
 <br>
 
 <h3 align='center' class='panel-title'> Name : $customer_name </h3>
+<br>
 
 ";
 
@@ -43,6 +38,7 @@ echo "
 </div><!-- panel-heading Ends -->
 
 <div class="panel-body"><!-- panel-body Starts -->
+<br>
 
 <ul class="nav nav-pills nav-stacked"><!-- nav nav-pills nav-stacked Starts -->
 
@@ -52,11 +48,7 @@ echo "
 
 </li>
 
-<li class="<?php if(isset($_GET['pay_offline'])){ echo "active"; } ?>">
 
-<a href="my_account.php?pay_offline"> <i class="fa fa-bolt"></i> Pay Offline </a>
-
-</li>
 
 <li class="<?php if(isset($_GET['edit_account'])){ echo "active"; } ?>">
 

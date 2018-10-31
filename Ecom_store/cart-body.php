@@ -108,22 +108,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </a><!--- navbar navbar-brand home Ends -->
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
-
 
 </div><!-- navbar-header Ends -->
 
@@ -572,8 +556,6 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
     $pro_img1 = $row_products['product_img1'];
 
-    $pro_label = $row_products['product_label'];
-
     $manufacturer_id = $row_products['manufacturer_id'];
 
     $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
@@ -584,37 +566,10 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
     $manufacturer_name = $row_manufacturer['manufacturer_title'];
 
-    $pro_psp_price = $row_products['product_psp_price'];
-
     $pro_url = $row_products['product_url'];
 
-    if ($pro_label == "Sale" or $pro_label == "Gift") {
+    
 
-        $product_price = "<del> $$pro_price </del>";
-
-        $product_psp_price = "| $$pro_psp_price";
-
-    } else {
-
-        $product_psp_price = "";
-
-        $product_price = "$$pro_price";
-
-    }
-
-    if ($pro_label == "") {
-
-    } else {
-
-        $product_label = "
-
-<a class='label sale' href='#' style='color:black;'>
-
-<div class='thelabel'>$pro_label</div>
-
-<div class='label-background'> </div>
-
-</a>
 
 ";
 

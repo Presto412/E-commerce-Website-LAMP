@@ -54,7 +54,8 @@ if (!isset($_SESSION['customer_email'])) {
 
 ?>
 </a>
-
+<a href="cart.php">
+Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?></a>
 </div><!-- col-md-6 offer Ends -->
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -122,22 +123,6 @@ if (!isset($_SESSION['customer_email'])) {
 <img src="images/logo-small.png" alt="logo" class="visible-xs animated bounce" >
 
 </a><!--- navbar navbar-brand home Ends -->
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
 
 
 </div><!-- navbar-header Ends -->
@@ -290,10 +275,10 @@ $contact_email = $row_conatct_us['contact_email'];
 </div><!-- box-header Ends -->
 <div ng-app="validationApp" ng-controller="mainController">
 <div class="container">
-<div class="row">  
-   
+<div class="row">
+<div class="col-sm-10">
     <!-- FORM ============ -->
-  
+
     <form name="userForm" ng-submit="submitForm()" novalidate>
 
         <!-- NAME -->
@@ -302,14 +287,14 @@ $contact_email = $row_conatct_us['contact_email'];
             <input type="text" name="name" class="form-control" ng-model="user.name" required>
             <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
         </div>
-      
+
         <div class="form-group" ng-class="{ 'has-error' : userForm.subject.$invalid && !userForm.subject.$pristine }">
             <label>Subject</label>
             <input type="text" name="subject" class="form-control" ng-model="user.subject" ng-minlength="3" ng-maxlength="15">
             <p ng-show="userForm.subject.$error.minlength" class="help-block">Subject is too short.</p>
             <p ng-show="userForm.subject.$error.maxlength" class="help-block">Subject is too long.</p>
         </div>
-        
+
         <!-- EMAIL -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
             <label>Email</label>
@@ -328,19 +313,20 @@ $contact_email = $row_conatct_us['contact_email'];
 		<select name="enquiry_type" class="form-control">
 		<option> Select Enquiry Type </option>
 		<?php
-		$get_enquiry_types = "select * from enquiry_types";
-		$run_enquiry_types = mysqli_query($con, $get_enquiry_types);
-		while ($row_enquiry_types = mysqli_fetch_array($run_enquiry_types)) {
-   		 $enquiry_title = $row_enquiry_types['enquiry_title'];
-    		echo "<option> $enquiry_title </option>";
-		}
-		?>
+$get_enquiry_types = "select * from enquiry_types";
+$run_enquiry_types = mysqli_query($con, $get_enquiry_types);
+while ($row_enquiry_types = mysqli_fetch_array($run_enquiry_types)) {
+    $enquiry_title = $row_enquiry_types['enquiry_title'];
+    echo "<option> $enquiry_title </option>";
+}
+?>
 		</select>
 	</div>
-        
+
 	<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
-        
+
     </form>
+</div>
 </div>
 <div>
 
@@ -372,7 +358,7 @@ include "includes/footer.php";
 	// create angular controller
 	validationApp.controller('mainController', function($scope) {
 
-		// function to submit the form after all validation has occurred			
+		// function to submit the form after all validation has occurred
 		$scope.submitForm = function() {
 
 			// check to make sure the form is completely valid
