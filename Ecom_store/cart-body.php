@@ -616,7 +616,6 @@ while ($row_products = mysqli_fetch_array($run_products)) {
 
 </div>
 
-$product_label
 
 
 </div>
@@ -659,7 +658,7 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <td> Order Subtotal </td>
 
-<th> $<?php echo $total; ?>.00 </th>
+<th> Rs.<?php echo $total; ?>.00 </th>
 
 </tr>
 
@@ -667,7 +666,7 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <td> Shipping and handling </td>
 
-<th>$0.00</th>
+<th>Rs.0.00</th>
 
 </tr>
 
@@ -675,7 +674,7 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <td>Tax</td>
 
-<th>$0.00</th>
+<th>Rs.0.00</th>
 
 </tr>
 
@@ -683,7 +682,7 @@ Shipping and additional costs are calculated based on the values you have entere
 
 <td>Total</td>
 
-<th>$<?php echo $total; ?>.00</th>
+<th>Rs.<?php echo Rs.total; ?>.00</th>
 
 </tr>
 

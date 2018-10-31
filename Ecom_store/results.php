@@ -252,7 +252,7 @@ if (isset($_GET['search'])) {
 
     $user_keyword = $_GET['user_query'];
 
-    $get_products = "select * from products where product_keywords like '%$user_keyword%'";
+    $get_products = "select * from products where product_title like '%$user_keyword%'";
 
     $run_products = mysqli_query($con, $get_products);
 

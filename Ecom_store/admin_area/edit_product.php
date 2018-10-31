@@ -34,31 +34,15 @@ $m_id = $row_edit['manufacturer_id'];
 
 $p_image1 = $row_edit['product_img1'];
 
-$p_image2 = $row_edit['product_img2'];
 
-$p_image3 = $row_edit['product_img3'];
 
 $new_p_image1 = $row_edit['product_img1'];
 
-$new_p_image2 = $row_edit['product_img2'];
 
-$new_p_image3 = $row_edit['product_img3'];
 
 $p_price = $row_edit['product_price'];
 
-$p_desc = $row_edit['product_desc'];
 
-$p_keywords = $row_edit['product_keywords'];
-
-$psp_price = $row_edit['product_psp_price'];
-
-$p_label = $row_edit['product_label'];
-
-$p_url = $row_edit['product_url'];
-
-$p_features = $row_edit['product_features'];
-
-$p_video = $row_edit['product_video'];
 
 }
 
@@ -100,9 +84,6 @@ $cat_title = $row_cat['cat_title'];
 
 <title> Edit Products </title>
 
-
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'#product_desc,#product_features' });</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -306,31 +287,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 </div><!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 2 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img2" class="form-control" >
-<br><img src="product_images/<?php echo $p_image2; ?>" width="70" height="70" >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 3 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img3" class="form-control" >
-<br><img src="product_images/<?php echo $p_image3; ?>" width="70" height="70" >
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -344,116 +301,10 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 </div><!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Sale Price </label>
-
-<div class="col-md-6" >
-
-<input type="text" name="psp_price" class="form-control" required value="<?php echo $psp_price; ?>">
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Keywords </label>
-
-<div class="col-md-6" >
-
-<input type="text" name="product_keywords" class="form-control" required value="<?php echo $p_keywords; ?>" >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Tabs </label>
-
-<div class="col-md-6" >
-
-<ul class="nav nav-tabs"><!-- nav nav-tabs Starts -->
-
-<li class="active">
-
-<a data-toggle="tab" href="#description"> Product Description </a>
-
-</li>
-
-<li>
-
-<a data-toggle="tab" href="#features"> Product Features </a>
-
-</li>
-
-<li>
-
-<a data-toggle="tab" href="#video"> Sounds And Videos </a>
-
-</li>
-
-</ul><!-- nav nav-tabs Ends -->
-
-<div class="tab-content"><!-- tab-content Starts -->
-
-<div id="description" class="tab-pane fade in active"><!-- description tab-pane fade in active Starts -->
-
-<br>
-
-<textarea name="product_desc" class="form-control" rows="15" id="product_desc">
-
-<?php echo $p_desc; ?>
-
-</textarea>
-
-</div><!-- description tab-pane fade in active Ends -->
 
 
-<div id="features" class="tab-pane fade in"><!-- features tab-pane fade in Starts -->
-
-<br>
-
-<textarea name="product_features" class="form-control" rows="15" id="product_features">
-
-<?php echo $p_features; ?>
-
-</textarea>
-
-</div><!-- features tab-pane fade in Ends -->
 
 
-<div id="video" class="tab-pane fade in"><!-- video tab-pane fade in Starts -->
-
-<br>
-
-<textarea name="product_video" class="form-control" rows="15">
-
-<?php echo $p_video; ?>
-
-</textarea>
-
-</div><!-- video tab-pane fade in Ends -->
-
-
-</div><!-- tab-content Ends -->
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Label </label>
-
-<div class="col-md-6" >
-
-<input type="text" name="product_label" class="form-control" required value="<?php echo $p_label; ?>">
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -493,28 +344,17 @@ $product_cat = $_POST['product_cat'];
 $cat = $_POST['cat'];
 $manufacturer_id = $_POST['manufacturer'];
 $product_price = $_POST['product_price'];
-$product_desc = $_POST['product_desc'];
-$product_keywords = $_POST['product_keywords'];
 
-$psp_price = $_POST['psp_price'];
-
-$product_label = $_POST['product_label'];
 
 $product_url = $_POST['product_url'];
-
-$product_features = $_POST['product_features'];
-
-$product_video = $_POST['product_video'];
 
 $status = "product";
 
 $product_img1 = $_FILES['product_img1']['name'];
-$product_img2 = $_FILES['product_img2']['name'];
-$product_img3 = $_FILES['product_img3']['name'];
+
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
-$temp_name2 = $_FILES['product_img2']['tmp_name'];
-$temp_name3 = $_FILES['product_img3']['tmp_name'];
+
 
 if(empty($product_img1)){
 
@@ -523,24 +363,13 @@ $product_img1 = $new_p_image1;
 }
 
 
-if(empty($product_img2)){
 
-$product_img2 = $new_p_image2;
-
-}
-
-if(empty($product_img3)){
-
-$product_img3 = $new_p_image3;
-
-}
 
 
 move_uploaded_file($temp_name1,"product_images/$product_img1");
-move_uploaded_file($temp_name2,"product_images/$product_img2");
-move_uploaded_file($temp_name3,"product_images/$product_img3");
 
-$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_psp_price='$psp_price',product_desc='$product_desc',product_features='$product_features',product_video='$product_video',product_keywords='$product_keywords',product_label='$product_label',status='$status' where product_id='$p_id'";
+
+$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_img1='$product_img1',product_price='$product_price',status='$status' where product_id='$p_id'";
 
 $run_product = mysqli_query($con,$update_product);
 

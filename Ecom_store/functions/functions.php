@@ -132,37 +132,7 @@ function getPro()
 
         $pro_url = 'images/' . $row_products['product_url'] . '.php';
 
-        if ($pro_label == "Sale" or $pro_label == "Gift") {
-
-            $product_price = "<del> $$pro_price </del>";
-
-            $product_psp_price = "| $$pro_psp_price";
-
-        } else {
-
-            $product_psp_price = "";
-
-            $product_price = "$$pro_price";
-
-        }
-
-        if ($pro_label == "") {
-
-        } else {
-
-            $product_label = "
-
-                <a class='label sale' href='#' style='color:black;'>
-
-                <div class='thelabel'>$pro_label</div>
-
-                <div class='label-background'> </div>
-
-                </a>
-
-                ";
-
-        }
+       
 
         echo "
 
@@ -189,7 +159,7 @@ function getPro()
 
             <h3><a href='$pro_url' >$pro_title</a></h3>
 
-            <p class='price' > $product_price $product_psp_price </p>
+            <p class='price' >Rs. $pro_price </p>
 
             <p class='buttons' >
 
@@ -217,7 +187,7 @@ function getPro()
 
             </div>
 
-            $product_label
+
 
 
             </div>
@@ -359,37 +329,7 @@ function getProducts()
 
         $pro_url = 'images/' . $row_products['product_url'] . '.php';
 
-        if ($pro_label == "Sale" or $pro_label == "Gift") {
-
-            $product_price = "<del> $$pro_price </del>";
-
-            $product_psp_price = "| $$pro_psp_price";
-
-        } else {
-
-            $product_psp_price = "";
-
-            $product_price = "$$pro_price";
-
-        }
-
-        if ($pro_label == "") {
-
-        } else {
-
-            $product_label = "
-
-                <a class='label sale' href='#' style='color:black;'>
-
-                <div class='thelabel'>$pro_label</div>
-
-                <div class='label-background'> </div>
-
-                </a>
-
-                ";
-
-        }
+        
 
         echo "
 
@@ -414,7 +354,7 @@ function getProducts()
 
             <h3><a href='$pro_url' >$pro_title</a></h3>
 
-            <p class='price' > $product_price $product_psp_price </p>
+            <p class='price' >Rs. $pro_price</p>
 
 
             <p class='buttons' >

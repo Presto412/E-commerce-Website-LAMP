@@ -41,17 +41,16 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `admin_image` text NOT NULL,
   `admin_contact` varchar(255) NOT NULL,
   `admin_country` text NOT NULL,
-  `admin_job` varchar(255) NOT NULL,
-  `admin_about` text NOT NULL
+  `admin_job` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`, `admin_about`) VALUES
-(2, 'Priyansh Jain', 'priyansh.jain0246@gmail.com', 'priyansh123', 'profile.jpg', '077885221', 'India', 'Student', ' Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical '),
-(5, 'Queenie Das', 'dasqueenie@gmail.com', 'queenie', 'profile.jpg', '33456693', 'India', 'Student', '  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical  ');
+INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`) VALUES
+(2, 'Priyansh Jain', 'priyansh.jain0246@gmail.com', 'priyansh123', 'profile.jpg', '077885221', 'India', 'Student'),
+(5, 'Queenie Das', 'dasqueenie@gmail.com', 'queenie', 'profile.jpg', '33456693', 'India', 'Student');
 
 -- --------------------------------------------------------
 
@@ -77,26 +76,9 @@ INSERT INTO `boxes_section` (`box_id`, `box_title`, `box_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bundle_product_relation`
---
-
-CREATE TABLE IF NOT EXISTS `bundle_product_relation` (
-`rel_id` int(10) NOT NULL,
-  `rel_title` varchar(255) NOT NULL,
-  `product_id` int(10) NOT NULL,
-  `bundle_id` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `bundle_product_relation`
---
 
-INSERT INTO `bundle_product_relation` (`rel_id`, `rel_title`, `product_id`, `bundle_id`) VALUES
-(8, 'jacket bundle relation -1', 4, 11),
-(9, 'jacket bundle relation -2', 5, 11),
-(10, 'jacket bundle relation -3', 6, 11);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `cart`
@@ -180,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `coupons` (
 --
 
 INSERT INTO `coupons` (`coupon_id`, `product_id`, `coupon_title`, `coupon_price`, `coupon_code`, `coupon_limit`, `coupon_used`) VALUES
-(3, 9, 'Remind T-shirt', '40', '333444', 5, 1);
+(3, 9, 'Remind T-shirt', '40', '111111', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -372,15 +354,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `product_title` text NOT NULL,
   `product_url` text NOT NULL,
   `product_img1` text NOT NULL,
-  `product_img2` text NOT NULL,
-  `product_img3` text NOT NULL,
   `product_price` int(10) NOT NULL,
-  `product_psp_price` int(100) NOT NULL,
-  `product_desc` text NOT NULL,
-  `product_features` text NOT NULL,
-  `product_video` text NOT NULL,
-  `product_keywords` text NOT NULL,
-  `product_label` text NOT NULL,
   `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
@@ -388,17 +362,17 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_psp_price`, `product_desc`, `product_features`, `product_video`, `product_keywords`, `product_label`, `status`) VALUES
-(1, 5, 4, 3, '2018-09-15 10:48:40', 'New T-Shirt', 'new-t-shirt', 'img1.jpg', 'img2.jpg', 'img3.jpg', 70, 50, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla</p>', '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>', '<iframe width="854" height="480" src="https://www.youtube.com/embed/BxjtpdWeGtI" frameborder="0" allowfullscreen></iframe>', 'T-Shirts', 'Sale', 'product'),
-(2, 5, 3, 2, '2018-09-15 10:48:48', 'U.S. Polo Assn. Blue Polos shirt', 'product-url-2', 'U-S--Polo-Assn--Blue-Polos-0266-586842-1-pdp_slider_l.jpg', 'U-S--Polo-Assn--Blue-Polos-0268-586842-2-pdp_slider_l.jpg', 'U-S--Polo-Assn--Blue-Polos-0271-586842-3-pdp_slider_l.jpg', 69, 45, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'T-Shirt', 'Gift', 'product'),
-(3, 5, 3, 6, '2018-09-15 10:48:52', 'BENETTON White Polo Shirt', 'product-url-3', 'United-Colors-of-Benetton-White-Polo-Shirt-0608-0914361-1-pdp_slider_l.jpg', 'United-Colors-of-Benetton-White-Polo-Shirt-0608-0914361-2-pdp_slider_l.jpg', 'United-Colors-of-Benetton-White-Polo-Shirt-0609-0914361-3-pdp_slider_l.jpg', 98, 0, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'T-Shirt', 'New', 'product'),
-(4, 7, 5, 5, '2018-09-19 06:49:39', 'Navy Blue Solid Denim Jacket', 'product-url-4', 'Levi-s-Blue-Solid-Denim-Jacket-5953-6506172-1-pdp_slider_l.jpg', 'Levi-s-Blue-Solid-Denim-Jacket-5953-6506172-2-pdp_slider_l.jpg', 'Levi-s-Blue-Solid-Denim-Jacket-5953-6506172-3-pdp_slider_l.jpg', 230, 150, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'Jackets', 'Sale', 'product'),
-(5, 7, 5, 5, '2018-09-19 06:45:07', 'Denim Borg Lined Western Jacket', 'product-url-5', 'Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-1-pdp_slider_l.jpg', 'Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-2-pdp_slider_l.jpg', 'Next-Denim-Borg-Lined-Western-Jacket-0465-0064553-3-pdp_slider_l.jpg', 259, 100, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'Jackets', 'Gift', 'product'),
-(6, 7, 5, 5, '2018-09-19 06:49:18', 'Jack & White Solid Denim Jacket', 'product-url-6', 'Jack---Jones-White-Solid-Denim-Jacket-3115-5549091-1-pdp_slider_l.jpg', 'Jack---Jones-White-Solid-Denim-Jacket-3115-5549091-2-pdp_slider_l.jpg', 'Jack---Jones-White-Solid-Denim-Jacket-3115-5549091-3-pdp_slider_l.jpg', 96, 0, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'Jackets', 'New', 'product'),
-(7, 4, 2, 6, '2018-09-15 10:49:07', 'Nice Solid Long Coat With Lace', 'product-url-7', 'fur coat with button1.jpg', 'fur coat with button2.jpg', 'fur coat with button3.jpg', 200, 150, '<p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document. kingVideo provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'Coats', 'Sale', 'product'),
-(8, 4, 2, 4, '2018-09-15 10:49:11', 'Sleeveless Faux Fur Hybrid Coat', 'product-url-8', 'Black Blouse Versace Coat1.jpg', 'Black Blouse Versace Coat2.jpg', 'Black Blouse Versace Coat3.jpg', 245, 100, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'Coats', 'Gift', 'product'),
-(9, 5, 4, 2, '2018-09-19 06:46:14', 'Remind Printed T-Shirt', 'product-url-9', 'product-1.jpg', 'product-2.jpg', 'product-3.jpg', 50, 0, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'T-Shirt', 'New', 'product'),
-(11, 7, 5, 5, '2018-09-20 06:21:03', 'jacket bundle', 'jacket-bundle', 'jacket-1.jpg', 'jacket-2.jpg', 'jacket-3.jpg', 300, 200, '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qImi3vNccaU" frameborder="0" allowfullscreen></iframe>', 'jacket bundle', 'Sale', 'bundle');
+INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_price`, `status`) VALUES
+(1, 5, 4, 3, '2018-09-15 10:48:40', 'New T-Shirt', 'new-t-shirt', 'img1.jpg', 270, 'product'),
+(2, 5, 3, 2, '2018-09-15 10:48:48', 'U.S. Polo Assn. Blue Polos shirt', 'product-url-2', 'U-S--Polo-Assn--Blue-Polos-0266-586842-1-pdp_slider_l.jpg', 400, 'product'),
+(3, 5, 3, 6, '2018-09-15 10:48:52', 'BENETTON White Polo Shirt', 'product-url-3', 'United-Colors-of-Benetton-White-Polo-Shirt-0608-0914361-1-pdp_slider_l.jpg', 598, 'product'),
+(4, 7, 5, 5, '2018-09-19 06:49:39', 'Navy Blue Solid Denim Jacket', 'product-url-4', 'Levi-s-Blue-Solid-Denim-Jacket-5953-6506172-1-pdp_slider_l.jpg', 630, 'product'),
+(5, 7, 5, 5, '2018-09-19 06:45:07', 'Denim Borg Lined Western Jacket', 'product-url-5', 'Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-1-pdp_slider_l.jpg', 859, 'product'),
+(6, 7, 5, 5, '2018-09-19 06:49:18', 'Jack & White Solid Denim Jacket', 'product-url-6', 'Jack---Jones-White-Solid-Denim-Jacket-3115-5549091-1-pdp_slider_l.jpg', 596,'product'),
+(7, 4, 2, 6, '2018-09-15 10:49:07', 'Nice Solid Long Coat With Lace', 'product-url-7', 'fur coat with button1.jpg', 400,'product'),
+(8, 4, 2, 4, '2018-09-15 10:49:11', 'Sleeveless Faux Fur Hybrid Coat', 'product-url-8', 'Black Blouse Versace Coat1.jpg', 445,'product'),
+(9, 5, 4, 2, '2018-09-19 06:46:14', 'Remind Printed T-Shirt', 'product-url-9', 'product-1.jpg', 650,'product'),
+(11, 7, 5, 5, '2018-09-20 06:21:03', 'jacket bundle', 'jacket-bundle', 'jacket-1.jpg', 700,'bundle');
 
 -- --------------------------------------------------------
 
@@ -443,18 +417,18 @@ CREATE TABLE IF NOT EXISTS `seller` (
 --
 
 INSERT INTO `seller` (`seller_id`,`seller_title`,`seller_price`,`seller_time`,`seller_rating`) VALUES
-(4, 'Seller C',5, '1-2 weeks','4/5' ),
+(4, 'Seller C',50, '1-2 weeks','4/5' ),
 (4, 'Seller B',0, '2-3 weeks','4.5/5' ),
-(4, 'Seller D',4, '1-2 weeks','3.5/5' ),
-(5, 'Seller C',5, '1-2 weeks','4/5' ),
-(5, 'Seller A',4, '5-6 days','4.5/5' ),
+(4, 'Seller D',40, '1-2 weeks','3.5/5' ),
+(5, 'Seller C',50, '1-2 weeks','4/5' ),
+(5, 'Seller A',40, '5-6 days','4.5/5' ),
 (5, 'Seller B',0, '2-3 weeks','4.5/5' ),
-(5, 'Seller D',4, '1-2 weeks','3.5/5' ),
-(6, 'Seller C',5, '1-2 weeks','4/5' ),
+(5, 'Seller D',40, '1-2 weeks','3.5/5' ),
+(6, 'Seller C',50, '1-2 weeks','4/5' ),
 (6, 'Seller B',0, '2-3 weeks','4.5/5' ),
-(7, 'Seller A',4, '5-6 days','4.5/5' ),
+(7, 'Seller A',40, '5-6 days','4.5/5' ),
 (7, 'Seller B',0, '2-3 weeks','4.5/5' ),
-(7, 'Seller D',4, '1-2 weeks','3.5/5' );
+(7, 'Seller D',40, '1-2 weeks','3.5/5' );
 -- --------------------------------------------------------
 
 
@@ -471,15 +445,6 @@ CREATE TABLE IF NOT EXISTS `services` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `services`
---
-
-INSERT INTO `services` (`service_id`, `service_title`, `service_image`, `service_desc`, `service_button`, `service_url`) VALUES
-(4, 'Gift Package ', 'service-1.jpg', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>', 'Contact For Details and Rates', 'http://www.computerfever.com'),
-(5, 'Love Surprisre', 'service-2.jpg', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>', 'Contact For Details and Rates', 'http://www.computerfever.com'),
-(6, 'Wedding Package', 'service-3.jpg', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>', 'Contact For Details and Rates', 'http://www.computerfever.com');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `slider`
@@ -527,25 +492,6 @@ INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
---
-
-CREATE TABLE IF NOT EXISTS `wishlist` (
-`wishlist_id` int(10) NOT NULL,
-  `customer_id` int(10) NOT NULL,
-  `product_id` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`wishlist_id`, `customer_id`, `product_id`) VALUES
-(2, 2, 8);
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `about_us`
@@ -566,10 +512,6 @@ ALTER TABLE `boxes_section`
  ADD PRIMARY KEY (`box_id`);
 
 --
--- Indexes for table `bundle_product_relation`
---
-ALTER TABLE `bundle_product_relation`
- ADD PRIMARY KEY (`rel_id`);
 
 --
 -- Indexes for table `cart`
@@ -649,11 +591,7 @@ ALTER TABLE `products`
 ALTER TABLE `product_categories`
  ADD PRIMARY KEY (`p_cat_id`);
 
---
--- Indexes for table `services`
---
-ALTER TABLE `services`
- ADD PRIMARY KEY (`service_id`);
+
 
 --
 -- Indexes for table `slider`
@@ -667,11 +605,6 @@ ALTER TABLE `slider`
 ALTER TABLE `terms`
  ADD PRIMARY KEY (`term_id`);
 
---
--- Indexes for table `wishlist`
---
-ALTER TABLE `wishlist`
- ADD PRIMARY KEY (`wishlist_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -693,10 +626,6 @@ MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 ALTER TABLE `boxes_section`
 MODIFY `box_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `bundle_product_relation`
---
-ALTER TABLE `bundle_product_relation`
-MODIFY `rel_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `categories`
 --
@@ -758,10 +687,7 @@ MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 ALTER TABLE `product_categories`
 MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `services`
---
-ALTER TABLE `services`
-MODIFY `service_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `slider`
 --
@@ -773,7 +699,3 @@ MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 ALTER TABLE `terms`
 MODIFY `term_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `wishlist`
---
-ALTER TABLE `wishlist`
-MODIFY `wishlist_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;

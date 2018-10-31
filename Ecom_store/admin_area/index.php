@@ -36,7 +36,7 @@ if (!isset($_SESSION['admin_email'])) {
 
     $admin_contact = $row_admin['admin_contact'];
 
-    $admin_about = $row_admin['admin_about'];
+
 
     $get_products = "select * from products";
     $run_products = mysqli_query($con, $get_products);
