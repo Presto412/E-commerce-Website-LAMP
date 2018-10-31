@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(2, 'test', 'test@gmail.com', 'test123', 'India', 'Vellore', '999999999', 'vit', 'profile.jpg', '::1');
+(2, 'test', 'priyanshjain412@gmail.com', 'test123', 'India', 'Vellore', '999999999', 'vit', 'profile.jpg', '::1');
 
 -- --------------------------------------------------------
 
@@ -400,6 +400,15 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `
 (9, 5, 4, 2, '2018-09-19 06:46:14', 'Remind Printed T-Shirt', 'product-url-9', 'product-1.jpg', 'product-2.jpg', 'product-3.jpg', 50, 0, '<p>Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.Integer tristique dictum sapien et lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sed imperdiet magna, at rhoncus arcu. Cras tincidunt felis eu vehicula consequat. Proin vel gravida quam. In tincidunt aliquam nisl. Sed velit erat, aliquam sit amet metus eget, molestie auctor nulla.</p>', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qRswlmADRa8" frameborder="0" allowfullscreen></iframe>', 'T-Shirt', 'New', 'product'),
 (11, 7, 5, 5, '2018-09-20 06:21:03', 'jacket bundle', 'jacket-bundle', 'jacket-1.jpg', 'jacket-2.jpg', 'jacket-3.jpg', 300, 200, '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', '<iframe width="854" height="480" src="https://www.youtube.com/embed/qImi3vNccaU" frameborder="0" allowfullscreen></iframe>', 'jacket bundle', 'Sale', 'bundle');
 
+
+CREATE TABLE IF NOT EXISTS `subscribers` (
+  `product_id` int(10) NOT NULL,
+  `subscriber_id` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `subscribers` VALUES (1, "priyanshjain412@gmail.com");
+INSERT INTO `subscribers` VALUES (2, "priyanshjain412@gmail.com");
+INSERT INTO `subscribers` VALUES (3, "priyanshjain412@gmail.com");
 -- --------------------------------------------------------
 
 --

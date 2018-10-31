@@ -428,8 +428,6 @@ function getProducts()
             </a>
 
 
-
-
             </p>
 
             </div>
