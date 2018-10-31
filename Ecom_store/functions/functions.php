@@ -193,7 +193,17 @@ function getPro()
 
             <p class='buttons' >
 
-            <a href='$pro_url' class='btn btn-default' >View details</a>
+<a href='$pro_url' class='btn btn-default' >View details</a>
+
+<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
+
+<i class='fa fa-shopping-cart'></i> Add to cart
+
+</a>
+
+
+
+</p>
 
             <a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
 

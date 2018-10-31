@@ -21,6 +21,8 @@ router.post("/image", (req, res, next) => {
     } else if (level === 1) {
       scaleWidth = image.bitmap.width > 625 ? 625 : image.bitmap.width;
     }
+    session_start();
+
     image = image.resize(scaleWidth, Jimp.AUTO);
     return image.getBase64(Jimp.AUTO, (err, bitmap) => {
       return res.json({
