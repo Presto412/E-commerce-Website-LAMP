@@ -156,76 +156,93 @@ function getPro()
 
             $product_label = "
 
-<a class='label sale' href='#' style='color:black;'>
+                <a class='label sale' href='#' style='color:black;'>
 
-<div class='thelabel'>$pro_label</div>
+                <div class='thelabel'>$pro_label</div>
 
-<div class='label-background'> </div>
+                <div class='label-background'> </div>
 
-</a>
+                </a>
 
-";
+                ";
 
         }
 
         echo "
 
-<div class='col-md-4 col-sm-6 single' >
+            <div class='col-md-4 col-sm-6 single' >
 
-<div class='product' >
+            <div class='product' >
 
-<a href='$pro_url' >
+            <a href='$pro_url' >
 
-<img src='" . $loading_str . "' class='img-responsive' id='imageid' >
+            <img src='" . $loading_str . "' class='img-responsive' id='imageId_$pro_id' >
 
-</a>
+            </a>
 
-<div class='text' >
+            <div class='text' >
 
-<center>
+            <center>
 
-<p class='btn btn-primary'> $manufacturer_name </p>
-
-
-</center>
-
-<hr>
-
-<h3><a href='$pro_url' >$pro_title</a></h3>
-
-<p class='price' > $product_price $product_psp_price </p>
-
-<p class='buttons' >
-
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
+            <p class='btn btn-primary'> $manufacturer_name </p>
 
 
+            </center>
 
-</p>
+            <hr>
 
-</div>
+            <h3><a href='$pro_url' >$pro_title</a></h3>
 
-$product_label
+            <p class='price' > $product_price $product_psp_price </p>
+
+            <p class='buttons' >
+
+            <a href='$pro_url' class='btn btn-default' >View details</a>
+
+            <a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
+
+            <i class='fa fa-shopping-cart'></i> Add to cart
+
+            </a>
 
 
-</div>
 
-</div>
+            </p>
 
-";
+            </div>
+
+            $product_label
+
+
+            </div>
+
+            </div>
+
+            <script>
+            var wid = screen.availWidth;
+            var level = 0;
+            if (wid <= 425) level = 3;
+            else if (wid <= 768) level = 2;
+            else if (wid <= 1440) level = 1;
+            else level = 0;
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'http://192.168.43.73:3000/image',
+                    type: 'POST',
+                    data: JSON.stringify({ image_name: '" . $pro_img1 . "', level: level }),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        document.getElementById('imageId_$pro_id').src = data.data;
+                    }
+                });
+            });
+            </script>
+
+            ";
 
     }
 
 }
-
-// getPro function Ends //
-
 /// getProducts Function Starts ///
 
 function getProducts()
@@ -360,70 +377,90 @@ function getProducts()
 
             $product_label = "
 
-<a class='label sale' href='#' style='color:black;'>
+                <a class='label sale' href='#' style='color:black;'>
 
-<div class='thelabel'>$pro_label</div>
+                <div class='thelabel'>$pro_label</div>
 
-<div class='label-background'> </div>
+                <div class='label-background'> </div>
 
-</a>
+                </a>
 
-";
+                ";
 
         }
 
         echo "
 
-<div class='col-md-4 col-sm-6 center-responsive' >
+            <div class='col-md-4 col-sm-6 center-responsive' >
 
-<div class='product' >
+            <div class='product' >
 
-<a href='$pro_url' >
+            <a href='$pro_url' >
 
-<img src='" . $loading_str . "' class='img-responsive' id='imageid'>
+            <img src='" . $loading_str . "' class='img-responsive' id='imageId_$pro_id'>
 
-</a>
+            </a>
 
-<div class='text' >
+            <div class='text' >
 
-<center>
-<p class='btn btn-primary'> $manufacturer_name </p>
+            <center>
+            <p class='btn btn-primary'> $manufacturer_name </p>
 
-</center>
+            </center>
 
-<hr>
+            <hr>
 
-<h3><a href='$pro_url' >$pro_title</a></h3>
+            <h3><a href='$pro_url' >$pro_title</a></h3>
 
-<p class='price' > $product_price $product_psp_price </p>
-
-
-<p class='buttons' >
-
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
+            <p class='price' > $product_price $product_psp_price </p>
 
 
+            <p class='buttons' >
+
+            <a href='$pro_url' class='btn btn-default' >View details</a>
+
+            <a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
+
+            <i class='fa fa-shopping-cart'></i> Add to cart
+
+            </a>
 
 
-</p>
-
-</div>
-
-$product_label
 
 
-</div>
+            </p>
 
-</div>
+            </div>
 
-";
+            $product_label
 
+
+            </div>
+
+            </div>
+
+            <script>
+            var wid = screen.availWidth;
+            var level = 0;
+            if (wid <= 425) level = 3;
+            else if (wid <= 768) level = 2;
+            else if (wid <= 1440) level = 1;
+            else level = 0;
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'http://192.168.43.73:3000/image',
+                    type: 'POST',
+                    data: JSON.stringify({ image_name: '" . $pro_img1 . "', level: level }),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        document.getElementById('imageId_$pro_id').src = data.data;
+                    }
+                });
+            });
+            </script>
+            ";
+
+        // loadImages($pro_img1, $pro_id);
     }
 /// getProducts function Code Ends ///
 
@@ -545,33 +582,4 @@ function getPaginator()
 
 /// getPaginator Function Ends ///
 ?>
-<!-- <script>
-
-	var img = <?php// echo json_encode($pro_img1); ?>;
-    var wid = screen.availWidth;
-	var level=0;
-	if (wid<=425) level=3;
-	else if(wid<=768)level=2;
-	else if(wid<=1440)level=1;
-	else
-	level=0;
-	var obj= {
-        imageName: img,
-        level: level
-    }
-
-$(document).ready(function() {
-
-        $.ajax({
-            url: '#',
-            type: "POST",
-            data: obj,
-	        contentType: "application/json; charset=utf-8",
-            success: function(data) {
-
-            }
-        });
-});
-document.getElementById("imageid").src=data1;
-</script> -->
 
