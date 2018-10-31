@@ -13,10 +13,6 @@
 
 </center>
 
-<p class="text-muted" >
-Lorem Ipsum
-
-</p>
 
 
 
@@ -118,9 +114,7 @@ else {
 
 $_SESSION['customer_email']=$customer_email;
 
-echo "<script>swal('You are Logged In')</script>";
-
-echo "<script>window.open('checkout.php','_self')</script>";
+echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
 
 } 
 

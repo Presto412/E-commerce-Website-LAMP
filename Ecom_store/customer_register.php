@@ -119,22 +119,6 @@ if (!isset($_SESSION['customer_email'])) {
 
 </a><!--- navbar navbar-brand home Ends -->
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
-
-<span class="sr-only" >Toggle Navigation </span>
-
-<i class="fa fa-align-justify"></i>
-
-</button>
-
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search" >
-
-<span class="sr-only" >Toggle Search</span>
-
-<i class="fa fa-search" ></i>
-
-</button>
-
 
 </div><!-- navbar-header Ends -->
 
@@ -489,16 +473,16 @@ function check_pass() {
  var no=0;
  if(val!="")
  {
-// If the password length is less than or equal to 6
+//length is less than or equal to 6
 if(val.length<=6)no=1;
 
- // If the password length is greater than 6 and contain any lowercase alphabet or any number or any special character
+ // greater than 6, lowercase alphabet, number, special character
   if(val.length>6 && (val.match(/[a-z]/) || val.match(/\d+/) || val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)))no=2;
 
-  // If the password length is greater than 6 and contain alphabet,number,special character respectively
+  // greater than 6, contain alphabet,number,special character
   if(val.length>6 && ((val.match(/[a-z]/) && val.match(/\d+/)) || (val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) || (val.match(/[a-z]/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))))no=3;
 
-  // If the password length is greater than 6 and must contain alphabets,numbers and special characters
+  // greater than 6, contain alphabets,numbers and special characters
   if(val.length>6 && val.match(/[a-z]/) && val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))no=4;
 
   if(no==1)
@@ -595,33 +579,7 @@ if (isset($_POST['register'])) {
 
         }
 
-        $customer_confirm_code = mt_rand();
-
-        $subject = "Email Confirmation Message";
-
-        $from = "sad.ahmed22224@gmail.com";
-
-        $message = "
-
-<h2>
-Email Confirmation By Computerfever.com $c_name
-</h2>
-
-<a href='localhost/ecom_store/customer/my_account.php?$customer_confirm_code'>
-
-Click Here To Confirm Email
-
-</a>
-
-";
-
-        $headers = "From: $from \r\n";
-
-        $headers .= "Content-type: text/html\r\n";
-
-        mail($c_email, $subject, $message, $headers);
-
-        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
+        $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
 
         $run_customer = mysqli_query($con, $insert_customer);
 

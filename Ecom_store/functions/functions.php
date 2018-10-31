@@ -72,7 +72,7 @@ function total_price()
 
     }
 
-    echo "$" . $total;
+    echo "Rs." . $total;
 
 }
 
@@ -120,8 +120,6 @@ function getPro()
 
         $pro_img1 = $row_products['product_img1'];
 
-        $pro_label = $row_products['product_label'];
-
         $manufacturer_id = $row_products['manufacturer_id'];
 
         $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
@@ -131,8 +129,6 @@ function getPro()
         $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
         $manufacturer_name = $row_manufacturer['manufacturer_title'];
-
-        $pro_psp_price = $row_products['product_psp_price'];
 
         $pro_url = 'images/' . $row_products['product_url'] . '.php';
 
@@ -231,8 +227,8 @@ function getPro()
                     type: 'POST',
                     data: JSON.stringify({ image_name: '" . $pro_img1 . "', level: level }),
                     contentType: 'application/json; charset=utf-8',
-                    success: function (data) {
-                        document.getElementById('imageId_$pro_id').src = data.data;
+                    success: function (response) {
+                        document.getElementById('imageId_$pro_id').src = response.data;
                     }
                 });
             });
@@ -341,8 +337,6 @@ function getProducts()
 
         $pro_img1 = $row_products['product_img1'];
 
-        $pro_label = $row_products['product_label'];
-
         $manufacturer_id = $row_products['manufacturer_id'];
 
         $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
@@ -352,8 +346,6 @@ function getProducts()
         $row_manufacturer = mysqli_fetch_array($run_manufacturer);
 
         $manufacturer_name = $row_manufacturer['manufacturer_title'];
-
-        $pro_psp_price = $row_products['product_psp_price'];
 
         $pro_url = 'images/' . $row_products['product_url'] . '.php';
 
@@ -432,7 +424,6 @@ function getProducts()
 
             </div>
 
-            $product_label
 
 
             </div>
@@ -452,8 +443,8 @@ function getProducts()
                     type: 'POST',
                     data: JSON.stringify({ image_name: '" . $pro_img1 . "', level: level }),
                     contentType: 'application/json; charset=utf-8',
-                    success: function (data) {
-                        document.getElementById('imageId_$pro_id').src = data.data;
+                    success: function (response) {
+                        document.getElementById('imageId_$pro_id').src = response.data;
                     }
                 });
             });
