@@ -37,6 +37,14 @@ if (!isset($_SESSION['customer_email'])) {
 
 }
 
+if (isset($_GET['subscribe'])) {
+    if (!isset($_SESSION['customer_email'])) {
+
+        echo "<script>window.location = 'checkout.php'</script>";
+
+    }
+    addSubscriber($_GET['product_id'], $_SESSION['customer_email']);
+}
 ?>
 </a>
 <a href="cart.php">

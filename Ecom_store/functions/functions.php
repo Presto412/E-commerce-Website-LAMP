@@ -193,17 +193,7 @@ function getPro()
 
             <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View details</a>
-
-<a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
-
-<i class='fa fa-shopping-cart'></i> Add to cart
-
-</a>
-
-
-
-</p>
+            <a href='$pro_url' class='btn btn-default' >View details</a>
 
             <a href='cart.php?itemId=$pro_id&quantity=1&price=$pro_price&size=Medium' class='btn btn-primary'>
 
@@ -211,6 +201,9 @@ function getPro()
 
             </a>
 
+            <a href='index.php?subscribe=true&product_id=$pro_id' class='btn btn-primary'>Subscribe</a>
+
+            </p>
 
 
             </p>
@@ -248,6 +241,19 @@ function getPro()
 
     }
 
+}
+
+function addSubscriber($product_id, $customer_id)
+{
+    echo "<script>alert('$product_id, $customer_id')</script>";
+    global $db;
+    $query = "insert into subscribers values($product_id, '$customer_id')";
+    $result = mysqli_query($db, $query);
+    if ($result) {
+        echo "<script>alert('You have subscribed to the Product!')</script>";
+    } else {
+        echo "<script>alert('Failed!')</script>";
+    }
 }
 /// getProducts Function Starts ///
 
@@ -390,6 +396,10 @@ function getProducts()
                 ";
 
         }
+        $customer_id = "";
+        if (isset($_SESSION['customer_email'])) {
+            $customer_id = $_SESSION['customer_email'];
+        }
 
         echo "
 
@@ -426,9 +436,7 @@ function getProducts()
             <i class='fa fa-shopping-cart'></i> Add to cart
 
             </a>
-
-
-            </p>
+            <a href='index.php?subscribe=true&product_id=$pro_id' class='btn btn-primary'>Subscribe</a>
 
             </div>
 
