@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin_email'])) {
 
 </div><!-- 1 row Ends -->
 
-<a href="https://lean-project.herokuapp.com" target="_blank">Open Real-Time Map To Copy Unique Location URL</a>
+<a href="https://iwp-geoshare.herokuapp.com/" target="_blank">Open Real-Time Map To Copy Unique Location URL</a>
 
 <div class="row"><!-- 2 row Starts -->
 
