@@ -5,7 +5,7 @@
 </head>
 <?php
 
-$db = mysqli_connect("localhost", "root", "my_password", "Ecom_Store");
+$db = mysqli_connect(gethostbyname('mysql'), "root", "my_password", "Ecom_Store");
 
 /// IP address code starts /////
 function getRealUserIp()

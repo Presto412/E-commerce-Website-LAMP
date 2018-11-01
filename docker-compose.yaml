@@ -1,0 +1,32 @@
+version: "3.2"
+
+networks:
+  testnet:
+    # external:
+    # name: testnet
+services:
+  ecom_server:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - node.hostname == priyansh-Inspiron-3543
+    image: linode/lamp:latest
+    command: service apache2 start && service mysql start
+    hostname: server1_server.example.com
+    working_dir: /var/www/html
+    volumes:
+      - ./Ecom_store/:/var/www/html
+
+    ports:
+      - "8080:80"
+      - "3306:3306"
+    tty: true
+    networks:
+      testnet:
+        aliases:
+          - server1_server.example.com

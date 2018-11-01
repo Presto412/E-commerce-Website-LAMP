@@ -1,8 +1,9 @@
-FROM linode/lamp:latest
+FROM ubuntu:latest
 
-# Create app directory
-WORKDIR /var/www/html
+RUN apt-get update
+RUN apt-get install -y apache2
+# RUN apt install -y php libapache2-mod-php php-mysql
 
-COPY ./Ecom_store/* ./
+EXPOSE  80
 
-RUN service apache2 start && service mysql start
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
