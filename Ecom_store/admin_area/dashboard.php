@@ -384,11 +384,6 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 
 <hr class="dotted short">
 
-<h5 class="text-muted">About</h5>
-
-<p>
-<?php echo $admin_about; ?>
-</p>
 
 </div><!-- mb-md Ends -->
 

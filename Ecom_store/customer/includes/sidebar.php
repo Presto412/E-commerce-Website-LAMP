@@ -62,11 +62,6 @@ echo "
 
 </li>
 
-<li class="<?php if(isset($_GET['my_wishlist'])){ echo "active"; } ?>">
-
-<a href="my_account.php?my_wishlist"> <i class="fa fa-heart"></i> My WishList </a>
-
-</li>
 
 <li class="<?php if(isset($_GET['delete_account'])){ echo "active"; } ?>">
 

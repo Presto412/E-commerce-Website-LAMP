@@ -216,29 +216,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 </div><!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 2 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img2" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 3 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img3" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -249,116 +227,9 @@ echo "<option value='$cat_id'>$cat_title</option>";
 <input type="text" name="product_price" class="form-control" required >
 
 </div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Sale Price </label>
-
-<div class="col-md-6" >
-
-<input type="text" name="psp_price" class="form-control" required >
-
 </div>
 
-</div><!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Keywords </label>
-
-<div class="col-md-6" >
-
-<input type="text" name="product_keywords" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Tabs </label>
-
-<div class="col-md-6" >
-
-<ul class="nav nav-tabs"><!-- nav nav-tabs Starts -->
-
-<li class="active">
-
-<a data-toggle="tab" href="#description"> Product Description </a>
-
-</li>
-
-<li>
-
-<a data-toggle="tab" href="#features"> Product Features </a>
-
-</li>
-
-<li>
-
-<a data-toggle="tab" href="#video"> Sounds And Videos </a>
-
-</li>
-
-</ul><!-- nav nav-tabs Ends -->
-
-<div class="tab-content"><!-- tab-content Starts -->
-
-<div id="description" class="tab-pane fade in active"><!-- description tab-pane fade in active Starts -->
-
-<br>
-
-<textarea name="product_desc" class="form-control" rows="15" id="product_desc">
-
-
-</textarea>
-
-</div><!-- description tab-pane fade in active Ends -->
-
-
-<div id="features" class="tab-pane fade in"><!-- features tab-pane fade in Starts -->
-
-<br>
-
-<textarea name="product_features" class="form-control" rows="15" id="product_features">
-
-
-</textarea>
-
-</div><!-- features tab-pane fade in Ends -->
-
-
-<div id="video" class="tab-pane fade in"><!-- video tab-pane fade in Starts -->
-
-<br>
-
-<textarea name="product_video" class="form-control" rows="15">
-
-
-</textarea>
-
-</div><!-- video tab-pane fade in Ends -->
-
-
-</div><!-- tab-content Ends -->
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Label </label>
-
-<div class="col-md-6" >
-
-<input type="text" name="product_label" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -414,18 +285,15 @@ $product_video = $_POST['product_video'];
 $status = "product";
 
 $product_img1 = $_FILES['product_img1']['name'];
-$product_img2 = $_FILES['product_img2']['name'];
-$product_img3 = $_FILES['product_img3']['name'];
+
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
-$temp_name2 = $_FILES['product_img2']['tmp_name'];
-$temp_name3 = $_FILES['product_img3']['tmp_name'];
+
 
 move_uploaded_file($temp_name1,"product_images/$product_img1");
-move_uploaded_file($temp_name2,"product_images/$product_img2");
-move_uploaded_file($temp_name3,"product_images/$product_img3");
 
-$insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_url,product_img1,product_img2,product_img3,product_price,product_psp_price,product_desc,product_features,product_video,product_keywords,product_label,status) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_url','$product_img1','$product_img2','$product_img3','$product_price','$psp_price','$product_desc','$product_features','$product_video','$product_keywords','$product_label','$status')";
+
+$insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_url,product_img1,product_price,product_psp_price,product_desc,product_features,product_video,product_keywords,product_label,status) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_url','$product_img1','$product_price','$psp_price','$product_desc','$product_features','$product_video','$product_keywords','$product_label','$status')";
 
 $run_product = mysqli_query($con,$insert_product);
 

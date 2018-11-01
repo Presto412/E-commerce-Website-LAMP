@@ -132,38 +132,6 @@ function getPro()
 
         $pro_url = 'images/' . $row_products['product_url'] . '.php';
 
-        if ($pro_label == "Sale" or $pro_label == "Gift") {
-
-            $product_price = "<del> $$pro_price </del>";
-
-            $product_psp_price = "| $$pro_psp_price";
-
-        } else {
-
-            $product_psp_price = "";
-
-            $product_price = "$$pro_price";
-
-        }
-
-        if ($pro_label == "") {
-
-        } else {
-
-            $product_label = "
-
-                <a class='label sale' href='#' style='color:black;'>
-
-                <div class='thelabel'>$pro_label</div>
-
-                <div class='label-background'> </div>
-
-                </a>
-
-                ";
-
-        }
-
         echo "
 
             <div class='col-md-4 col-sm-6 single' >
@@ -189,7 +157,7 @@ function getPro()
 
             <h3><a href='$pro_url' >$pro_title</a></h3>
 
-            <p class='price' > $product_price $product_psp_price </p>
+            <p class='price' >Rs. $pro_price </p>
 
             <p class='buttons' >
 
@@ -210,7 +178,7 @@ function getPro()
 
             </div>
 
-            $product_label
+
 
 
             </div>
@@ -226,7 +194,7 @@ function getPro()
             else level = 0;
             $(document).ready(function () {
                 $.ajax({
-                    url: 'http://192.168.43.73:3000/image',
+                    url: 'http://localhost:3000/image',
                     type: 'POST',
                     data: JSON.stringify({ image_name: '" . $pro_img1 . "', level: level }),
                     contentType: 'application/json; charset=utf-8',
@@ -365,42 +333,6 @@ function getProducts()
 
         $pro_url = 'images/' . $row_products['product_url'] . '.php';
 
-        if ($pro_label == "Sale" or $pro_label == "Gift") {
-
-            $product_price = "<del> $$pro_price </del>";
-
-            $product_psp_price = "| $$pro_psp_price";
-
-        } else {
-
-            $product_psp_price = "";
-
-            $product_price = "$$pro_price";
-
-        }
-
-        if ($pro_label == "") {
-
-        } else {
-
-            $product_label = "
-
-                <a class='label sale' href='#' style='color:black;'>
-
-                <div class='thelabel'>$pro_label</div>
-
-                <div class='label-background'> </div>
-
-                </a>
-
-                ";
-
-        }
-        $customer_id = "";
-        if (isset($_SESSION['customer_email'])) {
-            $customer_id = $_SESSION['customer_email'];
-        }
-
         echo "
 
             <div class='col-md-4 col-sm-6 center-responsive' >
@@ -424,7 +356,7 @@ function getProducts()
 
             <h3><a href='$pro_url' >$pro_title</a></h3>
 
-            <p class='price' > $product_price $product_psp_price </p>
+            <p class='price' >Rs. $pro_price</p>
 
 
             <p class='buttons' >
@@ -455,7 +387,7 @@ function getProducts()
             else level = 0;
             $(document).ready(function () {
                 $.ajax({
-                    url: 'http://192.168.43.73:3000/image',
+                    url: 'http://localhost:3000/image',
                     type: 'POST',
                     data: JSON.stringify({ image_name: '" . $pro_img1 . "', level: level }),
                     contentType: 'application/json; charset=utf-8',

@@ -303,17 +303,7 @@ if (isset($_GET['delete_account'])) {
 
 }
 
-if (isset($_GET['my_wishlist'])) {
 
-    include("my_wishlist.php");
-
-}
-
-if (isset($_GET['delete_wishlist'])) {
-
-    include("delete_wishlist.php");
-
-}
 
 ?>
 
