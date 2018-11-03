@@ -2,8 +2,9 @@ version: "3.2"
 
 networks:
   testnet:
-    # external:
-    # name: testnet
+    external:
+      name: testnet
+
 services:
   ecom_server:
     deploy:
@@ -15,18 +16,16 @@ services:
       placement:
         constraints:
           - node.hostname == priyansh-Inspiron-3543
-    image: linode/lamp:latest
-    command: service apache2 start && service mysql start
-    hostname: server1_server.example.com
+    image: iwp/local:apache
+    command: /bin/bash -c "/usr/sbin/apache2ctl -D FOREGROUND"
+    hostname: ecom_server
     working_dir: /var/www/html
+    container_name: ecom_server
     volumes:
-      - ./Ecom_store/:/var/www/html
-
+      - /var/www/html:/var/www/html
     ports:
       - "8080:80"
-      - "3306:3306"
-    tty: true
     networks:
       testnet:
         aliases:
-          - server1_server.example.com
+          - apache
