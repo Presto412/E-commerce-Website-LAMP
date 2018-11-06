@@ -7,6 +7,7 @@
 
 ## Instructions
 
+- In the `static_server` folder, create a file named `.env`. Paste the contents of `.env.example` into the same and replace with your credentials.
 - Build the images
 
 ```bash
