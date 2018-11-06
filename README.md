@@ -1,20 +1,34 @@
-# All in one E-commerce website(IWP Project)
-
-## Done by
-
-- Priyansh Jain 16BCE0979
-- Queenie Das 16BCE0779
+# IWP Project - All in one E-commerce store
 
 ## Prerequisites
 
-- Linux Environment (Preferred Ubuntu 18.04)
-- [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- [Apache2 Server](https://help.ubuntu.com/lts/serverguide/httpd.html)
-- [PHP 7](https://tecadmin.net/install-php-7-on-ubuntu/)
-- [MySQL](https://dev.mysql.com/downloads/mysql/)
+- Docker, Docker-compose, Docker-Swarm
+- Ubuntu 18.04 OS
 
 ## Instructions
 
-### To use with docker
+- Build the images
 
-- Install above prerequisites
+```bash
+./build-images.sh
+```
+
+- Setup the Swarm Network
+
+```bash
+./setup-swarm.sh
+```
+
+- Insert the sql data
+
+```bash
+./insert_sql.sh
+```
+
+- Go to `http://localhost:8080`
+- Done!
+
+## Code walkthrough
+
+- `public_html` holds the server side php code
+- `static_server` holds the image hosting platform

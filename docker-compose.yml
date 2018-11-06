@@ -1,0 +1,96 @@
+version: "3.2"
+
+networks:
+  testnet:
+    external:
+      name: testnet
+
+services:
+  php:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - node.hostname == priyansh-Inspiron-3543
+    image: iwp/php
+    networks:
+      testnet:
+        aliases:
+          - php
+    hostname: php
+    volumes:
+      - ./public_html/:/var/www/html/
+
+  apache:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - node.hostname == priyansh-Inspiron-3543
+    image: iwp/apache
+    depends_on:
+      - php
+      - mysql
+    networks:
+      testnet:
+        aliases:
+          - apache
+
+    hostname: apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public_html/:/var/www/html/
+
+  mysql:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - node.hostname == priyansh-Inspiron-3543
+    image: mysql:5.6.40
+    networks:
+      testnet:
+        aliases:
+          - mysql
+    hostname: mysql
+    volumes:
+      - ./ecom_store.sql:/ecom_store.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+    ports:
+      - "3306:3306"
+
+  static_server:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      placement:
+        constraints:
+          - node.hostname == priyansh-Inspiron-3543
+    image: iwp/node
+    command: npm start
+    hostname: static_server
+    volumes:
+      - ./static_server:/usr/src/app
+    ports:
+      - "3000:3000"
+    networks:
+      testnet:
+        aliases:
+          - static_server

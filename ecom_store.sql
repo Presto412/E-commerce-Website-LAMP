@@ -476,10 +476,10 @@ CREATE TABLE IF NOT EXISTS `slider` (
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
-(1, 'Slide Number 1', '1.jpg', 'http://localhost/index.php'),
-(2, 'Slide Number 2', '2.jpg', 'http://localhost/index.php'),
-(3, 'Slide Number 3', '3.jpg', 'http://localhost/index.php'),
-(7, 'Slide Number 4', 'slide-5.jpg', 'http://localhost/index.php');
+(1, 'Slide Number 1', '1.jpg', 'http://mysql/index.php'),
+(2, 'Slide Number 2', '2.jpg', 'http://mysql/index.php'),
+(3, 'Slide Number 3', '3.jpg', 'http://mysql/index.php'),
+(7, 'Slide Number 4', 'slide-5.jpg', 'http://mysql/index.php');
 
 -- --------------------------------------------------------
 
