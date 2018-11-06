@@ -13,9 +13,6 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-      placement:
-        constraints:
-          - node.hostname == priyansh-Inspiron-3543
     image: iwp/php
     networks:
       testnet:
@@ -32,9 +29,6 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-      placement:
-        constraints:
-          - node.hostname == priyansh-Inspiron-3543
     image: iwp/apache
     depends_on:
       - php
@@ -57,9 +51,6 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-      placement:
-        constraints:
-          - node.hostname == priyansh-Inspiron-3543
     image: mysql:5.6.40
     networks:
       testnet:
