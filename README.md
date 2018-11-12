@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - Docker, Docker-compose, Docker-Swarm
-- Ubuntu 18.04 OS
+- Ubuntu 18.04/16.04 OS
 
 ## Instructions
 
@@ -37,10 +37,10 @@ docker logs -f "$CONTAINER_NAME"
 - After completion, Go to `http://0.0.0.0:8080`
 - Done!
 
-## Code walkthrough
+## Folder Descriptions
 
 - `public_html` holds the server side php code
-- `static_server` holds the image hosting platform that compresses image on demand
+- `static_server` holds the image hosting platform that compresses image based on screen size
 - `php` and `apache` hold the docker configuration
 - `docker-compose.yml` holds the configuration for running docker services
 - `ecom_store.sql` holds the initialization database (table creation, sample records)
