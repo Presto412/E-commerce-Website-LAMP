@@ -1,7 +1,5 @@
 <?php
-
 $db = mysqli_connect('mysql', "root", "pass", "Ecom_Store");
-
 /// IP address code starts /////
 function getRealUserIp()
 {
