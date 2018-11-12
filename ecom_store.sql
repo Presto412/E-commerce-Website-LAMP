@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(2, 'test', 'priyanshjain412@gmail.com', 'test123', 'India', 'Vellore', '999999999', 'vit', 'profile.jpg', '::1');
+(2, 'test', 'priyanshjain412@gmail.com', 'test123', 'India', 'Vellore', '999999999', 'vit', 'profile.jpg', '::1'),
 (4, 'test2', 'dasqueenie@gmail.com', 'test222', 'India', 'Vellore', '999999999', 'vit', 'profile.jpg', '::1');
 
 CREATE TABLE IF NOT EXISTS `customer_orders` (
