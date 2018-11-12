@@ -177,17 +177,17 @@ if (!isset($_SESSION['customer_email'])) {
 
 </ul>
 
-</div><!-- padding-nav Ends -->
+</div>
 
-<a class="btn btn-primary navbar-btn right" href="cart.php"><!-- btn btn-primary navbar-btn right Starts -->
+<a class="btn btn-primary navbar-btn right" href="cart.php">
 
 <i class="fa fa-shopping-cart"></i>
 
 <span> <?php items();?> items in cart </span>
 
-</a><!-- btn btn-primary navbar-btn right Ends -->
+</a>
 
-<div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
+<div class="navbar-collapse collapse right">
 
 <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
 
@@ -197,17 +197,17 @@ if (!isset($_SESSION['customer_email'])) {
 
 </button>
 
-</div><!-- navbar-collapse collapse right Ends -->
+</div>
 
-<div class="collapse clearfix" id="search"><!-- collapse clearfix Starts -->
+<div class="collapse clearfix" id="search">
 
-<form class="navbar-form" method="get" action="results.php"><!-- navbar-form Starts -->
+<form class="navbar-form" method="get" action="results.php">
 
-<div class="input-group"><!-- input-group Starts -->
+<div class="input-group">
 
 <input class="form-control" type="text" placeholder="Search" name="user_query" required>
 
-<span class="input-group-btn"><!-- input-group-btn Starts -->
+<span class="input-group-btn">
 
 <button type="submit" value="Search" name="search" class="btn btn-primary">
 
@@ -215,26 +215,26 @@ if (!isset($_SESSION['customer_email'])) {
 
 </button>
 
-</span><!-- input-group-btn Ends -->
+</span>
 
-</div><!-- input-group Ends -->
+</div>
 
-</form><!-- navbar-form Ends -->
+</form>
 
-</div><!-- collapse clearfix Ends -->
+</div>
 
-</div><!-- navbar-collapse collapse Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- navbar navbar-default Ends -->
+</div>
+</div>
 
 
-<div id="content" ><!-- content Starts -->
-<div class="container" ><!-- container Starts -->
+<div id="content" >
+<div class="container" >
 
-<div class="col-md-12" ><!--- col-md-12 Starts -->
+<div class="col-md-12" >
 
-<ul class="breadcrumb" ><!-- breadcrumb Starts -->
+<ul class="breadcrumb" >
 
 <li>
 <a href="index.php">Home</a>
@@ -242,18 +242,18 @@ if (!isset($_SESSION['customer_email'])) {
 
 <li>Cart</li>
 
-</ul><!-- breadcrumb Ends -->
+</ul>
 
 
 
-</div><!--- col-md-12 Ends -->
+</div>
 
 
-<div class="col-md-9" id="cart" ><!-- col-md-9 Starts -->
+<div class="col-md-9" id="cart" >
 
-<div class="box animated zoomIn" ><!-- box Starts -->
+<div class="box animated zoomIn" >
 
-<form action="cart.php" method="post" enctype="multipart-form-data" ><!-- form Starts -->
+<form action="cart.php" method="post" enctype="multipart-form-data" >
 
 <h1> Shopping Cart </h1>
 
@@ -271,11 +271,11 @@ $count = mysqli_num_rows($run_cart);
 
 <p class="text-muted" > You currently have <?php echo $count; ?> item(s) in your cart. </p>
 
-<div class="table-responsive" ><!-- table-responsive Starts -->
+<div class="table-responsive" >
 
-<table class="table" ><!-- table Starts -->
+<table class="table" >
 
-<thead><!-- thead Starts -->
+<thead>
 
 <tr>
 
@@ -294,9 +294,9 @@ $count = mysqli_num_rows($run_cart);
 
 </tr>
 
-</thead><!-- thead Ends -->
+</thead>
 
-<tbody><!-- tbody Starts -->
+<tbody>
 
 <?php
 
@@ -330,7 +330,7 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
 
         ?>
 
-<tr><!-- tr Starts -->
+<tr>
 
 <td>
 
@@ -370,15 +370,15 @@ Rs.<?php echo $sub_total; ?>.00
 
 </td>
 
-</tr><!-- tr Ends -->
+</tr>
 
 <?php
 }
 }?>
 
-</tbody><!-- tbody Ends -->
+</tbody>
 
-<tfoot><!-- tfoot Starts -->
+<tfoot>
 
 <tr>
 
@@ -388,30 +388,30 @@ Rs.<?php echo $sub_total; ?>.00
 
 </tr>
 
-</tfoot><!-- tfoot Ends -->
+</tfoot>
 
-</table><!-- table Ends -->
+</table>
 
-<div class="form-inline pull-right"><!-- form-inline pull-right Starts -->
+<div class="form-inline pull-right">
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label>Coupon Code : </label>
 
 <input type="text" name="code" class="form-control">
 
-</div><!-- form-group Ends -->
+</div>
 
 <input class="btn btn-primary" type="submit" name="apply_coupon" value="Apply Coupon Code" >
 
-</div><!-- form-inline pull-right Ends -->
+</div>
 
-</div><!-- table-responsive Ends -->
+</div>
 
 
-<div class="box-footer"><!-- box-footer Starts -->
+<div class="box-footer">
 
-<div class="pull-left"><!-- pull-left Starts -->
+<div class="pull-left">
 
 <a href="index.php" class="btn btn-default">
 
@@ -419,9 +419,9 @@ Rs.<?php echo $sub_total; ?>.00
 
 </a>
 
-</div><!-- pull-left Ends -->
+</div>
 
-<div class="pull-right"><!-- pull-right Starts -->
+<div class="pull-right">
 
 <button class="btn btn-default" type="submit" name="update" value="Update Cart">
 
@@ -435,14 +435,14 @@ Proceed to checkout <i class="fa fa-chevron-right"></i>
 
 </a>
 
-</div><!-- pull-right Ends -->
+</div>
 
-</div><!-- box-footer Ends -->
+</div>
 
-</form><!-- form Ends -->
+</form>
 
 
-</div><!-- box Ends -->
+</div>
 
 <?php
 
@@ -547,23 +547,23 @@ echo @$up_cart = update_cart();
 
 ?>
 
-</div><!-- col-md-9 Ends -->
+</div>
 
-<div class="col-md-3"><!-- col-md-3 Starts -->
+<div class="col-md-3">
 
-<div class="box" id="order-summary"><!-- box Starts -->
+<div class="box" id="order-summary">
 
-<div class="box-header"><!-- box-header Starts -->
+<div class="box-header">
 
 <h3>Order Summary</h3>
 
-</div><!-- box-header Ends -->
+</div>
 
-<div class="table-responsive"><!-- table-responsive Starts -->
+<div class="table-responsive">
 
-<table class="table"><!-- table Starts -->
+<table class="table">
 
-<tbody><!-- tbody Starts -->
+<tbody>
 
 <tr>
 
@@ -591,18 +591,18 @@ echo @$up_cart = update_cart();
 
 </tr>
 
-</tbody><!-- tbody Ends -->
+</tbody>
 
-</table><!-- table Ends -->
+</table>
 
-</div><!-- table-responsive Ends -->
+</div>
 
-</div><!-- box Ends -->
+</div>
 
-</div><!-- col-md-3 Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- content Ends -->
+</div>
+</div>
 
 
 

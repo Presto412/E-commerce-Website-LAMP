@@ -1,4 +1,4 @@
-<div class="box"><!-- box Starts -->
+<div class="box">
 
 <?php
 
@@ -24,4 +24,4 @@ $customer_id = $row_customer['customer_id'];
 </p>
 
 
-</div><!-- box Ends -->
+</div>

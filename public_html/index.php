@@ -50,10 +50,10 @@ if (isset($_GET['subscribe'])) {
 <a href="cart.php">
 Shopping Cart Total Price: <?php total_price();?>, Total Items <?php items();?></a>
 
-</div><!-- col-md-6 offer Ends -->
+</div>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
-<ul class="menu"><!-- menu Starts -->
+<div class="col-md-6">
+<ul class="menu">
 
 <li>
 <a href="customer_register.php">
@@ -98,25 +98,25 @@ if (!isset($_SESSION['customer_email'])) {
 </div>
 </div>
 
-<div class="navbar navbar-default" id="navbar"><!-- navbar navbar-default Starts -->
+<div class="navbar navbar-default" id="navbar">
 <div class="container" >
 
-<div class="navbar-header"><!-- navbar-header Starts -->
+<div class="navbar-header">
 
-<a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
+<a class="navbar-brand home" href="index.php" >
 
 <img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
-</a><!--- navbar navbar-brand home Ends -->
+</a>
 
-</div><!-- navbar-header Ends -->
+</div>
 
-<div class="navbar-collapse collapse" id="navigation" ><!-- navbar-collapse collapse Starts -->
+<div class="navbar-collapse collapse" id="navigation" >
 
-<div class="padding-nav" ><!-- padding-nav Starts -->
+<div class="padding-nav" >
 
-<ul class="nav navbar-nav navbar-left"><!-- nav navbar-nav navbar-left Starts -->
+<ul class="nav navbar-nav navbar-left">
 
 <li class="active">
 <a href="index.php"> Home </a>
@@ -155,12 +155,12 @@ if (!isset($_SESSION['customer_email'])) {
 <a href="contact.php"> Contact Us </a>
 </li>
 
-</ul><!-- nav navbar-nav navbar-left Ends -->
+</ul>
 
-</div><!-- padding-nav Ends -->
+</div>
 
 
-<div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
+<div class="navbar-collapse collapse right">
 
 <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
 
@@ -170,17 +170,17 @@ if (!isset($_SESSION['customer_email'])) {
 
 </button>
 
-</div><!-- navbar-collapse collapse right Ends -->
+</div>
 
-<div class="collapse clearfix" id="search"><!-- collapse clearfix Starts -->
+<div class="collapse clearfix" id="search">
 
-<form class="navbar-form" method="get" action="results.php"><!-- navbar-form Starts -->
+<form class="navbar-form" method="get" action="results.php">
 
-<div class="input-group"><!-- input-group Starts -->
+<div class="input-group">
 
 <input class="form-control" type="text" placeholder="Search" name="user_query" required>
 
-<span class="input-group-btn"><!-- input-group-btn Starts -->
+<span class="input-group-btn">
 
 <button type="submit" value="Search" name="search" class="btn btn-primary">
 
@@ -188,24 +188,24 @@ if (!isset($_SESSION['customer_email'])) {
 
 </button>
 
-</span><!-- input-group-btn Ends -->
+</span>
 
-</div><!-- input-group Ends -->
+</div>
 
-</form><!-- navbar-form Ends -->
+</form>
 
-</div><!-- collapse clearfix Ends -->
+</div>
 
-</div><!-- navbar-collapse collapse Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- navbar navbar-default Ends -->
+</div>
+</div>
 
-<div class="container" id="slider"><!-- container Starts -->
+<div class="container" id="slider">
 
-<div class="col-md-12"><!-- col-md-12 Starts -->
+<div class="col-md-12">
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Starts --->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 <ol class="carousel-indicators">
 
@@ -274,34 +274,34 @@ while ($row_slides = mysqli_fetch_array($run_slides)) {
 
 ?>
 
-</div><!-- carousel-inner Ends -->
+</div>
 
-<a class="left carousel-control" href="#myCarousel" data-slide="prev"><!-- left carousel-control Starts -->
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 
 <span class="glyphicon glyphicon-chevron-left"> </span>
 
 <span class="sr-only"> Previous </span>
 
-</a><!-- left carousel-control Ends -->
+</a>
 
-<a class="right carousel-control" href="#myCarousel" data-slide="next"><!-- right carousel-control Starts -->
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
 
 <span class="glyphicon glyphicon-chevron-right"> </span>
 
 <span class="sr-only"> Next </span>
 
-</a><!-- right carousel-control Ends -->
+</a>
 
-</div><!-- carousel slide Ends --->
+</div>
 
-</div><!-- col-md-12 Ends -->
+</div>
 
-</div><!-- container Ends -->
+</div>
 
-<div id="advantages"><!-- advantages Starts -->
-<div class="container"><!-- container Starts -->
+<div id="advantages">
+<div class="container">
 
-<div class="same-height-row" ><!-- same-height-row Starts -->
+<div class="same-height-row" >
 
 <?php
 
@@ -319,9 +319,9 @@ while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
     ?>
 
-<div class="col-sm-4"><!-- col-sm-4 Starts -->
+<div class="col-sm-4">
 
-<div class="box same-height"><!-- box same-height Starts -->
+<div class="box same-height">
 
 <div class="icon">
 
@@ -336,40 +336,40 @@ while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 </p>
 
 
-</div><!-- box same-height Ends -->
+</div>
 
-</div><!-- col-sm-4 Ends -->
+</div>
 
 <?php
 }?>
 
-</div><!-- same-height-row Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- advantages Ends -->
+</div>
+</div>
 
-<div id="hot"><!-- hot Starts -->
+<div id="hot">
 
-<div class="box"><!-- box Starts -->
+<div class="box">
 
-<div class="container"><!-- container Starts -->
+<div class="container">
 
-<div class="col-md-12"><!-- col-md-12 Starts -->
+<div class="col-md-12">
 
 <h2>Latest this week</h2>
 
-</div><!-- col-md-12 Ends -->
+</div>
 
-</div><!-- container Ends -->
+</div>
 
-</div><!-- box Ends -->
+</div>
 
-</div><!-- hot Ends -->
+</div>
 
 
-<div id="content" class="container"><!-- container Starts -->
+<div id="content" class="container">
 
-<div class="row"><!-- row Starts -->
+<div class="row">
 
 <?php
 
@@ -377,9 +377,9 @@ getPro();
 
 ?>
 
-</div><!-- row Ends -->
+</div>
 
-</div><!-- container Ends -->
+</div>
 
 <?php
 

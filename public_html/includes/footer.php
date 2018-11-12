@@ -49,7 +49,7 @@ echo "<a href='my_account.php?my_orders'>My Account</a>";
 <div class="col-md-3 col-sm-6">
 
 <h4>Contact Us at</h4>
-<p><!-- p Starts -->
+<p>
 <strong>IWP Project</strong>
 <br>Queenie Das
 <br>dasqueenie@gmail.com

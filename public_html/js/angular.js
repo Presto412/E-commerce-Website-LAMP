@@ -8469,7 +8469,7 @@ function $TemplateCacheProvider() {
  * * `E` - Element name (default): `<my-directive></my-directive>`
  * * `A` - Attribute (default): `<div my-directive="exp"></div>`
  * * `C` - Class: `<div class="my-directive: exp;"></div>`
- * * `M` - Comment: `<!-- directive: my-directive exp -->`
+ * * `M` - Comment: ``
  *
  *
  * #### `templateNamespace`
@@ -9986,7 +9986,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    * * Data properties used by the {@link angular.element#methods
    * `scope()`/`isolateScope()` methods} to return the element's scope.
    * * Placeholder comments will contain information about what directive and
-   * binding caused the placeholder. E.g. `<!-- ngIf: shouldShow() -->`.
+   * binding caused the placeholder. E.g. ``.
    *
    * You may want to disable this in production for a significant performance
    * boost. See
@@ -25568,9 +25568,9 @@ var lowercaseFilter = valueFn(lowercase);
            }]);
        </script>
        <div ng-controller="ExampleController">
-         <!-- This title should be formatted normally -->
+         
          <h1>{{title}}</h1>
-         <!-- This title should be capitalized -->
+         
          <h1>{{title | uppercase}}</h1>
        </div>
      </file>
@@ -36349,7 +36349,7 @@ var ngOptionsDirective = [
  value="Misko" /></label><br/> <label>Number of People:<input type="text"
  ng-model="personCount" value="1" /></label><br/>
 
-          <!--- Example with simple pluralization rules for en locale --->
+          
           Without Offset:
           <ng-pluralize count="personCount"
                         when="{'0': 'Nobody is viewing.',
@@ -36357,7 +36357,7 @@ var ngOptionsDirective = [
                                'other': '{} people are viewing.'}">
           </ng-pluralize><br>
 
-          <!--- Example with offset --->
+          
           With Offset(2):
           <ng-pluralize count="personCount" offset=2
                         when="{'0': 'Nobody is viewing.',
@@ -37615,10 +37615,10 @@ var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
  * {@link ng.directive:ngCsp ngCsp}).
  *
  * ```html
- * <!-- when $scope.myValue is truthy (element is visible) -->
+ * 
  * <div ng-show="myValue"></div>
  *
- * <!-- when $scope.myValue is falsy (element is hidden) -->
+ * 
  * <div ng-show="myValue" class="ng-hide"></div>
  * ```
  *
@@ -37872,10 +37872,10 @@ var ngShowDirective = [
  * {@link ng.directive:ngCsp ngCsp}).
  *
  * ```html
- * <!-- when $scope.myValue is truthy (element is hidden) -->
+ * 
  * <div ng-hide="myValue" class="ng-hide"></div>
  *
- * <!-- when $scope.myValue is falsy (element is visible) -->
+ * 
  * <div ng-hide="myValue"></div>
  * ```
  *
@@ -38515,9 +38515,9 @@ var ngSwitchDefaultDirective = ngDirective({
  *             };
  *         });
  * </script>
- * <!-- fallback button content -->
+ * 
  * <my-button id="fallback"></my-button>
- * <!-- modified button content -->
+ * 
  * <my-button id="modified">
  *   <i style="color: green;">Button2</i>
  * </my-button>

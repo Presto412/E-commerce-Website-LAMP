@@ -1,8 +1,8 @@
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></head>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<div class="box animated zoomIn" ><!-- box Starts -->
+<div class="box animated zoomIn" >
 
-<div class="box-header" ><!-- box-header Starts -->
+<div class="box-header" >
 
 <center>
 
@@ -17,19 +17,19 @@
 
 
 
-</div><!-- box-header Ends -->
+</div>
 
-<form action="checkout.php" method="post" ><!--form Starts -->
+<form action="checkout.php" method="post" >
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" >
 
 <label>Email</label>
 
 <input type="text" class="form-control" name="c_email" required >
 
-</div><!-- form-group Ends -->
+</div>
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" >
 
 <label>Password</label>
 
@@ -41,9 +41,9 @@
 
 </h4>
 
-</div><!-- form-group Ends -->
+</div>
 
-<div class="text-center" ><!-- text-center Starts -->
+<div class="text-center" >
 
 <button name="login" value="Login" class="btn btn-primary" >
 
@@ -52,12 +52,12 @@
 
 </button>
 
-</div><!-- text-center Ends -->
+</div>
 
 
-</form><!--form Ends -->
+</form>
 
-<center><!-- center Starts -->
+<center>
 
 <a href="customer_register.php" >
 
@@ -66,10 +66,10 @@
 </a>
 
 
-</center><!-- center Ends -->
+</center>
 
 
-</div><!-- box Ends -->
+</div>
 
 <?php
 

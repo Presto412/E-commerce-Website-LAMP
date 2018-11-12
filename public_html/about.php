@@ -233,14 +233,14 @@ $about_desc = $row_about_us['about_desc'];
 
 <p> <?php echo $about_desc; ?> </p>
 
-</div><!-- box Ends -->
+</div>
 
-</div><!-- col-md-12 Ends -->
+</div>
 
 
 
-</div><!-- container Ends -->
-</div><!-- content Ends -->
+</div>
+</div>
 
 
 

@@ -74,13 +74,13 @@ if (!isset($_SESSION['admin_email'])) {
 
 <body>
 
-<div id="wrapper"><!-- wrapper Starts -->
+<div id="wrapper">
 
 <?php include "includes/sidebar.php";?>
 
-<div id="page-wrapper"><!-- page-wrapper Starts -->
+<div id="page-wrapper">
 
-<div class="container-fluid"><!-- container-fluid Starts -->
+<div class="container-fluid">
 
 <?php
 
@@ -212,11 +212,11 @@ if (!isset($_SESSION['admin_email'])) {
 
     ?>
 
-</div><!-- container-fluid Ends -->
+</div>
 
-</div><!-- page-wrapper Ends -->
+</div>
 
-</div><!-- wrapper Ends -->
+</div>
 
 <script src="js/jquery.min.js"></script>
 

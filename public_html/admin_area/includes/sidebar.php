@@ -12,11 +12,11 @@ else {
 
 ?>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" ><!-- navbar navbar-inverse navbar-fixed-top Starts -->
+<nav class="navbar navbar-inverse navbar-fixed-top" >
 
-<div class="navbar-header" ><!-- navbar-header Starts -->
+<div class="navbar-header" >
 
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" ><!-- navbar-ex1-collapse Starts -->
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" >
 
 
 
@@ -28,29 +28,29 @@ else {
 <span class="icon-bar" ></span>
 
 
-</button><!-- navbar-ex1-collapse Ends -->
+</button>
 
 <a class="navbar-brand" href="index.php?dashboard" >Admin Panel</a>
 
 
-</div><!-- navbar-header Ends -->
+</div>
 
-<ul class="nav navbar-right top-nav" ><!-- nav navbar-right top-nav Starts -->
+<ul class="nav navbar-right top-nav" >
 
-<li class="dropdown" ><!-- dropdown Starts -->
+<li class="dropdown" >
 
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" ><!-- dropdown-toggle Starts -->
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" >
 
 <i class="fa fa-user" ></i>
 
 <?php echo $admin_name; ?> <b class="caret" ></b>
 
 
-</a><!-- dropdown-toggle Ends -->
+</a>
 
-<ul class="dropdown-menu" ><!-- dropdown-menu Starts -->
+<ul class="dropdown-menu" >
 
-<li><!-- li Starts -->
+<li>
 
 <a href="index.php?user_profile=<?php echo $admin_id; ?>" >
 
@@ -59,9 +59,9 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
-<li><!-- li Starts -->
+<li>
 
 <a href="index.php?view_products" >
 
@@ -72,9 +72,9 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
-<li><!-- li Starts -->
+<li>
 
 <a href="index.php?view_customers" >
 
@@ -85,9 +85,9 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
-<li><!-- li Starts -->
+<li>
 
 <a href="index.php?view_p_cats" >
 
@@ -98,11 +98,11 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
 <li class="divider"></li>
 
-<li><!-- li Starts -->
+<li>
 
 <a href="logout.php">
 
@@ -110,23 +110,23 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
-</ul><!-- dropdown-menu Ends -->
-
-
+</ul>
 
 
-</li><!-- dropdown Ends -->
 
 
-</ul><!-- nav navbar-right top-nav Ends -->
+</li>
 
-<div class="collapse navbar-collapse navbar-ex1-collapse"><!-- collapse navbar-collapse navbar-ex1-collapse Starts -->
 
-<ul class="nav navbar-nav side-nav"><!-- nav navbar-nav side-nav Starts -->
+</ul>
 
-<li><!-- li Starts -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+
+<ul class="nav navbar-nav side-nav">
+
+<li>
 
 <a href="index.php?dashboard">
 
@@ -134,9 +134,9 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
-<li><!-- Products li Starts -->
+<li>
 
 <a href="#" data-toggle="collapse" data-target="#products">
 
@@ -160,23 +160,23 @@ else {
 
 </ul>
 
-</li><!-- Products li Ends -->
+</li>
 
 
 
 
-<li><!-- manufacturer li Starts -->
+<li>
 
-<a href="#" data-toggle="collapse" data-target="#manufacturers"><!-- anchor Starts -->
+<a href="#" data-toggle="collapse" data-target="#manufacturers">
 
 <i class="fa fa-fw fa-briefcase"></i> Manufacturers
 
 <i class="fa fa-fw fa-caret-down"></i>
 
 
-</a><!-- anchor Ends -->
+</a>
 
-<ul id="manufacturers" class="collapse"><!-- ul collapse Starts -->
+<ul id="manufacturers" class="collapse">
 
 <li>
 <a href="index.php?insert_manufacturer"> Insert Manufacturer </a>
@@ -186,14 +186,14 @@ else {
 <a href="index.php?view_manufacturers"> View Manufacturers </a>
 </li>
 
-</ul><!-- ul collapse Ends -->
+</ul>
 
 
-</li><!-- manufacturer li Ends -->
+</li>
 
 
 
-<li><!-- li Starts -->
+<li>
 
 <a href="#" data-toggle="collapse" data-target="#cat">
 
@@ -216,7 +216,7 @@ else {
 
 </ul>
 
-</li><!-- li Ends -->
+</li>
 
 
 
@@ -245,7 +245,7 @@ else {
 
 
 
-<li><!-- li Starts -->
+<li>
 
 <a href="#" data-toggle="collapse" data-target="#users">
 
@@ -272,9 +272,9 @@ else {
 
 </ul>
 
-</li><!-- li Ends -->
+</li>
 
-<li><!-- li Starts -->
+<li>
 
 <a href="logout.php">
 
@@ -282,12 +282,12 @@ else {
 
 </a>
 
-</li><!-- li Ends -->
+</li>
 
-</ul><!-- nav navbar-nav side-nav Ends -->
+</ul>
 
-</div><!-- collapse navbar-collapse navbar-ex1-collapse Ends -->
+</div>
 
-</nav><!-- navbar navbar-inverse navbar-fixed-top Ends -->
+</nav>
 
 <?php } ?>

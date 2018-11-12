@@ -9,11 +9,11 @@ If you have any questions, please feel free to <a href="../contact.php" >contact
 <hr>
 
 
-<div class="table-responsive" ><!-- table-responsive Starts -->
+<div class="table-responsive" >
 
-<table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
+<table class="table table-bordered table-hover table-striped" >
 
-<thead><!-- thead Starts -->
+<thead>
 
 <tr>
 
@@ -24,9 +24,9 @@ If you have any questions, please feel free to <a href="../contact.php" >contact
 
 </tr>
 
-</thead><!-- thead Ends -->
+</thead>
 
-<tbody><!-- tbody Starts -->
+<tbody>
 
 <tr>
 
@@ -37,9 +37,9 @@ If you have any questions, please feel free to <a href="../contact.php" >contact
 
 </tr>
 
-</tbody><!-- tbody Ends -->
+</tbody>
 
 
-</table><!-- table table-bordered table-hover table-striped Ends -->
+</table>
 
-</div><!-- table-responsive Ends -->
+</div>

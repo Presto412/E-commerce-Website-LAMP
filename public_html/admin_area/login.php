@@ -22,9 +22,9 @@ include("includes/db.php");
 
 <body>
 
-<div class="container" ><!-- container Starts -->
+<div class="container" >
 
-<form class="form-login" action="" method="post" ><!-- form-login Starts -->
+<form class="form-login" action="" method="post" >
 
 <h2 class="form-login-heading" >Admin Login</h2>
 
@@ -39,9 +39,9 @@ Log in
 </button>
 
 
-</form><!-- form-login Ends -->
+</form>
 
-</div><!-- container Ends -->
+</div>
 
 
 

@@ -25,11 +25,11 @@ include "functions/functions.php";
 
 <body>
 
-<div id="top"><!-- top Starts -->
+<div id="top">
 
-<div class="container"><!-- container Starts -->
+<div class="container">
 
-<div class="col-md-6 offer"><!-- col-md-6 offer Starts -->
+<div class="col-md-6 offer">
 
 <a href="#" class="btn btn-success btn-sm" >
 <?php
@@ -47,10 +47,10 @@ if (!isset($_SESSION['customer_email'])) {
 ?>
 </a>
 
-</div><!-- col-md-6 offer Ends -->
+</div>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
-<ul class="menu"><!-- menu Starts -->
+<div class="col-md-6">
+<ul class="menu">
 
 <li>
 <a href="customer_register.php">
@@ -96,24 +96,24 @@ if (!isset($_SESSION['customer_email'])) {
 ?>
 </li>
 
-</ul><!-- menu Ends -->
+</ul>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- top Ends -->
+</div>
+</div>
 
-<div class="navbar navbar-default" id="navbar"><!-- navbar navbar-default Starts -->
-<div class="container" ><!-- container Starts -->
+<div class="navbar navbar-default" id="navbar">
+<div class="container" >
 
-<div class="navbar-header"><!-- navbar-header Starts -->
+<div class="navbar-header">
 
-<a class="navbar-brand home" href="index.php" ><!--- navbar navbar-brand home Starts -->
+<a class="navbar-brand home" href="index.php" >
 
 <img src="images/logo.png" width="80px" height="40px" alt="computerfever logo" class="hidden-xs" >
 <img src="images/logo-small.png" alt="computerfever logo" class="visible-xs" >
 
-</a><!--- navbar navbar-brand home Ends -->
+</a>
 
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"  >
 
@@ -132,13 +132,13 @@ if (!isset($_SESSION['customer_email'])) {
 </button>
 
 
-</div><!-- navbar-header Ends -->
+</div>
 
-<div class="navbar-collapse collapse" id="navigation" ><!-- navbar-collapse collapse Starts -->
+<div class="navbar-collapse collapse" id="navigation" >
 
-<div class="padding-nav" ><!-- padding-nav Starts -->
+<div class="padding-nav" >
 
-<ul class="nav navbar-nav navbar-left"><!-- nav navbar-nav navbar-left Starts -->
+<ul class="nav navbar-nav navbar-left">
 
 <li>
 <a href="index.php"> Home </a>
@@ -177,11 +177,11 @@ if (!isset($_SESSION['customer_email'])) {
 <a href="contact.php"> Contact Us </a>
 </li>
 
-</ul><!-- nav navbar-nav navbar-left Ends -->
+</ul>
 
-</div><!-- padding-nav Ends -->
+</div>
 
-<div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right Starts -->
+<div class="navbar-collapse collapse right">
 
 <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
 
@@ -191,17 +191,17 @@ if (!isset($_SESSION['customer_email'])) {
 
 </button>
 
-</div><!-- navbar-collapse collapse right Ends -->
+</div>
 
-<div class="collapse clearfix" id="search"><!-- collapse clearfix Starts -->
+<div class="collapse clearfix" id="search">
 
-<form class="navbar-form" method="get" action="results.php"><!-- navbar-form Starts -->
+<form class="navbar-form" method="get" action="results.php">
 
-<div class="input-group"><!-- input-group Starts -->
+<div class="input-group">
 
 <input class="form-control" type="text" placeholder="Search" name="user_query" required>
 
-<span class="input-group-btn"><!-- input-group-btn Starts -->
+<span class="input-group-btn">
 
 <button type="submit" value="Search" name="search" class="btn btn-primary">
 
@@ -209,26 +209,26 @@ if (!isset($_SESSION['customer_email'])) {
 
 </button>
 
-</span><!-- input-group-btn Ends -->
+</span>
 
-</div><!-- input-group Ends -->
+</div>
 
-</form><!-- navbar-form Ends -->
+</form>
 
-</div><!-- collapse clearfix Ends -->
+</div>
 
-</div><!-- navbar-collapse collapse Ends -->
+</div>
 
-</div><!-- container Ends -->
-</div><!-- navbar navbar-default Ends -->
+</div>
+</div>
 
 
-<div id="content" ><!-- content Starts -->
-<div class="container" ><!-- container Starts -->
+<div id="content" >
+<div class="container" >
 
-<div class="col-md-12" ><!--- col-md-12 Starts -->
+<div class="col-md-12" >
 
-<ul class="breadcrumb" ><!-- breadcrumb Starts -->
+<ul class="breadcrumb" >
 
 <li>
 <a href="index.php">Home</a>
@@ -236,15 +236,15 @@ if (!isset($_SESSION['customer_email'])) {
 
 <li>Search Results</li>
 
-</ul><!-- breadcrumb Ends -->
+</ul>
 
 
 
-</div><!--- col-md-12 Ends -->
+</div>
 
-<div class="col-md-12" ><!-- col-md-12 Starts --->
+<div class="col-md-12" >
 
-<div class="row" id="Products" ><!-- row Starts -->
+<div class="row" id="Products" >
 
 <?php
 
@@ -343,13 +343,13 @@ if (isset($_GET['search'])) {
 }
 ?>
 
-</div><!-- row Ends -->
+</div>
 
-</div><!-- col-md-9 Ends --->
+</div>
 
-</div><!-- container Ends -->
+</div>
 
-</div><!-- content Ends -->
+</div>
 
 
 <?php

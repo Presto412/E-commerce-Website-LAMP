@@ -13,11 +13,11 @@ else {
 ?>
 
 
-<div class="row" ><!-- 1  row Starts -->
+<div class="row" >
 
-<div class="col-lg-12" ><!-- col-lg-12 Starts -->
+<div class="col-lg-12" >
 
-<ol class="breadcrumb" ><!-- breadcrumb Starts -->
+<ol class="breadcrumb" >
 
 <li class="active" >
 
@@ -27,19 +27,19 @@ else {
 
 
 
-</ol><!-- breadcrumb Ends -->
+</ol>
 
-</div><!-- col-lg-12 Ends -->
+</div>
 
-</div><!-- 1  row Ends -->
+</div>
 
-<div class="row" ><!-- 2 row Starts -->
+<div class="row" >
 
-<div class="col-lg-12" ><!-- col-lg-12 Starts -->
+<div class="col-lg-12" >
 
-<div class="panel panel-default" ><!-- panel panel-default Starts -->
+<div class="panel panel-default" >
 
-<div class="panel-heading" ><!-- panel-heading Starts -->
+<div class="panel-heading" >
 
 <h3 class="panel-title" >
 
@@ -48,127 +48,127 @@ else {
 </h3>
 
 
-</div><!-- panel-heading Ends -->
+</div>
 
 
-<div class="panel-body"><!-- panel-body Starts -->
+<div class="panel-body">
 
-<form class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
+<form class="form-horizontal" method="post" enctype="multipart/form-data">
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Name: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="text" name="admin_name" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Email: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="text" name="admin_email" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Password: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="password" name="admin_pass" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Country: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="text" name="admin_country" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Job: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="text" name="admin_job" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Contact: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="text" name="admin_contact" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label">User Image: </label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="file" name="admin_image" class="form-control" required>
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label class="col-md-3 control-label"></label>
 
-<div class="col-md-6"><!-- col-md-6 Starts -->
+<div class="col-md-6">
 
 <input type="submit" name="submit" value="Insert User" class="btn btn-primary form-control">
 
-</div><!-- col-md-6 Ends -->
+</div>
 
-</div><!-- form-group Ends -->
-
-
-</form><!-- form-horizontal Ends -->
-
-</div><!-- panel-body Ends -->
-
-</div><!-- panel panel-default Ends -->
-
-</div><!-- col-lg-12 Ends -->
+</div>
 
 
-</div><!-- 2 row Ends -->
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
 
 <?php
 

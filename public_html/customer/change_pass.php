@@ -2,35 +2,35 @@
 
 <h1 align="center">Change Password </h1>
 
-<form action="" method="post"><!-- form Starts -->
+<form action="" method="post">
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label>Enter Your Current Password</label>
 
 <input type="text" name="old_pass" class="form-control" required>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label>Enter Your New Password</label>
 
 <input type="text" name="new_pass" class="form-control" required>
 
-</div><!-- form-group Ends -->
+</div>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
 
 <label>Enter Your New Password Again</label>
 
 <input type="text" name="new_pass_again" class="form-control" required>
 
-</div><!-- form-group Ends -->
+</div>
 
-<div class="text-center"><!-- text-center Starts -->
+<div class="text-center">
 
 <button type="submit" name="submit" class="btn btn-primary">
 
@@ -38,9 +38,9 @@
 
 </button>
 
-</div><!-- text-center Ends -->
+</div>
 
-</form><!-- form Ends -->
+</form>
 <?php
 
 if(isset($_POST['submit'])){
