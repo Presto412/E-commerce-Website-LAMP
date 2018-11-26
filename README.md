@@ -1,5 +1,6 @@
 # E-commerce store
 
+A dockerized e-commerce website that is compatible with docker swarm. Served as the project for Internet and Web Programming Course at uni. Find the project report [here](./ProjectReport.pdf)
 ## Prerequisites
 
 - Docker, Docker-compose, Docker-Swarm
