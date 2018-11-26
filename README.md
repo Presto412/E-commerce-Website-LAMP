@@ -1,4 +1,4 @@
-# IWP Project - All in one E-commerce store
+# E-commerce store
 
 ## Prerequisites
 
