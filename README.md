@@ -38,10 +38,15 @@ docker logs -f "$CONTAINER_NAME"
 - After completion, Go to `http://0.0.0.0:8080`
 - Done!
 
-## Folder Descriptions
+## General Descriptions
 
 - `public_html` holds the server side php code
 - `static_server` holds the image hosting platform that compresses image based on screen size
 - `php` and `apache` hold the docker configuration
 - `docker-compose.yml` holds the configuration for running docker services
 - `ecom_store.sql` holds the initialization database (table creation, sample records)
+
+## Contributors
+
+- [Priyansh Jain](https://github.com/Presto412) 
+- [Queenie Das](https://github.com/Queenie07)
