@@ -13,7 +13,7 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-    image: iwp/php
+    image: virt/php
     networks:
       testnet:
         aliases:
@@ -29,7 +29,7 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-    image: iwp/apache
+    image: virt/apache
     depends_on:
       - php
       - mysql
@@ -71,10 +71,7 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-      placement:
-        constraints:
-          - node.hostname == priyansh-Inspiron-3543
-    image: iwp/node
+    image: virt/node
     command: npm start
     hostname: static_server
     volumes:
