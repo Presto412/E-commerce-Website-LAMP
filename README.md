@@ -9,11 +9,6 @@ A dockerized e-commerce website that is compatible with docker swarm. Served as 
 ## Instructions
 
 - In the `static_server` folder, create a file named `.env`. Paste the contents of `.env.example` into the same and replace with your credentials.
-- Build the images
-
-```bash
-./build-images.sh
-```
 
 - Setup the Swarm Network
 
