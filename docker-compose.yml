@@ -13,7 +13,7 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-    image: virt/php
+    image: presto412/iwp-php
     networks:
       testnet:
         aliases:
@@ -29,7 +29,7 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-    image: virt/apache
+    image: presto412/iwp-apache
     depends_on:
       - php
       - mysql
@@ -71,7 +71,7 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-    image: virt/node
+    image: presto412/iwp-node
     command: npm start
     hostname: static_server
     volumes:
